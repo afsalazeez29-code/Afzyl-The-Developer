@@ -1,0 +1,29 @@
+---
+import ParticleField from '../components/ParticleField.svelte';
+import '../styles/global.scss';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="An isolated WebGL anti-gravity particle interaction study." />
+    <meta name="theme-color" content="#030407" />
+    <title>Particle Study — Afzyl</title>
+  </head>
+  <body class="particle-lab-page">
+    <main>
+      <h1 class="sr-only">Anti-gravity particle interaction study</h1>
+      <ParticleField client:only="svelte" />
+    </main>
+  </body>
+</html>
+
+<style is:global>
+  body.particle-lab-page {
+    margin: 0;
+    overflow: hidden;
+    background: #030407;
+  }
+</style>
