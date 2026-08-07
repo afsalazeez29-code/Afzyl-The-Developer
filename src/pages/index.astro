@@ -1,5 +1,8 @@
 ﻿---
 import SiteNav from '../components/SiteNav.svelte';
+import CoreFullStack from '../components/Gap/CoreFullStack.svelte';
+import Gap2CoreFullStack from '../components/Gap/Gap2CoreFullStack.svelte';
+import Gap3CoreFullStack from '../components/Gap/Gap3CoreFullStack.svelte';
 import '../styles/global.scss';
 ---
 
@@ -9,7 +12,7 @@ import '../styles/global.scss';
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width" />
   <meta name="description" content="Afzyl — creative developer crafting cinematic digital experiences." />
-  <meta name="theme-color" content="#28282B" />
+  <meta name="theme-color" content="#E9E7DF" />
   <title>Afzyl — Creative Developer</title>
 </head>
 <body>
@@ -30,13 +33,25 @@ import '../styles/global.scss';
       <img class="portrait" src="/images/Portrait.webp" alt="Portrait of Afzyl" fetchpriority="high" />
     </section>
 
+    <div class="scene-gap gap-1">
+      <CoreFullStack client:load />
+    </div>
+
     <section class="background-section" aria-hidden="true">
       <img class="hero-bg" src="/images/Hero-BG2.webp" alt="" loading="eager" />
     </section>
 
+    <div class="scene-gap gap-2">
+      <Gap2CoreFullStack client:load />
+    </div>
+
     <section class="background-section" aria-hidden="true">
       <img class="hero-bg" src="/images/Hero-BG3.webp" alt="" loading="lazy" />
     </section>
+
+    <div class="scene-gap gap-3">
+      <Gap3CoreFullStack client:load />
+    </div>
 
     <section class="background-section" aria-hidden="true">
       <img class="hero-bg" src="/images/Hero-BG4.webp" alt="" loading="lazy" />
@@ -116,39 +131,21 @@ import '../styles/global.scss';
 <style lang="scss">
   .hero,
   .background-section {
-    --scene-gap: clamp(80px, 8vw, 160px);
-    --bridge-gradient: linear-gradient(180deg, rgba(24, 24, 27, 0), #1f2023 24%, #44221d 55%, #242326 78%, rgba(36, 35, 38, 0));
     position: relative;
     min-height: 100svh;
     overflow: visible;
-    background: #28282B;
+    background: #E9E7DF;
     isolation: isolate;
   }
-  .hero,
-  .background-section:nth-of-type(2),
-  .background-section:nth-of-type(3) {
-    margin-bottom: var(--scene-gap);
-  }
-  .background-section:nth-of-type(2) {
-    --bridge-gradient: linear-gradient(180deg, rgba(42, 28, 25, 0), #4e251f 24%, #33272a 52%, #34363a 78%, rgba(52, 54, 58, 0));
-  }
-  .background-section:nth-of-type(3) {
-    --bridge-gradient: linear-gradient(180deg, rgba(34, 35, 38, 0), #292a2e 24%, #382a25 52%, #27282b 78%, rgba(39, 40, 43, 0));
-  }
-  .hero::after,
-  .background-section::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    z-index: 1;
-    height: calc(var(--scene-gap) * 1.45);
+  .scene-gap {
+    --gap-height: clamp(180px, 18vw, 350px);
+    position: relative;
+    z-index: 0;
+    height: var(--gap-height);
+    overflow: hidden;
     pointer-events: none;
-  }
-  .hero::after,
-  .background-section::after {
-    bottom: calc(var(--scene-gap) * -.725);
-    background: var(--bridge-gradient);
+    isolation: isolate;
+    background: #E9E7DF;
   }
 .hero-bg {
   position: absolute;
@@ -198,7 +195,7 @@ import '../styles/global.scss';
   .statement h2 { width: min(1100px, 92%); margin: 15vh auto; font: 500 clamp(3rem, 7.2vw, 7.2rem)/1.01 var(--sans); letter-spacing: -.06em; }
   .statement h2 em { font-family: var(--serif); font-weight: 500; }
   .statement-foot { padding-top: 1.5rem; border-top: 1px solid var(--line); font: .7rem var(--mono); text-transform: uppercase; letter-spacing: .08em; }
-  .work { padding: clamp(7rem, 12vw, 12rem) var(--gutter); background: var(--ink); color: #28282B;}
+  .work { padding: clamp(7rem, 12vw, 12rem) var(--gutter); background: var(--ink); color: #E9E7DF;}
   .section-head { display: grid; grid-template-columns: 1fr 2fr auto; align-items: start; margin-bottom: 10vw; }
   .section-head h2 { margin: -.2em 0 0; font: 500 clamp(3rem, 6vw, 6rem)/.98 var(--sans); letter-spacing: -.06em; }
   .count { margin: 0; font: .8rem var(--mono); }
@@ -206,7 +203,7 @@ import '../styles/global.scss';
   .project-image { position: relative; overflow: hidden; background: #1a1a1a; aspect-ratio: 16/10; }
   .project-image img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1); transition: transform .8s cubic-bezier(.2,.7,.2,1), filter .4s; }
   .project-image:hover img { transform: scale(1.025); filter: grayscale(.25); }
-  .view { position: absolute; right: 1rem; bottom: 1rem; padding: .7rem 1rem; color: var(--ink); background: #28282B; font: .6rem var(--mono); text-transform: uppercase; letter-spacing: .08em; transform: translateY(150%); transition: transform .4s; }
+  .view { position: absolute; right: 1rem; bottom: 1rem; padding: .7rem 1rem; color: var(--ink); background: #E9E7DF; font: .6rem var(--mono); text-transform: uppercase; letter-spacing: .08em; transform: translateY(150%); transition: transform .4s; }
   .project-image:hover .view { transform: none; }
   .project-info { display: grid; gap: 1rem; padding-bottom: .5rem; }
   .project-info h3 { margin: 1rem 0 0; font: 500 clamp(2rem, 4vw, 4rem)/1 var(--sans); letter-spacing: -.05em; }
@@ -215,7 +212,7 @@ import '../styles/global.scss';
   .project-split { grid-template-columns: minmax(240px,.85fr) minmax(0,1.3fr); width: 82%; margin-left: auto; }
   .project-split .project-info { grid-row: 1; grid-column: 1; }
   .blueprint { grid-column: 2; aspect-ratio: 4/5; }
-  .type-canvas { aspect-ratio: 16/9; background: #e6e3da; color: #28282B; overflow: hidden; display: grid; place-items: center; position: relative; }
+  .type-canvas { aspect-ratio: 16/9; background: #e6e3da; color: #E9E7DF; overflow: hidden; display: grid; place-items: center; position: relative; }
   .type-canvas span { font: 600 min(31vw, 28rem)/.7 var(--sans); letter-spacing: -.16em; transform: translateX(-.07em); }
   .type-canvas i { position: absolute; font: 500 clamp(1rem, 2vw, 2rem) var(--serif); }
   .services { padding: clamp(7rem, 12vw, 12rem) var(--gutter); }
@@ -225,7 +222,7 @@ import '../styles/global.scss';
   .services li > span { font: .65rem var(--mono); }
   .services h3 { margin: 0; font-size: clamp(1.4rem, 2.5vw, 2.5rem); letter-spacing: -.04em; }
   .services li p { margin: 0; color: #666; font: .72rem/1.6 var(--mono); }
-  .contact { min-height: 90svh; padding: clamp(7rem, 10vw, 10rem) var(--gutter) 2rem; color: #28282B ; background: var(--ink); display: flex; flex-direction: column; }
+  .contact { min-height: 90svh; padding: clamp(7rem, 10vw, 10rem) var(--gutter) 2rem; color: #E9E7DF ; background: var(--ink); display: flex; flex-direction: column; }
   .contact h2 { margin: auto 0 5vw; font: 500 clamp(4rem, 11vw, 11rem)/.79 var(--sans); letter-spacing: -.08em; }
   .contact h2 em { font-family: var(--serif); font-weight: 500; }
   .contact-link { border-bottom: 1px solid #555; padding: 1.5rem 0; display: flex; justify-content: space-between; font: 400 clamp(1.2rem, 2.2vw, 2.2rem) var(--mono); }
@@ -263,10 +260,5 @@ import '../styles/global.scss';
   }
   @media (max-width: 480px) {
     .portrait { width: min(48vw, 13.5rem); max-width: 52%; }
-  }
-  /* Remove bottom fades on hero and background sections so images show clearly */
-  .hero::after,
-  .background-section::after {
-    display: none !important;
   }
 </style>

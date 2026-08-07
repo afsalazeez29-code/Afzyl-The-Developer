@@ -32,7 +32,7 @@
     .availability { display: none; }
     .menu { display: grid; gap: 5px; width: 38px; padding: 10px; }
     .menu span { display: block; height: 1px; background: currentColor; transition: transform .3s; }
-    nav { position: fixed; inset: 0; background: #28282B; color: #f1f0eb; flex-direction: column; justify-content: center; align-items: center; gap: 1.5rem; font-size: clamp(2.5rem, 12vw, 5rem); transform: translateY(-101%); transition: transform .5s cubic-bezier(.77,0,.18,1); mix-blend-mode: normal; }
+    nav { position: fixed; inset: 0; background: #E9E7DF; color: #f1f0eb; flex-direction: column; justify-content: center; align-items: center; gap: 1.5rem; font-size: clamp(2.5rem, 12vw, 5rem); transform: translateY(-101%); transition: transform .5s cubic-bezier(.77,0,.18,1); mix-blend-mode: normal; }
     .open nav { transform: none; }
     .open .menu { z-index: 2; }
     .open .menu span:first-child { transform: translateY(3px) rotate(45deg); }
