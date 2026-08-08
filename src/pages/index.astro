@@ -11,11 +11,22 @@ import '../styles/global.scss';
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width" />
-  <meta name="description" content="Afzyl — creative developer crafting cinematic digital experiences." />
+  <meta
+    name="description"
+    content="Afzyl — creative developer crafting cinematic digital experiences."
+  />
   <meta name="theme-color" content="#E9E7DF" />
   <title>Afzyl — Creative Developer</title>
 </head>
+
 <body>
+
+  <!-- =====================================================
+       THREE.JS PARTICLE EFFECT
+       This stays BELOW portrait + icon waves.
+       DO NOT MODIFY MainElement.js / Mouse.js.
+       ===================================================== -->
+
   <div
     class="effect-layer"
     data-main-particles-component
@@ -26,239 +37,711 @@ import '../styles/global.scss';
   >
     <div data-container></div>
   </div>
+
   <SiteNav client:load />
+
   <main id="top">
-    <section class="hero" aria-hidden="true">
-      <img class="hero-bg" src="/images/Hero-BG.webp" alt="" fetchpriority="high" />
-      <img class="portrait" src="/images/Portrait.webp" alt="Portrait of Afzyl" fetchpriority="high" />
+
+    <!-- ===================================================
+         IMAGE 1 / HERO
+         =================================================== -->
+
+    <section class="image-section image-section-1">
+
+      <!-- BACKGROUND — BOTTOM LAYER -->
+      <img
+        class="hero-bg"
+        src="/images/Hero-BG1.webp"
+        alt=""
+        fetchpriority="high"
+      />
+
+      <!-- PORTRAIT — TOP LAYER -->
+      <img
+        class="portrait"
+        src="/Portraits/Portrait1.webp"
+        alt="Portrait of Afzyl"
+        fetchpriority="high"
+      />
+
+      <!-- GAP 1 ICON WAVE — TOP LAYER -->
+      <div class="icon-wave-layer">
+        <CoreFullStack client:load />
+      </div>
+
     </section>
 
-    <div class="scene-gap gap-1">
-      <CoreFullStack client:load />
-    </div>
 
-    <section class="background-section" aria-hidden="true">
-      <img class="hero-bg" src="/images/Hero-BG2.webp" alt="" loading="eager" />
+    <!-- ===================================================
+         IMAGE 2
+         =================================================== -->
+
+    <section class="image-section image-section-2">
+
+      <!-- BACKGROUND — BOTTOM LAYER -->
+      <img
+        class="hero-bg"
+        src="/images/Hero-BG2.webp"
+        alt=""
+        loading="eager"
+      />
+
+      <!-- GAP 2 ICON WAVE — TOP LAYER -->
+      <div class="icon-wave-layer">
+        <Gap2CoreFullStack client:load />
+      </div>
+
     </section>
 
-    <div class="scene-gap gap-2">
-      <Gap2CoreFullStack client:load />
-    </div>
 
-    <section class="background-section" aria-hidden="true">
-      <img class="hero-bg" src="/images/Hero-BG3.webp" alt="" loading="lazy" />
+    <!-- ===================================================
+         IMAGE 3
+         =================================================== -->
+
+    <section class="image-section image-section-3">
+
+      <!-- BACKGROUND — BOTTOM LAYER -->
+      <img
+        class="hero-bg"
+        src="/images/Hero-BG3.webp"
+        alt=""
+        loading="lazy"
+      />
+
+      <!-- GAP 3 ICON WAVE — TOP LAYER -->
+      <div class="icon-wave-layer">
+        <Gap3CoreFullStack client:load />
+      </div>
+
     </section>
 
-    <div class="scene-gap gap-3">
-      <Gap3CoreFullStack client:load />
-    </div>
 
-    <section class="background-section" aria-hidden="true">
-      <img class="hero-bg" src="/images/Hero-BG4.webp" alt="" loading="lazy" />
+    <!-- ===================================================
+         IMAGE 4
+         =================================================== -->
+
+    <section class="image-section image-section-4 final-image-section">
+
+      <!-- BACKGROUND — BOTTOM LAYER -->
+      <img
+        class="hero-bg"
+        src="/images/Hero-BG4.webp"
+        alt=""
+        loading="lazy"
+      />
+
+      <footer class="compact-footer">
+
+        <p>©️ 2026 AFZYL</p>
+
+        <p>India</p>
+
+        <div>
+          <a href="#">LinkedIn</a>
+          <a href="#">GitHub</a>
+          <a href="#top">Back to top ↑</a>
+        </div>
+
+      </footer>
+
     </section>
 
-    <section class="statement" id="about" aria-labelledby="statement-title">
-      <div class="statement-meta"><p class="eyebrow">01 / Philosophy</p><p class="eyebrow">Independent creative practice</p></div>
-      <h2 id="statement-title">I build digital work with <em>clarity, character</em> and a reason to be remembered.</h2>
-      <div class="statement-foot"><p>Thoughtful identities. Immersive interfaces. Precise code.</p><p>Scroll to view selected work</p></div>
-    </section>
-
-    <section class="work" id="work" aria-labelledby="work-title">
-      <div class="section-head"><p class="eyebrow">02 / Selected work</p><h2 id="work-title">A few things<br />made with intent.</h2><p class="count">(03)</p></div>
-      <article class="project project-featured">
-        <a class="project-image" href="#contact" aria-label="View RSP project">
-          <img src="/images/rsp-ui.png" alt="RSP digital product interface" loading="lazy" />
-          <span class="view">View case study ↗</span>
-        </a>
-        <div class="project-info"><p class="eyebrow">01 — Product / Development</p><h3>RSP Platform</h3><p>A focused digital system built to turn complex operations into a calm, coherent experience.</p><span>2026</span></div>
-      </article>
-      <article class="project project-split">
-        <a class="project-image blueprint" href="#contact" aria-label="View Blueprint project"><img src="/images/blueprint.jpeg" alt="Architectural blueprint study" loading="lazy" /><span class="view">View study ↗</span></a>
-        <div class="project-info"><p class="eyebrow">02 — Experiment / Direction</p><h3>Blueprint</h3><p>An editorial investigation of structure, proportion and systems that stay out of the way.</p><span>2025</span></div>
-      </article>
-      <article class="project project-type">
-        <div class="type-canvas"><span>AF</span><i>Form follows feeling.</i></div>
-        <div class="project-info"><p class="eyebrow">03 — Identity / Digital</p><h3>Personal Index</h3><p>A living identity built from stark contrasts, generous space and typography in motion.</p><span>Ongoing</span></div>
-      </article>
-    </section>
-
-    <section class="services" aria-labelledby="services-title">
-      <p class="eyebrow">03 / Capabilities</p>
-      <h2 id="services-title">From first thought<br />to final frame.</h2>
-      <ol>
-        <li><span>01</span><h3>Creative Direction</h3><p>Positioning, visual systems, art direction</p></li>
-        <li><span>02</span><h3>Experience Design</h3><p>UX strategy, UI design, prototyping</p></li>
-        <li><span>03</span><h3>Creative Development</h3><p>Astro, Svelte, motion, interactive systems</p></li>
-      </ol>
-    </section>
-
-    <section class="contact" id="contact" aria-labelledby="contact-title">
-      <p class="eyebrow">04 / Start a conversation</p>
-      <h2 id="contact-title">Have something<br /><em>worth making?</em></h2>
-      <a class="contact-link" href="mailto:hello@afzyl.dev">hello@afzyl.dev <span>↗</span></a>
-      <footer><p>© 2026 AFZYL</p><p>India · <span id="clock">IST</span></p><div><a href="#">LinkedIn</a><a href="#">GitHub</a><a href="#top">Back to top ↑</a></div></footer>
-    </section>
   </main>
+
+
+  <!-- =====================================================
+       GSAP + LENIS + THREE.JS INITIALIZATION
+       ===================================================== -->
 
   <script>
     import '../effects/MainElement.js';
     import Lenis from 'lenis';
     import gsap from 'gsap';
     import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
     gsap.registerPlugin(ScrollTrigger);
-    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const reduce = window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    ).matches;
+
     if (!reduce) {
-      const lenis = new Lenis({ lerp: 0.08, smoothWheel: true });
+
+      const lenis = new Lenis({
+        lerp: 0.08,
+        smoothWheel: true
+      });
+
       lenis.on('scroll', ScrollTrigger.update);
-      gsap.ticker.add((time) => lenis.raf(time * 1000));
+
+      gsap.ticker.add((time) => {
+        lenis.raf(time * 1000);
+      });
+
       gsap.ticker.lagSmoothing(0);
+
       if (document.querySelector('.hero h1 span')) {
-        gsap.from('.hero h1 span', { yPercent: 120, opacity: 0, duration: 1.35, stagger: .12, ease: 'power4.out' });
+
+        gsap.from('.hero h1 span', {
+          yPercent: 120,
+          opacity: 0,
+          duration: 1.35,
+          stagger: 0.12,
+          ease: 'power4.out'
+        });
+
       }
+
       if (document.querySelector('.portrait')) {
-        gsap.from('.portrait', { yPercent: 8, opacity: 0, scale: .97, duration: 1.6, delay: .2, ease: 'power3.out' });
+
+        gsap.from('.portrait', {
+          yPercent: 8,
+          opacity: 0,
+          scale: 0.97,
+          duration: 1.6,
+          delay: 0.2,
+          ease: 'power3.out'
+        });
+
       }
-      gsap.utils.toArray<HTMLElement>('.statement h2, .section-head h2, .services h2').forEach((el) => gsap.from(el, { y: 70, opacity: 0, duration: 1, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 85%' } }));
-      gsap.utils.toArray<HTMLElement>('.project').forEach((el) => gsap.from(el, { y: 80, opacity: 0, duration: 1.1, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 82%' } }));
+
     }
-    const clock = document.querySelector('#clock');
-    const updateClock = () => { if (clock) clock.textContent = new Intl.DateTimeFormat('en-IN', { timeZone: 'Asia/Kolkata', hour: '2-digit', minute: '2-digit', hour12: false }).format(new Date()) + ' IST'; };
-    updateClock(); setInterval(updateClock, 60000);
   </script>
+
 </body>
 </html>
 
+
 <style lang="scss">
-  .hero,
-  .background-section {
-    position: relative;
-    min-height: 100svh;
-    overflow: visible;
-    background: #E9E7DF;
-    isolation: isolate;
-  }
-  .scene-gap {
-    --gap-height: clamp(180px, 18vw, 350px);
-    position: relative;
-    z-index: 0;
-    height: var(--gap-height);
-    overflow: hidden;
-    pointer-events: none;
-    isolation: isolate;
-    background: #E9E7DF;
-  }
+
+/* =========================================================
+   EXACT GLOBAL LAYER ORDER
+   =========================================================
+
+   0 = IMAGE
+   10 = PARTICLES
+   20 = PORTRAIT
+   30 = ICON WAVES
+
+   Therefore:
+
+   TOP
+   ─────────────────────────
+   Portrait + Icon Waves
+   ─────────────────────────
+   Three.js particles
+   ─────────────────────────
+   Background image
+   ─────────────────────────
+   BOTTOM
+   ========================================================= */
+
+
+/* =========================================================
+   IMAGE SECTIONS
+   ========================================================= */
+
+.image-section {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 2560 / 1600;
+
+  /*
+   * IMPORTANT:
+   * Allows icon waves to cross the image boundary.
+   */
+  overflow: visible;
+
+  background: #E9E7DF;
+
+  /*
+   * DO NOT use isolation here.
+   * The particle layer must be able to sit
+   * between the image and foreground elements.
+   */
+
+  isolation: auto;
+}
+
+
+/* =========================================================
+   IMAGE BACKGROUND
+   BOTTOM LAYER
+   ========================================================= */
+
 .hero-bg {
   position: absolute;
+
   inset: 0;
+
   width: 100%;
   height: 100%;
+
   object-fit: cover;
 
   filter: none;
   opacity: 1;
 
   z-index: 0;
+
+  display: block;
 }
-  .effect-layer { position: fixed; inset: 0; z-index: 2; width: 100%; height: 100%; pointer-events: none; }
-  .effect-layer [data-container] { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
-  .effect-layer canvas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+
+
+/* =========================================================
+   THREE.JS PARTICLE EFFECT
+   MIDDLE LAYER
+   ========================================================= */
+
+.effect-layer {
+  position: fixed;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  /*
+   * ABOVE IMAGE
+   * BELOW PORTRAIT
+   * BELOW ICON WAVES
+   */
+
+  z-index: 10;
+
+  pointer-events: none;
+}
+
+.effect-layer [data-container] {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  pointer-events: none;
+}
+
+.effect-layer canvas {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  pointer-events: none;
+
+  /*
+   * Keep the canvas itself in the particle layer.
+   */
+
+  z-index: 0;
+}
+
+
+/* =========================================================
+   PORTRAIT
+   TOP LAYER
+   ========================================================= */
+
 .portrait {
   position: absolute;
-  z-index: 3;
+  z-index: 20;
 
-  left: clamp(14rem, 6vw, 10rem);
+  left: clamp(18rem, 6vw, 10rem);
   bottom: 0;
 
-  height: 90vh;
-  width: auto;
+  height: auto;
+  width: min(32vw, 42rem);
 
-  max-height: none;
   max-width: none;
+  max-height: none;
 
   object-fit: contain;
   object-position: left bottom;
-
   transform: none;
+
+  pointer-events: none;
 }
-  .hero h1 { position: absolute; z-index: 4; inset: 22% var(--gutter) auto; margin: 0; display: flex; flex-direction: column; font: 500 clamp(5rem, 13.5vw, 13rem)/.76 var(--sans); letter-spacing: -.085em; text-transform: uppercase; }
-  .hero h1 span { display: block; overflow: hidden; }
-  .hero h1 .outline { align-self: flex-end; color: transparent; -webkit-text-stroke: 1.5px rgba(241,240,235,.78); }
-  .hero-index { position: absolute; z-index: 4; top: 15%; left: var(--gutter); }
-  .hero-role { position: absolute; z-index: 4; right: var(--gutter); bottom: 5%; text-align: right; line-height: 1.8; }
-  .hero-copy { position: absolute; z-index: 4; left: var(--gutter); bottom: 5%; width: min(25rem, 42vw); display: flex; align-items: flex-end; gap: clamp(1.5rem, 4vw, 4rem); }
-  .hero-copy > p { max-width: 17rem; margin: 0; font-size: clamp(.8rem, 1vw, .95rem); line-height: 1.55; }
-  .round-link { flex: 0 0 86px; aspect-ratio: 1; border: 1px solid rgba(255,255,255,.45); border-radius: 50%; display: grid; place-content: center; gap: .4rem; text-align: center; font: .58rem var(--mono); text-transform: uppercase; letter-spacing: .12em; transition: color .3s, background .3s, transform .3s; }
-  .round-link:hover { color: var(--ink); background: #f1f0eb; transform: rotate(-8deg); }
-  .round-link b { font: 400 1rem var(--sans); }
-  .statement { min-height: 100svh; padding: clamp(7rem, 13vw, 13rem) var(--gutter) 4rem; display: flex; flex-direction: column; justify-content: space-between; }
-  .statement-meta, .statement-foot { display: flex; justify-content: space-between; align-items: flex-end; }
-  .statement h2 { width: min(1100px, 92%); margin: 15vh auto; font: 500 clamp(3rem, 7.2vw, 7.2rem)/1.01 var(--sans); letter-spacing: -.06em; }
-  .statement h2 em { font-family: var(--serif); font-weight: 500; }
-  .statement-foot { padding-top: 1.5rem; border-top: 1px solid var(--line); font: .7rem var(--mono); text-transform: uppercase; letter-spacing: .08em; }
-  .work { padding: clamp(7rem, 12vw, 12rem) var(--gutter); background: var(--ink); color: #E9E7DF;}
-  .section-head { display: grid; grid-template-columns: 1fr 2fr auto; align-items: start; margin-bottom: 10vw; }
-  .section-head h2 { margin: -.2em 0 0; font: 500 clamp(3rem, 6vw, 6rem)/.98 var(--sans); letter-spacing: -.06em; }
-  .count { margin: 0; font: .8rem var(--mono); }
-  .project { display: grid; grid-template-columns: minmax(0, 2.1fr) minmax(260px, .9fr); gap: clamp(2rem, 5vw, 6rem); align-items: end; padding-bottom: clamp(7rem, 14vw, 13rem); }
-  .project-image { position: relative; overflow: hidden; background: #1a1a1a; aspect-ratio: 16/10; }
-  .project-image img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1); transition: transform .8s cubic-bezier(.2,.7,.2,1), filter .4s; }
-  .project-image:hover img { transform: scale(1.025); filter: grayscale(.25); }
-  .view { position: absolute; right: 1rem; bottom: 1rem; padding: .7rem 1rem; color: var(--ink); background: #E9E7DF; font: .6rem var(--mono); text-transform: uppercase; letter-spacing: .08em; transform: translateY(150%); transition: transform .4s; }
-  .project-image:hover .view { transform: none; }
-  .project-info { display: grid; gap: 1rem; padding-bottom: .5rem; }
-  .project-info h3 { margin: 1rem 0 0; font: 500 clamp(2rem, 4vw, 4rem)/1 var(--sans); letter-spacing: -.05em; }
-  .project-info > p:not(.eyebrow) { margin: 0; max-width: 24rem; color: var(--muted); font-size: .85rem; line-height: 1.65; }
-  .project-info > span { margin-top: 1.5rem; font: .65rem var(--mono); }
-  .project-split { grid-template-columns: minmax(240px,.85fr) minmax(0,1.3fr); width: 82%; margin-left: auto; }
-  .project-split .project-info { grid-row: 1; grid-column: 1; }
-  .blueprint { grid-column: 2; aspect-ratio: 4/5; }
-  .type-canvas { aspect-ratio: 16/9; background: #e6e3da; color: #E9E7DF; overflow: hidden; display: grid; place-items: center; position: relative; }
-  .type-canvas span { font: 600 min(31vw, 28rem)/.7 var(--sans); letter-spacing: -.16em; transform: translateX(-.07em); }
-  .type-canvas i { position: absolute; font: 500 clamp(1rem, 2vw, 2rem) var(--serif); }
-  .services { padding: clamp(7rem, 12vw, 12rem) var(--gutter); }
-  .services > h2 { margin: 8vw 0; font: 500 clamp(3.5rem, 8vw, 8rem)/.9 var(--sans); letter-spacing: -.07em; }
-  .services ol { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
-  .services li { display: grid; grid-template-columns: .35fr 1.3fr 1fr; gap: 2rem; align-items: center; padding: 2rem 0; border-bottom: 1px solid var(--line); }
-  .services li > span { font: .65rem var(--mono); }
-  .services h3 { margin: 0; font-size: clamp(1.4rem, 2.5vw, 2.5rem); letter-spacing: -.04em; }
-  .services li p { margin: 0; color: #666; font: .72rem/1.6 var(--mono); }
-  .contact { min-height: 90svh; padding: clamp(7rem, 10vw, 10rem) var(--gutter) 2rem; color: #E9E7DF ; background: var(--ink); display: flex; flex-direction: column; }
-  .contact h2 { margin: auto 0 5vw; font: 500 clamp(4rem, 11vw, 11rem)/.79 var(--sans); letter-spacing: -.08em; }
-  .contact h2 em { font-family: var(--serif); font-weight: 500; }
-  .contact-link { border-bottom: 1px solid #555; padding: 1.5rem 0; display: flex; justify-content: space-between; font: 400 clamp(1.2rem, 2.2vw, 2.2rem) var(--mono); }
-  footer { margin-top: 7vw; padding-top: 1.5rem; border-top: 1px solid #333; display: grid; grid-template-columns: 1fr 1fr 1fr; font: .6rem var(--mono); text-transform: uppercase; letter-spacing: .08em; }
-  footer > p:nth-child(2) { text-align: center; }
-  footer div { display: flex; justify-content: flex-end; gap: 1.5rem; }
-  @media (min-width: 1920px) {
-    .portrait { width: min(29vw, 38rem); }
+
+/* =========================================================
+   ICON WAVES
+   TOPMOST LAYER
+   ========================================================= */
+
+.icon-wave-layer {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  bottom: 0;
+
+  width: 100%;
+
+  height: clamp(180px, 18vw, 350px);
+
+  /*
+   * Exactly half inside the current image
+   * and half into the next image.
+   *
+   * This places the wave on the boundary.
+   */
+
+  transform: translateY(50%);
+
+  /*
+   * ABOVE EVERYTHING
+   */
+
+  z-index: 30;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   HERO TEXT
+   ========================================================= */
+
+.hero h1 {
+  position: absolute;
+
+  z-index: 21;
+
+  inset: 22% var(--gutter) auto;
+
+  margin: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  font:
+    500
+    clamp(5rem, 13.5vw, 13rem)
+    / 0.76
+    var(--sans);
+
+  letter-spacing: -0.085em;
+
+  text-transform: uppercase;
+}
+
+.hero h1 span {
+  display: block;
+
+  overflow: hidden;
+}
+
+.hero h1 .outline {
+  align-self: flex-end;
+
+  color: transparent;
+
+  -webkit-text-stroke:
+    1.5px
+    rgba(241, 240, 235, 0.78);
+}
+
+
+/* =========================================================
+   HERO INDEX
+   ========================================================= */
+
+.hero-index {
+  position: absolute;
+
+  z-index: 21;
+
+  top: 15%;
+
+  left: var(--gutter);
+}
+
+
+/* =========================================================
+   HERO ROLE
+   ========================================================= */
+
+.hero-role {
+  position: absolute;
+
+  z-index: 21;
+
+  right: var(--gutter);
+
+  bottom: 5%;
+
+  text-align: right;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   HERO COPY
+   ========================================================= */
+
+.hero-copy {
+  position: absolute;
+
+  z-index: 21;
+
+  left: var(--gutter);
+
+  bottom: 5%;
+
+  width: min(25rem, 42vw);
+
+  display: flex;
+
+  align-items: flex-end;
+
+  gap: clamp(1.5rem, 4vw, 4rem);
+}
+
+.hero-copy > p {
+  max-width: 17rem;
+
+  margin: 0;
+
+  font-size: clamp(0.8rem, 1vw, 0.95rem);
+
+  line-height: 1.55;
+}
+
+
+/* =========================================================
+   ROUND LINK
+   ========================================================= */
+
+.round-link {
+  flex: 0 0 86px;
+
+  aspect-ratio: 1;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.45);
+
+  border-radius: 50%;
+
+  display: grid;
+
+  place-content: center;
+
+  gap: 0.4rem;
+
+  text-align: center;
+
+  font:
+    0.58rem
+    var(--mono);
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.12em;
+
+  transition:
+    color 0.3s,
+    background 0.3s,
+    transform 0.3s;
+}
+
+.round-link:hover {
+  color: var(--ink);
+
+  background: #f1f0eb;
+
+  transform: rotate(-8deg);
+}
+
+.round-link b {
+  font:
+    400
+    1rem
+    var(--sans);
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.compact-footer {
+  position: absolute;
+
+  left: var(--gutter);
+  right: var(--gutter);
+
+  bottom: clamp(0.8rem, 2vw, 1.5rem);
+
+  z-index: 21;
+
+  margin: 0;
+
+  padding:
+    clamp(0.7rem, 1.2vw, 1rem)
+    0
+    0;
+
+  border-top:
+    1px solid
+    rgba(241, 240, 235, 0.42);
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    auto
+    1fr;
+
+  align-items: center;
+
+  gap: 1rem;
+
+  color: #f1f0eb;
+
+  background: transparent;
+
+  font:
+    0.6rem
+    var(--mono);
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.08em;
+
+  text-shadow:
+    0 1px 18px
+    rgba(0, 0, 0, 0.38);
+}
+
+.compact-footer p {
+  margin: 0;
+}
+
+.compact-footer > p:nth-child(2) {
+  text-align: center;
+}
+
+.compact-footer div {
+  display: flex;
+
+  justify-content: flex-end;
+
+  gap: 1.5rem;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (min-width: 1920px) {
+
+  .portrait {
+    width: min(42vw, 48rem);
   }
-  @media (max-width: 1200px) {
-    .portrait { width: min(35vw, 27rem); max-width: 45%; }
+
+}
+
+
+@media (max-width: 1200px) {
+
+  .portrait {
+    width: min(42vw, 31rem);
+
+    max-width: 45%;
   }
-  @media (max-width: 900px) {
-    .portrait { width: min(39vw, 21rem); max-width: 48%; }
+
+}
+
+
+@media (max-width: 900px) {
+
+  .portrait {
+    width: min(46vw, 24rem);
+
+    max-width: 48%;
   }
-  @media (max-width: 720px) {
-    .hero h1 { top: 26%; font-size: 20vw; }
-    .hero h1 .outline { align-self: flex-start; }
-    .portrait { left: var(--gutter); width: min(43vw, 17rem); max-width: 48%; max-height: calc(100svh - 72px); }
-    .hero-copy { width: 65%; }
-    .round-link { display: none; }
-    .hero-role { display: none; }
-    .statement h2 { width: 100%; margin: 10vh 0; }
-    .statement-meta > p:last-child, .statement-foot > p:last-child { display: none; }
-    .section-head { grid-template-columns: 1fr auto; gap: 2rem; }
-    .section-head h2 { grid-row: 2; grid-column: 1 / -1; }
-    .project, .project-split { width: 100%; grid-template-columns: 1fr; gap: 1.5rem; margin: 0; }
-    .project-split .project-info, .blueprint { grid-row: auto; grid-column: auto; }
-    .blueprint { aspect-ratio: 4/5; }
-    .services li { grid-template-columns: auto 1fr; }
-    .services li p { grid-column: 2; }
-    footer { grid-template-columns: 1fr auto; gap: 1rem; }
-    footer > p:nth-child(2) { text-align: right; }
-    footer div { grid-column: 1 / -1; justify-content: flex-start; }
+
+}
+
+
+@media (max-width: 720px) {
+
+  .hero h1 {
+    top: 26%;
+
+    font-size: 20vw;
   }
-  @media (max-width: 480px) {
-    .portrait { width: min(48vw, 13.5rem); max-width: 52%; }
+
+  .hero h1 .outline {
+    align-self: flex-start;
   }
+
+  .portrait {
+    left: var(--gutter);
+
+    width: min(50vw, 19rem);
+
+    max-width: 54%;
+
+    max-height:
+      calc(100svh - 72px);
+  }
+
+  .hero-copy {
+    width: 65%;
+  }
+
+  .round-link {
+    display: none;
+  }
+
+  .hero-role {
+    display: none;
+  }
+
+  .compact-footer {
+    grid-template-columns:
+      1fr
+      auto;
+
+    gap:
+      0.7rem
+      1rem;
+  }
+
+  .compact-footer > p:nth-child(2) {
+    text-align: right;
+  }
+
+  .compact-footer div {
+    grid-column: 1 / -1;
+
+    justify-content: flex-start;
+
+    gap: 1rem;
+  }
+
+}
+
+
+@media (max-width: 480px) {
+
+  .portrait {
+    width: min(55vw, 15rem);
+
+    max-width: 58%;
+  }
+
+}
+
 </style>

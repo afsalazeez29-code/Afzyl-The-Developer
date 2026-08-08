@@ -149,7 +149,7 @@
     gap: clamp(.9rem, 1.8vw, 1.4rem);
     padding: clamp(1.25rem, 3vw, 2.5rem) 0;
     color: #171717;
-    background: #E9E7DF;
+    background: transparent;
     overflow: hidden;
     pointer-events: none;
   }
