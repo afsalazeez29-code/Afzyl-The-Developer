@@ -1,4 +1,4 @@
-﻿---
+---
 import SiteNav from '../components/SiteNav.svelte';
 import CoreFullStack from '../components/Gap/CoreFullStack.svelte';
 import Gap2CoreFullStack from '../components/Gap/Gap2CoreFullStack.svelte';
@@ -13,10 +13,10 @@ import '../styles/global.scss';
   <meta name="viewport" content="width=device-width" />
   <meta
     name="description"
-    content="Afzyl — creative developer crafting cinematic digital experiences."
+    content="Afzyl Azeez — Full-Stack Software Developer building secure, scalable, and user-focused web applications."
   />
   <meta name="theme-color" content="#E9E7DF" />
-  <title>Afzyl — Creative Developer</title>
+  <title>Afzyl Azeez — Full-Stack Software Developer</title>
 </head>
 
 <body>
@@ -46,7 +46,7 @@ import '../styles/global.scss';
          IMAGE 1 / HERO
          =================================================== -->
 
-    <section class="image-section image-section-1">
+    <section class="image-section image-section-1" id="home">
 
       <!-- BACKGROUND — BOTTOM LAYER -->
       <img
@@ -64,6 +64,15 @@ import '../styles/global.scss';
         fetchpriority="high"
       />
 
+      <!-- HERO COPY CONTENT -->
+      <div class="p1-copy" aria-label="Hero introduction">
+        <p class="p1-greeting">Afzyl here!</p>
+        <p class="p1-desc">Full-Stack Software Developer building secure, scalable, and user-focused web applications with clean interfaces and thoughtful digital experiences.</p>
+      </div>
+
+      <!-- BIG BOTTOM TEXT -->
+      <p class="afzyl-big" aria-hidden="true">AFZYL</p>
+
       <!-- GAP 1 ICON WAVE — TOP LAYER -->
       <div class="icon-wave-layer">
         <CoreFullStack client:load />
@@ -76,7 +85,7 @@ import '../styles/global.scss';
          IMAGE 2
          =================================================== -->
 
-    <section class="image-section image-section-2">
+    <section class="image-section image-section-2" id="process">
 
       <!-- BACKGROUND — BOTTOM LAYER -->
       <img
@@ -85,6 +94,60 @@ import '../styles/global.scss';
         alt=""
         loading="eager"
       />
+
+      <!-- PAGE 2 — ORBITAL CONTENT OVERLAY -->
+      <div class="p2-orbital" aria-label="Technology and philosophy">
+
+        <!-- CENTER CORE -->
+        <div class="p2-core">
+          <span class="p2-core-name">AFZYL</span>
+          <span class="p2-core-role">FULL-STACK<br/>DEVELOPER</span>
+        </div>
+
+        <!-- 3 MAIN CARDS -->
+        <div class="p2-cards">
+          <article class="p2-card">
+            <span class="p2-card-num">01</span>
+            <h2 class="p2-card-title">Full-Stack Engineering</h2>
+            <p class="p2-card-desc">Building complete, production-ready applications from frontend to backend.</p>
+          </article>
+          <article class="p2-card p2-card--mid">
+            <span class="p2-card-num">02</span>
+            <h2 class="p2-card-title">Modern Digital Experiences</h2>
+            <p class="p2-card-desc">Creating fast, interactive interfaces that combine clean engineering with thoughtful design.</p>
+          </article>
+          <article class="p2-card">
+            <span class="p2-card-num">03</span>
+            <h2 class="p2-card-title">Scalable &amp; Reliable</h2>
+            <p class="p2-card-desc">Designing systems that are secure, maintainable, and ready to evolve with real-world needs.</p>
+          </article>
+        </div>
+
+        <!-- 5 FLOATING NODES -->
+        <ul class="p2-nodes" aria-label="Skill areas">
+          <li class="p2-node p2-node--top">
+            <span class="p2-node-label">ARCHITECTURE</span>
+            <span class="p2-node-sub">System Design</span>
+          </li>
+          <li class="p2-node p2-node--left">
+            <span class="p2-node-label">FRONTEND</span>
+            <span class="p2-node-sub">React / UI</span>
+          </li>
+          <li class="p2-node p2-node--right">
+            <span class="p2-node-label">BACKEND</span>
+            <span class="p2-node-sub">Node / API</span>
+          </li>
+          <li class="p2-node p2-node--bl">
+            <span class="p2-node-label">DATABASE</span>
+            <span class="p2-node-sub">Data / Cloud</span>
+          </li>
+          <li class="p2-node p2-node--br">
+            <span class="p2-node-label">ENGINEERING</span>
+            <span class="p2-node-sub">DevOps / Tools</span>
+          </li>
+        </ul>
+
+      </div>
 
       <!-- GAP 2 ICON WAVE — TOP LAYER -->
       <div class="icon-wave-layer">
@@ -98,7 +161,7 @@ import '../styles/global.scss';
          IMAGE 3
          =================================================== -->
 
-    <section class="image-section image-section-3">
+    <section class="image-section image-section-3" id="playground">
 
       <!-- BACKGROUND — BOTTOM LAYER -->
       <img
@@ -107,6 +170,120 @@ import '../styles/global.scss';
         alt=""
         loading="lazy"
       />
+
+      <!-- PAGE 3 — HOW I BUILD + PROJECTS -->
+      <div class="p3-content" aria-label="How I build and selected work">
+
+        <!-- INTRO -->
+        <header class="p3-intro">
+          <p class="p3-eyebrow">03 / HOW I BUILD</p>
+          <h2 class="p3-heading">FROM IDEA<br/>TO PRODUCTION</h2>
+          <p class="p3-intro-desc">I turn product ideas into structured, scalable web applications — combining thoughtful interface design, solid engineering, and production-focused development from the first architecture decision to deployment.</p>
+        </header>
+
+        <!-- DEVELOPMENT PROCESS -->
+        <ol class="p3-stages" aria-label="Development process stages">
+          <li class="p3-stage">
+            <span class="p3-stage-num">01</span>
+            <div class="p3-stage-body">
+              <h3 class="p3-stage-title">DISCOVER<span class="p3-stage-sub">Understand the Problem</span></h3>
+              <p class="p3-stage-desc">I start by understanding the product goal, users, requirements, and technical constraints before writing code.</p>
+              <p class="p3-tags">Requirements · User Needs · Scope · Technical Constraints</p>
+            </div>
+          </li>
+          <li class="p3-stage">
+            <span class="p3-stage-num">02</span>
+            <div class="p3-stage-body">
+              <h3 class="p3-stage-title">ARCHITECT<span class="p3-stage-sub">Plan the System</span></h3>
+              <p class="p3-stage-desc">I break the product into clear modules, data flows, APIs, components, and responsibilities before implementation begins.</p>
+              <p class="p3-tags">Architecture · Data Flow · API Design · Database</p>
+            </div>
+          </li>
+          <li class="p3-stage">
+            <span class="p3-stage-num">03</span>
+            <div class="p3-stage-body">
+              <h3 class="p3-stage-title">ENGINEER<span class="p3-stage-sub">Build the Product</span></h3>
+              <p class="p3-stage-desc">I develop the interface and backend as structured, reusable systems — connecting frontend interactions with reliable application logic and data.</p>
+              <p class="p3-tags">Frontend · Backend · Components · APIs</p>
+            </div>
+          </li>
+          <li class="p3-stage">
+            <span class="p3-stage-num">04</span>
+            <div class="p3-stage-body">
+              <h3 class="p3-stage-title">REFINE<span class="p3-stage-sub">Make It Feel Right</span></h3>
+              <p class="p3-stage-desc">I refine interactions, responsiveness, performance, accessibility, and visual details until the product feels cohesive across devices.</p>
+              <p class="p3-tags">Responsive · Interaction · Performance · Accessibility</p>
+            </div>
+          </li>
+          <li class="p3-stage">
+            <span class="p3-stage-num">05</span>
+            <div class="p3-stage-body">
+              <h3 class="p3-stage-title">SHIP<span class="p3-stage-sub">Deploy &amp; Improve</span></h3>
+              <p class="p3-stage-desc">I take completed applications into production, monitor real-world behavior, fix issues, and continuously improve the system.</p>
+              <p class="p3-tags">Deployment · CI/CD · Monitoring · Iteration</p>
+            </div>
+          </li>
+        </ol>
+
+        <!-- BUILT WITH INTENT -->
+        <section class="p3-intent" aria-labelledby="intent-heading">
+          <h2 class="p3-intent-heading" id="intent-heading">BUILT WITH INTENT</h2>
+          <p class="p3-intent-sub">Good software isn't only about making something work. It's about making it understandable, maintainable, secure, and ready for the next iteration.</p>
+          <ul class="p3-pillars">
+            <li><strong class="p3-pillar-title">MODULAR</strong><span class="p3-pillar-desc">Reusable components and clearly separated responsibilities.</span></li>
+            <li><strong class="p3-pillar-title">SECURE</strong><span class="p3-pillar-desc">Authentication, authorization, validation, and role-aware application flows.</span></li>
+            <li><strong class="p3-pillar-title">SCALABLE</strong><span class="p3-pillar-desc">Architecture designed to accommodate new features without unnecessary complexity.</span></li>
+            <li><strong class="p3-pillar-title">PRODUCTION-MINDED</strong><span class="p3-pillar-desc">Performance, responsiveness, deployment, and real-world reliability considered from the beginning.</span></li>
+          </ul>
+        </section>
+
+        <!-- SELECTED PRODUCTION WORK -->
+        <section class="p3-projects" aria-labelledby="projects-heading">
+          <h2 class="p3-projects-heading" id="projects-heading">Selected Production Work</h2>
+          <div class="p3-project-grid">
+
+            <article class="p3-project">
+              <div class="p3-project-meta">
+                <span class="p3-project-num">01</span>
+                <span class="p3-project-cat">FULL-STACK / ENTERPRISE / RBAC</span>
+              </div>
+              <h3 class="p3-project-name">JailMeet</h3>
+              <p class="p3-project-type">Enterprise Parole &amp; Visitor Management Platform</p>
+              <p class="p3-project-highlight">4 ROLE-BASED MODULES — ADMIN · OFFICER · VISITOR · PRISONER</p>
+              <p class="p3-project-desc">A secure role-based platform designed around complex institutional workflows, where functionality, authorization, and reliable data handling take priority alongside a polished user experience.</p>
+              <p class="p3-project-focus">Role-based workflows · Authentication &amp; authorization · Complex modules · Database-driven · Responsive dashboards · Secure API · Production structure</p>
+              <blockquote class="p3-project-quote">"Functionality first. Experience without sacrificing control."</blockquote>
+            </article>
+
+            <article class="p3-project">
+              <div class="p3-project-meta">
+                <span class="p3-project-num">02</span>
+                <span class="p3-project-cat">FULL-STACK / PRODUCT UI / RESPONSIVE</span>
+              </div>
+              <h3 class="p3-project-name">Recipe.IO</h3>
+              <p class="p3-project-type">Modern Recipe Sharing Platform</p>
+              <p class="p3-project-desc">A modern recipe-sharing experience focused on making content discovery simple, visual, responsive, and enjoyable across devices.</p>
+              <p class="p3-project-focus">Modern interface design · Responsive layouts · Content-focused UX · Reusable components · Smooth interactions · Clear hierarchy · Mobile-first</p>
+              <blockquote class="p3-project-quote">"Turning structured content into an experience people want to explore."</blockquote>
+            </article>
+
+            <article class="p3-project">
+              <div class="p3-project-meta">
+                <span class="p3-project-num">03</span>
+                <span class="p3-project-cat">GROUP PROJECT / AI / THREE.JS</span>
+              </div>
+              <h3 class="p3-project-name">Hue.AI</h3>
+              <p class="p3-project-type">AI-Powered Creative Interface</p>
+              <p class="p3-project-desc">A collaborative AI project where I focused on the interface architecture and interactive experience, connecting AI-generated results with a visually immersive frontend.</p>
+              <p class="p3-project-focus">UI/UX architecture · Three.js integration · Interactive visual experiences · AI API integration · Frontend architecture · Collaborative development</p>
+              <blockquote class="p3-project-quote">"Connecting AI intelligence with an expressive interactive interface."</blockquote>
+            </article>
+
+          </div>
+          <p class="p3-closing">THREE PRODUCTS.<br/>THREE DIFFERENT PROBLEMS.<br/>ONE ENGINEERING APPROACH.</p>
+        </section>
+
+      </div>
 
       <!-- GAP 3 ICON WAVE — TOP LAYER -->
       <div class="icon-wave-layer">
@@ -120,7 +297,7 @@ import '../styles/global.scss';
          IMAGE 4
          =================================================== -->
 
-    <section class="image-section image-section-4 final-image-section">
+    <section class="image-section image-section-4 final-image-section" id="contact">
 
       <!-- BACKGROUND — BOTTOM LAYER -->
       <img
@@ -130,18 +307,56 @@ import '../styles/global.scss';
         loading="lazy"
       />
 
-      <footer class="compact-footer">
+      <!-- PAGE 4 — CONTACT CONTENT -->
+      <div class="p4-contact" aria-label="Contact section">
 
-        <p>©️ 2026 AFZYL</p>
+        <p class="p4-eyebrow">04 / CONTACT</p>
 
-        <p>India</p>
+        <p class="p4-avail"><span class="p4-dot" aria-hidden="true">●</span> AVAILABLE FOR OPPORTUNITIES</p>
+        <p class="p4-avail-sub">Open to Full-Time Roles · Frontend · Full-Stack · Software Development</p>
 
-        <div>
-          <a href="#">LinkedIn</a>
-          <a href="#">GitHub</a>
-          <a href="#top">Back to top ↑</a>
+        <h2 class="p4-heading">LET'S BUILD<br/>SOMETHING USEFUL.</h2>
+
+        <p class="p4-body">I'm looking for my next opportunity where I can turn ideas into reliable, well-crafted digital products, solve meaningful problems, and continue growing as a software developer.</p>
+
+        <!-- HIRE ME CTA — TODO_BLOCKER: replace href="#" with:
+             mailto:YOUR_EMAIL?subject=Job%20Opportunity%20%E2%80%94%20Afzyl%20Azeez&body=Hi%20Afzyl%2C%0AI%20came%20across%20your%20portfolio%20and%20would%20like%20to%20discuss%20an%20opportunity.%0A%0ABest%20regards%2C
+             when real email is provided -->
+        <a
+          class="p4-cta"
+          id="hire-me-btn"
+          href="#"
+          aria-label="Hire Afzyl Azeez — opens email client"
+        >HIRE ME ↗</a>
+
+        <div class="p4-connect">
+          <p class="p4-connect-label">CONNECT</p>
+          <div class="p4-socials">
+            <!-- TODO_BLOCKER: replace href="#" with real URLs when provided -->
+            <a class="p4-social" href="#" id="social-whatsapp">WHATSAPP</a>
+            <a class="p4-social p4-social--primary" href="#" id="social-linkedin">LINKEDIN</a>
+            <a class="p4-social" href="#" id="social-instagram">INSTAGRAM</a>
+            <a class="p4-social" href="#" id="social-x">X</a>
+          </div>
         </div>
 
+        <p class="p4-tagline">Have an opportunity, idea, or interesting problem to solve?<br/><strong>LET'S TALK.</strong></p>
+
+        <div class="p4-sig">
+          <p class="p4-sig-name">AFZYL AZEEZ</p>
+          <p class="p4-sig-role">FULL-STACK SOFTWARE DEVELOPER</p>
+        </div>
+
+      </div>
+
+      <!-- FOOTER -->
+      <!-- TODO_BLOCKER: replace footer-name href="#" with real LinkedIn URL when provided -->
+      <footer class="compact-footer">
+        <p>© Designed &amp; developed by <a
+          class="footer-name"
+          href="#"
+          id="footer-linkedin-link"
+        >Afsal S Azeez</a>.</p>
       </footer>
 
     </section>
@@ -570,72 +785,633 @@ import '../styles/global.scss';
 
 
 /* =========================================================
-   FOOTER
+   FOOTER — single-line signature
    ========================================================= */
 
 .compact-footer {
   position: absolute;
-
   left: var(--gutter);
   right: var(--gutter);
-
   bottom: clamp(0.8rem, 2vw, 1.5rem);
-
   z-index: 21;
-
   margin: 0;
-
-  padding:
-    clamp(0.7rem, 1.2vw, 1rem)
-    0
-    0;
-
-  border-top:
-    1px solid
-    rgba(241, 240, 235, 0.42);
-
-  display: grid;
-
-  grid-template-columns:
-    1fr
-    auto
-    1fr;
-
-  align-items: center;
-
-  gap: 1rem;
-
-  color: #f1f0eb;
-
+  padding: clamp(0.7rem, 1.2vw, 1rem) 0 0;
+  border-top: 1px solid rgba(241, 240, 235, 0.3);
+  color: rgba(241, 240, 235, 0.65);
   background: transparent;
-
-  font:
-    0.6rem
-    var(--mono);
-
-  text-transform: uppercase;
-
-  letter-spacing: 0.08em;
-
-  text-shadow:
-    0 1px 18px
-    rgba(0, 0, 0, 0.38);
+  font: 400 0.82rem/1.5 var(--sans);
+  letter-spacing: 0.02em;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
 }
 
 .compact-footer p {
   margin: 0;
 }
 
-.compact-footer > p:nth-child(2) {
-  text-align: center;
+.footer-name {
+  color: rgba(241, 240, 235, 0.9);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: transparent;
+  transition: text-decoration-color 0.18s ease, opacity 0.18s ease;
+  cursor: pointer;
 }
 
-.compact-footer div {
+.footer-name:hover {
+  text-decoration-color: rgba(241, 240, 235, 0.7);
+  opacity: 1;
+}
+
+
+/* =========================================================
+   PAGE 1 — HERO COPY + BIG AFZYL TEXT
+   ========================================================= */
+
+.p1-copy {
+  position: absolute;
+  z-index: 21;
+  left: var(--gutter);
+  bottom: clamp(5rem, 12vw, 10rem);
+  max-width: min(28rem, 44vw);
   display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  pointer-events: none;
+}
 
-  justify-content: flex-end;
+.p1-greeting {
+  margin: 0;
+  font: 700 clamp(1.1rem, 2vw, 1.6rem)/1.2 var(--heading);
+  color: #020D19;
+  letter-spacing: -0.02em;
+}
 
-  gap: 1.5rem;
+.p1-desc {
+  margin: 0;
+  font: 400 clamp(0.78rem, 1vw, 0.95rem)/1.6 var(--sans);
+  color: #020D19;
+  max-width: 22rem;
+}
+
+.afzyl-big {
+  position: absolute;
+  z-index: 20;
+  bottom: -0.08em;
+  left: -0.02em;
+  margin: 0;
+  font: 800 clamp(9rem, 22vw, 22rem)/0.85 var(--heading);
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  color: #020D19;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+}
+
+
+/* =========================================================
+   PAGE 2 — ORBITAL CONTENT OVERLAY
+   ========================================================= */
+
+.p2-orbital {
+  position: absolute;
+  z-index: 21;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  padding: clamp(2rem, 5vw, 4rem) var(--gutter);
+  pointer-events: none;
+}
+
+/* Center core */
+.p2-core {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: clamp(7rem, 12vw, 11rem);
+  aspect-ratio: 1;
+  border: 2px solid rgba(180, 40, 30, 0.8);
+  border-radius: 50%;
+  background: rgba(30, 5, 5, 0.85);
+  text-align: center;
+  gap: 0.25rem;
+  line-height: 1.1;
+  box-shadow: 0 0 32px rgba(200, 50, 30, 0.25);
+}
+
+.p2-core-name {
+  font: 700 clamp(0.85rem, 1.5vw, 1.1rem)/1 var(--heading);
+  color: #fff;
+  letter-spacing: 0.04em;
+}
+
+.p2-core-role {
+  font: 500 clamp(0.55rem, 0.9vw, 0.72rem)/1.3 var(--sans);
+  color: rgba(255, 255, 255, 0.8);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* 3 main cards */
+.p2-cards {
+  display: flex;
+  gap: clamp(0.6rem, 1.5vw, 1.2rem);
+  width: 100%;
+  max-width: 820px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.p2-card {
+  background: rgba(20, 5, 5, 0.78);
+  border: 1px solid rgba(180, 40, 30, 0.35);
+  border-radius: 10px;
+  padding: clamp(0.9rem, 1.5vw, 1.4rem) clamp(1rem, 2vw, 1.6rem);
+  flex: 1 1 200px;
+  max-width: 280px;
+  position: relative;
+}
+
+.p2-card-num {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.85rem;
+  font: 500 0.68rem/1 var(--sans);
+  color: rgba(220, 80, 60, 0.9);
+  letter-spacing: 0.08em;
+}
+
+.p2-card-title {
+  margin: 0 0 0.5rem;
+  font: 600 clamp(0.82rem, 1.2vw, 1rem)/1.25 var(--heading);
+  color: #fff;
+  letter-spacing: -0.01em;
+}
+
+.p2-card-desc {
+  margin: 0;
+  font: 400 clamp(0.72rem, 0.9vw, 0.82rem)/1.55 var(--sans);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* 5 floating nodes */
+.p2-nodes {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: clamp(0.8rem, 2vw, 1.6rem);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.p2-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  background: rgba(15, 3, 3, 0.72);
+  border: 1px solid rgba(180, 40, 30, 0.4);
+  border-radius: 50%;
+  width: clamp(4.5rem, 8vw, 7.5rem);
+  aspect-ratio: 1;
+  justify-content: center;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.p2-node-label {
+  font: 600 clamp(0.55rem, 0.8vw, 0.7rem)/1 var(--sans);
+  color: rgba(220, 80, 60, 0.95);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+.p2-node-sub {
+  font: 400 clamp(0.5rem, 0.7vw, 0.62rem)/1.3 var(--sans);
+  color: rgba(255, 255, 255, 0.65);
+}
+
+
+/* =========================================================
+   PAGE 3 — HOW I BUILD + PROJECTS
+   ========================================================= */
+
+.p3-content {
+  position: absolute;
+  z-index: 21;
+  inset: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2rem, 4vw, 3.5rem);
+  padding: clamp(2rem, 5vw, 4rem) var(--gutter) clamp(6rem, 14vw, 10rem);
+  pointer-events: none;
+  scrollbar-width: none;
+}
+
+.p3-content::-webkit-scrollbar { display: none; }
+
+/* Intro */
+.p3-intro {
+  max-width: 640px;
+}
+
+.p3-eyebrow {
+  margin: 0 0 0.6rem;
+  font: 500 0.72rem/1 var(--sans);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: rgba(241, 240, 235, 0.65);
+}
+
+.p3-heading {
+  margin: 0 0 1rem;
+  font: 700 clamp(2rem, 5vw, 4rem)/0.95 var(--heading);
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: #f1f0eb;
+}
+
+.p3-intro-desc {
+  margin: 0;
+  font: 400 clamp(0.82rem, 1.1vw, 0.95rem)/1.65 var(--sans);
+  color: rgba(241, 240, 235, 0.8);
+  max-width: 520px;
+}
+
+/* Process stages */
+.p3-stages {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.9rem, 1.5vw, 1.3rem);
+  max-width: 680px;
+}
+
+.p3-stage {
+  display: flex;
+  gap: clamp(1rem, 2vw, 1.8rem);
+  align-items: flex-start;
+}
+
+.p3-stage-num {
+  flex: 0 0 auto;
+  font: 600 0.72rem/1 var(--sans);
+  color: rgba(241, 240, 235, 0.45);
+  padding-top: 0.18rem;
+  letter-spacing: 0.08em;
+}
+
+.p3-stage-body {
+  flex: 1;
+}
+
+.p3-stage-title {
+  margin: 0 0 0.35rem;
+  font: 600 clamp(0.82rem, 1.1vw, 0.95rem)/1.2 var(--heading);
+  letter-spacing: 0.04em;
+  color: #f1f0eb;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.p3-stage-sub {
+  font: 400 clamp(0.72rem, 0.9vw, 0.82rem)/1 var(--sans);
+  letter-spacing: 0.01em;
+  color: rgba(241, 240, 235, 0.55);
+  text-transform: none;
+}
+
+.p3-stage-desc {
+  margin: 0 0 0.4rem;
+  font: 400 clamp(0.72rem, 0.9vw, 0.82rem)/1.55 var(--sans);
+  color: rgba(241, 240, 235, 0.72);
+}
+
+.p3-tags {
+  margin: 0;
+  font: 400 0.67rem/1.4 var(--sans);
+  color: rgba(241, 240, 235, 0.45);
+  letter-spacing: 0.04em;
+}
+
+/* Built With Intent */
+.p3-intent {
+  max-width: 680px;
+}
+
+.p3-intent-heading {
+  margin: 0 0 0.6rem;
+  font: 700 clamp(1.2rem, 2.2vw, 1.8rem)/1 var(--heading);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #f1f0eb;
+}
+
+.p3-intent-sub {
+  margin: 0 0 1.2rem;
+  font: 400 clamp(0.78rem, 1vw, 0.9rem)/1.65 var(--sans);
+  color: rgba(241, 240, 235, 0.72);
+  max-width: 520px;
+}
+
+.p3-pillars {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.p3-pillars li {
+  display: flex;
+  gap: 0.75rem;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
+.p3-pillar-title {
+  font: 600 0.78rem/1 var(--sans);
+  letter-spacing: 0.08em;
+  color: #f1f0eb;
+  flex: 0 0 auto;
+}
+
+.p3-pillar-desc {
+  font: 400 0.78rem/1.5 var(--sans);
+  color: rgba(241, 240, 235, 0.65);
+}
+
+/* Projects heading */
+.p3-projects {
+  max-width: 900px;
+}
+
+.p3-projects-heading {
+  margin: 0 0 1.2rem;
+  font: 700 clamp(1rem, 1.8vw, 1.4rem)/1 var(--heading);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #f1f0eb;
+}
+
+.p3-project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+  gap: clamp(0.8rem, 1.5vw, 1.2rem);
+}
+
+.p3-project {
+  background: rgba(10, 8, 6, 0.55);
+  border: 1px solid rgba(241, 240, 235, 0.14);
+  border-radius: 10px;
+  padding: clamp(1rem, 1.8vw, 1.4rem);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.p3-project-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.15rem;
+}
+
+.p3-project-num {
+  font: 600 0.65rem/1 var(--sans);
+  color: rgba(241, 240, 235, 0.4);
+  letter-spacing: 0.08em;
+}
+
+.p3-project-cat {
+  font: 500 0.62rem/1 var(--sans);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(241, 240, 235, 0.45);
+}
+
+.p3-project-name {
+  margin: 0;
+  font: 700 clamp(1rem, 1.6vw, 1.25rem)/1.1 var(--heading);
+  letter-spacing: -0.01em;
+  color: #f1f0eb;
+}
+
+.p3-project-type {
+  margin: 0;
+  font: 400 0.75rem/1.3 var(--sans);
+  color: rgba(241, 240, 235, 0.55);
+}
+
+.p3-project-highlight {
+  margin: 0;
+  font: 500 0.67rem/1.3 var(--sans);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: rgba(241, 240, 235, 0.6);
+}
+
+.p3-project-desc {
+  margin: 0;
+  font: 400 0.78rem/1.55 var(--sans);
+  color: rgba(241, 240, 235, 0.72);
+}
+
+.p3-project-focus {
+  margin: 0;
+  font: 400 0.7rem/1.5 var(--sans);
+  color: rgba(241, 240, 235, 0.5);
+}
+
+.p3-project-quote {
+  margin: 0.3rem 0 0;
+  padding: 0.4rem 0 0 0.7rem;
+  border-left: 2px solid rgba(241, 240, 235, 0.25);
+  font: 400 italic 0.78rem/1.5 var(--sans);
+  color: rgba(241, 240, 235, 0.65);
+}
+
+.p3-closing {
+  margin: clamp(1.5rem, 3vw, 2.5rem) 0 0;
+  font: 700 clamp(1rem, 2vw, 1.5rem)/1.1 var(--heading);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #f1f0eb;
+}
+
+
+/* =========================================================
+   PAGE 4 — CONTACT
+   ========================================================= */
+
+.p4-contact {
+  position: absolute;
+  z-index: 21;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: clamp(0.7rem, 1.2vw, 1.1rem);
+  padding: clamp(3rem, 8vw, 6rem) var(--gutter) clamp(6rem, 14vw, 10rem);
+  pointer-events: none;
+  max-width: 700px;
+}
+
+.p4-eyebrow {
+  margin: 0;
+  font: 500 0.72rem/1 var(--sans);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: rgba(241, 240, 235, 0.55);
+}
+
+.p4-avail {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font: 600 0.78rem/1 var(--sans);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(241, 240, 235, 0.9);
+}
+
+.p4-dot {
+  color: rgba(80, 200, 120, 0.9);
+  font-size: 0.55em;
+}
+
+.p4-avail-sub {
+  margin: 0;
+  font: 400 0.72rem/1.4 var(--sans);
+  color: rgba(241, 240, 235, 0.55);
+  letter-spacing: 0.04em;
+}
+
+.p4-heading {
+  margin: 0.3rem 0 0;
+  font: 700 clamp(2.2rem, 6vw, 5rem)/0.95 var(--heading);
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: #f1f0eb;
+}
+
+.p4-body {
+  margin: 0;
+  font: 400 clamp(0.82rem, 1.1vw, 0.95rem)/1.65 var(--sans);
+  color: rgba(241, 240, 235, 0.75);
+  max-width: 480px;
+}
+
+.p4-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  align-self: flex-start;
+  margin-top: 0.3rem;
+  padding: 0.65rem 1.5rem;
+  border: 1px solid rgba(241, 240, 235, 0.6);
+  border-radius: 999px;
+  font: 600 0.8rem/1 var(--sans);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #f1f0eb;
+  background: rgba(241, 240, 235, 0.06);
+  pointer-events: all;
+  transition: background 0.2s ease, border-color 0.2s ease;
+  cursor: pointer;
+}
+
+.p4-cta:hover {
+  background: rgba(241, 240, 235, 0.14);
+  border-color: rgba(241, 240, 235, 0.9);
+}
+
+.p4-connect {
+  margin-top: 0.5rem;
+}
+
+.p4-connect-label {
+  margin: 0 0 0.5rem;
+  font: 500 0.65rem/1 var(--sans);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: rgba(241, 240, 235, 0.45);
+}
+
+.p4-socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.2rem;
+  pointer-events: all;
+}
+
+.p4-social {
+  font: 500 0.72rem/1 var(--sans);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(241, 240, 235, 0.65);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: transparent;
+  transition: color 0.18s ease, text-decoration-color 0.18s ease;
+}
+
+.p4-social:hover {
+  color: #f1f0eb;
+  text-decoration-color: rgba(241, 240, 235, 0.6);
+}
+
+.p4-social--primary {
+  color: rgba(241, 240, 235, 0.9);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.p4-tagline {
+  margin: 0.3rem 0 0;
+  font: 400 clamp(0.78rem, 1vw, 0.88rem)/1.65 var(--sans);
+  color: rgba(241, 240, 235, 0.65);
+}
+
+.p4-tagline strong {
+  font-weight: 700;
+  color: #f1f0eb;
+  display: block;
+  margin-top: 0.2rem;
+}
+
+.p4-sig {
+  margin-top: 0.8rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid rgba(241, 240, 235, 0.15);
+}
+
+.p4-sig-name {
+  margin: 0 0 0.2rem;
+  font: 700 clamp(0.82rem, 1.2vw, 1rem)/1 var(--heading);
+  letter-spacing: 0.06em;
+  color: #f1f0eb;
+}
+
+.p4-sig-role {
+  margin: 0;
+  font: 400 0.68rem/1 var(--sans);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(241, 240, 235, 0.5);
 }
 
 
@@ -709,26 +1485,20 @@ import '../styles/global.scss';
     display: none;
   }
 
-  .compact-footer {
-    grid-template-columns:
-      1fr
-      auto;
-
-    gap:
-      0.7rem
-      1rem;
+  /* page 1 hero copy repositioned on mobile */
+  .p1-copy {
+    max-width: 90vw;
+    bottom: clamp(4rem, 10vw, 7rem);
   }
 
-  .compact-footer > p:nth-child(2) {
-    text-align: right;
+  /* page 3 scrollable content pointer-events on mobile */
+  .p3-content {
+    pointer-events: auto;
   }
 
-  .compact-footer div {
-    grid-column: 1 / -1;
-
-    justify-content: flex-start;
-
-    gap: 1rem;
+  /* page 4 full width on mobile */
+  .p4-contact {
+    max-width: 100%;
   }
 
 }
