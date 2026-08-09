@@ -18,29 +18,89 @@
   --ink: #E9E7DF;
   --paper: #e9e7df;
   --muted: #9c9b95;
-  --line: rgba(10,10,10,.2);
+  --line: rgba(10, 10, 10, .2);
   --gutter: clamp(1.2rem, 3.4vw, 4rem);
-  
+
   --font-display: 'Rosnoc', sans-serif;
   --font-body: 'Sofia Pro', sans-serif;
 
-  --heading: var(--font-display);
+  --heading: var(--font-body);
   --sans: var(--font-body);
-  
-  /* legacy aliases so existing references still resolve */
-  --serif: var(--font-display);
+  --serif: var(--font-body);
   --mono: var(--font-body);
-  
+
   --text: #020D19;
 }
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; background: var(--ink); }
-body { margin: 0; color: var(--text); background: #E9E7DF; font-family: var(--font-body); overflow-x: hidden; }
-a { color: inherit; text-decoration: none; }
-img { display: block; max-width: 100%; }
-button { font: inherit; }
-::selection { color: #E9E7DF; background: var(--text); }
-.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; clip: rect(0,0,0,0); overflow: hidden; white-space: nowrap; border: 0; }
-.eyebrow { margin: 0; font: 400 .67rem/1.4 var(--font-body); text-transform: uppercase; letter-spacing: .15em; }
-.rule { height: 1px; background: var(--line); }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--ink);
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  background: #E9E7DF;
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font: inherit;
+}
+
+::selection {
+  color: #E9E7DF;
+  background: var(--text);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+  white-space: nowrap;
+  border: 0;
+}
+
+.eyebrow {
+  margin: 0;
+  font: 400 .67rem/1.4 var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: .15em;
+}
+
+.rule {
+  height: 1px;
+  background: var(--line);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
