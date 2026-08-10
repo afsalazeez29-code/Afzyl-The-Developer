@@ -8,6 +8,7 @@
   import FrontendOrbit from "./FrontendOrbit.svelte";
   import DatabaseOrbit from "./DatabaseOrbit.svelte";
   import ArchitectureOrbit from "./ArchitectureOrbit.svelte";
+  import SunOrbit from "./SunOrbit.svelte";
 </script>
 
 <div
@@ -17,6 +18,12 @@
   <!-- RINGS -->
   <div class="p2-ring p2-ring--mid" aria-hidden="true"></div>
   <div class="p2-ring p2-ring--outer" aria-hidden="true"></div>
+
+  <!-- SUN CORE — fiery particle sphere at the orbital origin -->
+  <div class="p2-sun-core" aria-hidden="true">
+    <SunOrbit sphereColor="rgba(220, 70, 50, 0.75)" />
+  </div>
+
   <!-- OUTER NODES -->
   <div class="p2-nodes" aria-label="Skill areas">
     <div class="p2-os-node p2-os-node--engineering">
@@ -82,6 +89,27 @@
   }
 
   /* ═══════════════════════════════════════════════════════════════════════════
+     SUN CORE — centered particle sphere
+     ═══════════════════════════════════════════════════════════════════════════ */
+
+  .p2-sun-core {
+    --sun-x: -3.5vw;
+    --sun-y: -3vw;
+
+    position: absolute;
+    left: var(--sun-x);
+    top: var(--sun-y);
+
+    transform: translate(-50%, -50%);
+
+    width: clamp(10rem, 13vw, 16rem);
+    height: clamp(10rem, 13vw, 16rem);
+
+    pointer-events: auto;
+    z-index: 5;
+  }
+
+  /* ═══════════════════════════════════════════════════════════════════════════
      GLOBAL MODULE POSITIONING (OWNED BY ORBITALSYSTEM)
      ═══════════════════════════════════════════════════════════════════════════ */
 
@@ -131,6 +159,16 @@
 
     .p2-ring {
       display: none;
+    }
+
+    .p2-sun-core {
+      position: relative;
+      top: auto;
+      left: auto;
+      transform: none;
+      width: clamp(8rem, 40vw, 12rem);
+      height: clamp(8rem, 40vw, 12rem);
+      margin: 0 auto 0.5rem;
     }
 
     .p2-core {
