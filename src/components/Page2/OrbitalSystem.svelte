@@ -7,7 +7,7 @@
   import BackendOrbit from "./BackendOrbit.svelte";
   import FrontendOrbit from "./FrontendOrbit.svelte";
   import DatabaseOrbit from "./DatabaseOrbit.svelte";
-  // import ArchitectureOrbit from './ArchitectureOrbit.svelte'; // TEMPORARILY DISABLED
+  import ArchitectureOrbit from "./ArchitectureOrbit.svelte";
 </script>
 
 <div
@@ -15,16 +15,8 @@
   aria-label="AFZYL Full-Stack Developer orbital architecture"
 >
   <!-- RINGS -->
-  <div class="p2-ring p2-ring--inner" aria-hidden="true"></div>
   <div class="p2-ring p2-ring--mid" aria-hidden="true"></div>
   <div class="p2-ring p2-ring--outer" aria-hidden="true"></div>
-
-  <!-- CENTER CORE -->
-  <div class="p2-core">
-    <span class="p2-core-name">AFZYL</span>
-    <span class="p2-core-role">FULL-STACK<br />DEVELOPER</span>
-  </div>
-
   <!-- OUTER NODES -->
   <div class="p2-nodes" aria-label="Skill areas">
     <div class="p2-os-node p2-os-node--engineering">
@@ -39,11 +31,9 @@
     <div class="p2-os-node p2-os-node--database">
       <DatabaseOrbit />
     </div>
-    <!--
     <div class="p2-os-node p2-os-node--architecture">
       <ArchitectureOrbit />
     </div>
-    -->
   </div>
 </div>
 
@@ -77,11 +67,6 @@
     pointer-events: none;
   }
 
-  .p2-ring--inner {
-    width: 20vw;
-    height: 20vw;
-  }
-
   .p2-ring--mid {
     width: 30vw;
     height: 30vw;
@@ -91,49 +76,6 @@
     width: 40vw;
     height: 40vw;
   }
-
-  /* ═══════════════════════════════════════════════════════════════════════════
-     CORE
-     ═══════════════════════════════════════════════════════════════════════════ */
-
-  .p2-core {
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: translate(-50%, -50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: clamp(6rem, 8vw, 9rem);
-    height: clamp(6rem, 8vw, 9rem);
-    border: 2px solid rgba(180, 40, 30, 0.9);
-    border-radius: 50%;
-    background: rgba(22, 4, 4, 0.9);
-    text-align: center;
-    gap: 0.2rem;
-    line-height: 1.1;
-    box-shadow: 0 0 40px rgba(200, 50, 30, 0.3);
-    pointer-events: auto;
-  }
-
-  .p2-core-name {
-    font: 700 clamp(0.75rem, 1.2vw, 1rem)/1 var(--heading);
-    color: #fff;
-    letter-spacing: 0.04em;
-  }
-
-  .p2-core-role {
-    font: 500 clamp(0.45rem, 0.7vw, 0.6rem)/1.3 var(--sans);
-    color: rgba(255, 255, 255, 0.8);
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-  }
-
-  /* ═══════════════════════════════════════════════════════════════════════════
-     NODES LIST CONTAINER
-     ═══════════════════════════════════════════════════════════════════════════ */
-
   .p2-nodes {
     margin: 0;
     padding: 0;
@@ -158,7 +100,7 @@
   }
 
   .p2-os-node--database {
-    transform: translate(calc(160% - 13vw), calc(-50% + 13.74vw));
+    transform: translate(calc(192% - 12vw), calc(-50% + 13.74vw));
   }
 
   .p2-os-node--backend {
@@ -166,7 +108,7 @@
   }
 
   .p2-os-node--architecture {
-    transform: translate(calc(-50% + 14vw), calc(-50% + 13.74vw));
+    transform: translate(calc(-50% - 14vw), calc(-50% - 13.74vw));
   }
 
   /* ═══════════════════════════════════════════════════════════════════════════

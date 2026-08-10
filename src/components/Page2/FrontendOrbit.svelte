@@ -194,9 +194,9 @@
 
     text-align: center;
 
-    background: rgba(15, 3, 3, 0.85);
+    background: #020d19;
 
-    border: 1px solid rgba(180, 40, 30, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.65);
 
     border-radius: 50%;
 
@@ -212,7 +212,7 @@
   .p2-node-label {
     font: 600 clamp(0.45rem, 0.65vw, 0.62rem) / 1 var(--sans);
 
-    color: rgba(220, 80, 60, 0.95);
+    color: #fafafa;
 
     text-transform: uppercase;
 

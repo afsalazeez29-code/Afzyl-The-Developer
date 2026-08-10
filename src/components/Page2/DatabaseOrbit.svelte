@@ -3,14 +3,17 @@
   const database = [
     // INNER
     { name: "PostgreSQL", icon: "/color-icons/postgresql-original.svg" },
-    { name: "MongoDB",    icon: "/color-icons/mongodb-original.svg" },
+    { name: "MongoDB", icon: "/color-icons/mongodb-original.svg" },
     { name: "Cloudinary", icon: "/color-icons/cloudinary-icon.svg" },
-    { name: "AWS",        icon: "/color-icons/amazonwebservices-original-wordmark.svg" },
+    {
+      name: "AWS",
+      icon: "/color-icons/amazonwebservices-original-wordmark.svg",
+    },
     // OUTER
-    { name: "Neon",       icon: "/color-icons/neon-icon.svg" },
-    { name: "Prisma",     icon: "/color-icons/prisma-original.svg" },
+    { name: "Neon", icon: "/color-icons/neon-icon.svg" },
+    { name: "Prisma", icon: "/color-icons/prisma-original.svg" },
     { name: "Cloudflare", icon: "/color-icons/cloudflare-original.svg" },
-    { name: "Vercel",     icon: "/color-icons/vercel-original.svg" },
+    { name: "Vercel", icon: "/color-icons/vercel-original.svg" },
   ];
 
   const databasePositions = [
@@ -18,8 +21,8 @@
     // INNER CIRCLE — 4 NODES — radius 5
     // Equal spacing = 360 ÷ 4 = 90°
     // ═══════════════════════════════════════════════
-    { angle: 0,   radius: 5 }, // PostgreSQL
-    { angle: 90,  radius: 5 }, // MongoDB
+    { angle: 0, radius: 5 }, // PostgreSQL
+    { angle: 90, radius: 5 }, // MongoDB
     { angle: 180, radius: 5 }, // Cloudinary
     { angle: 270, radius: 5 }, // AWS
 
@@ -27,7 +30,7 @@
     // OUTER CIRCLE — 4 NODES — radius 9
     // Offset by half of 90° = 45°
     // ═══════════════════════════════════════════════
-    { angle: 45,  radius: 9 }, // Neon
+    { angle: 45, radius: 9 }, // Neon
     { angle: 135, radius: 9 }, // Prisma
     { angle: 225, radius: 9 }, // Cloudflare
     { angle: 315, radius: 9 }, // Vercel
@@ -107,8 +110,8 @@
     flex-direction: column;
     align-items: center;
     gap: 0.2rem;
-    background: rgba(15, 3, 3, 0.85);
-    border: 1px solid rgba(180, 40, 30, 0.5);
+    background: #020d19;
+    border: 1px solid rgba(255, 255, 255, 0.65);
     border-radius: 50%;
     width: clamp(3.8rem, 6vw, 6rem);
     height: clamp(3.8rem, 6vw, 6rem);
@@ -120,7 +123,7 @@
 
   .p2-node-label {
     font: 600 clamp(0.45rem, 0.65vw, 0.62rem)/1 var(--sans);
-    color: rgba(220, 80, 60, 0.95);
+    color: #fafafa;
     text-transform: uppercase;
     letter-spacing: 0.07em;
   }
@@ -172,13 +175,21 @@
   }
 
   @keyframes p2-orbit-cw {
-    from { transform: rotate(0deg); }
-    to   { transform: rotate(360deg); }
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
   }
 
   @keyframes p2-orbit-ccw {
-    from { transform: rotate(0deg); }
-    to   { transform: rotate(-360deg); }
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(-360deg);
+    }
   }
 
   /* Inner ring — Clockwise */
@@ -208,7 +219,8 @@
     margin: calc(clamp(2.2rem, 3vw, 3.4rem) / -2);
     pointer-events: auto;
     cursor: default;
-    transform: rotate(var(--angle)) translateX(var(--radius)) rotate(calc(-1 * var(--angle)));
+    transform: rotate(var(--angle)) translateX(var(--radius))
+      rotate(calc(-1 * var(--angle)));
   }
 
   .p2-subnode-counter {
@@ -223,8 +235,8 @@
     border-radius: 50%;
     transition:
       border-color 0.3s ease,
-      box-shadow   0.3s ease,
-      transform    0.3s ease;
+      box-shadow 0.3s ease,
+      transform 0.3s ease;
   }
 
   .p2-subnode-icon {

@@ -2,20 +2,20 @@
   // ── Engineering technology data — LOCKED ────────────────────────────────────
   const engineering = [
     // INNER CIRCLE
-    { name: "npm",        icon: "/color-icons/npm-original.svg" },
-    { name: "PM2",        icon: "/color-icons/pm2-original.svg" },
-    { name: "Nginx",      icon: "/color-icons/nginx.svg" },
-    { name: "Ubuntu",     icon: "/color-icons/Ubuntu.svg" },
-    { name: "Docker",     icon: "/color-icons/docker-icon.svg" },
-    { name: "Git",        icon: "/color-icons/git-original.svg" },
+    { name: "npm", icon: "/color-icons/npm-original.svg" },
+    { name: "PM2", icon: "/color-icons/pm2-original.svg" },
+    { name: "Nginx", icon: "/color-icons/nginx.svg" },
+    { name: "Ubuntu", icon: "/color-icons/Ubuntu.svg" },
+    { name: "Docker", icon: "/color-icons/docker-icon.svg" },
+    { name: "Git", icon: "/color-icons/git-original.svg" },
 
     // OUTER CIRCLE
     { name: "Antigravity", icon: "/color-icons/antigravity-color.svg" },
     { name: "Claude Code", icon: "/color-icons/claude-code.svg" },
-    { name: "Codex",       icon: "/color-icons/codex-color.svg" },
-    { name: "Cursor",      icon: "/color-icons/cursor-ai-code-icon.svg" },
-    { name: "Trae",        icon: "/color-icons/trae-color.svg" },
-    { name: "GitHub",      icon: "/color-icons/github-original.svg" },
+    { name: "Codex", icon: "/color-icons/codex-color.svg" },
+    { name: "Cursor", icon: "/color-icons/cursor-ai-code-icon.svg" },
+    { name: "Trae", icon: "/color-icons/trae-color.svg" },
+    { name: "GitHub", icon: "/color-icons/github-original.svg" },
   ];
 
   const engineeringPositions = [
@@ -23,8 +23,8 @@
     // INNER CIRCLE — 6 NODES — radius 5
     // Equal spacing = 360 ÷ 6 = 60°
     // ═══════════════════════════════════════════════
-    { angle: 0,   radius: 5 }, // npm
-    { angle: 60,  radius: 5 }, // PM2
+    { angle: 0, radius: 5 }, // npm
+    { angle: 60, radius: 5 }, // PM2
     { angle: 120, radius: 5 }, // Nginx
     { angle: 180, radius: 5 }, // Ubuntu
     { angle: 240, radius: 5 }, // Docker
@@ -34,12 +34,12 @@
     // OUTER CIRCLE — 6 NODES — radius 8
     // Equal spacing = 360 ÷ 6 = 60°
     // ═══════════════════════════════════════════════
-    { angle: 30,  radius: 8 }, // Antigravity
-    { angle: 90,  radius: 8 }, // Claude Code
-    { angle: 150, radius: 8 }, // Codex
-    { angle: 210, radius: 8 }, // Cursor
-    { angle: 270, radius: 8 }, // Trae
-    { angle: 330, radius: 8 }, // GitHub
+    { angle: 30, radius: 9 }, // Antigravity
+    { angle: 90, radius: 9 }, // Claude Code
+    { angle: 150, radius: 9 }, // Codex
+    { angle: 210, radius: 9 }, // Cursor
+    { angle: 270, radius: 9 }, // Trae
+    { angle: 330, radius: 9 }, // GitHub
   ];
 
   function subNodeStyle(i: number): string {
@@ -117,8 +117,8 @@
     flex-direction: column;
     align-items: center;
     gap: 0.2rem;
-    background: rgba(15, 3, 3, 0.85);
-    border: 1px solid rgba(180, 40, 30, 0.5);
+    background: #020d19;
+    border: 1px solid rgba(255, 255, 255, 0.65);
     border-radius: 50%;
     width: clamp(3.8rem, 6vw, 6rem);
     height: clamp(3.8rem, 6vw, 6rem);
@@ -130,7 +130,7 @@
 
   .p2-node-label {
     font: 600 clamp(0.45rem, 0.65vw, 0.62rem)/1 var(--sans);
-    color: rgba(220, 80, 60, 0.95);
+    color: #fafafa;
     text-transform: uppercase;
     letter-spacing: 0.07em;
   }
@@ -171,8 +171,8 @@
 
   /* Outer circle — radius 8vw → diameter 16vw */
   .p2-suborbit-ring--engineering-outer {
-    width: 16vw;
-    height: 16vw;
+    width: 18vw;
+    height: 18vw;
   }
 
   /* ── Spinner ── */
@@ -185,13 +185,21 @@
   }
 
   @keyframes p2-orbit-cw {
-    from { transform: rotate(0deg); }
-    to   { transform: rotate(360deg); }
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
   }
 
   @keyframes p2-orbit-ccw {
-    from { transform: rotate(0deg); }
-    to   { transform: rotate(-360deg); }
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(-360deg);
+    }
   }
 
   /* Inner ring — Clockwise */
@@ -222,7 +230,8 @@
     margin: calc(clamp(2.2rem, 3vw, 3.4rem) / -2);
     pointer-events: auto;
     cursor: default;
-    transform: rotate(var(--angle)) translateX(var(--radius)) rotate(calc(-1 * var(--angle)));
+    transform: rotate(var(--angle)) translateX(var(--radius))
+      rotate(calc(-1 * var(--angle)));
   }
 
   .p2-subnode-counter {
@@ -237,8 +246,8 @@
     border-radius: 50%;
     transition:
       border-color 0.3s ease,
-      box-shadow   0.3s ease,
-      transform    0.3s ease;
+      box-shadow 0.3s ease,
+      transform 0.3s ease;
   }
 
   .p2-subnode-icon {

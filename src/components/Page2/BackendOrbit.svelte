@@ -14,17 +14,17 @@
     // INNER CIRCLE — 3 NODES — radius 4.5
     // Equal spacing = 360 ÷ 3 = 120°
     // ═══════════════════════════════════════════════
-    { angle: 0, radius: 4.5 }, // Express
-    { angle: 120, radius: 4.5 }, // Node.js
-    { angle: 240, radius: 4.5 }, // Axios
+    { angle: 0, radius: 5 }, // Express
+    { angle: 120, radius: 5 }, // Node.js
+    { angle: 240, radius: 5 }, // Axios
 
     // ═══════════════════════════════════════════════
     // OUTER CIRCLE — 3 NODES — radius 7
     // Offset = 120 ÷ 2 = 60°
     // ═══════════════════════════════════════════════
-    { angle: 60, radius: 7 }, // Postman
-    { angle: 180, radius: 7 }, // Zod
-    { angle: 300, radius: 7 }, // JWT
+    { angle: 60, radius: 9 }, // Postman
+    { angle: 180, radius: 9 }, // Zod
+    { angle: 300, radius: 9 }, // JWT
   ];
 
   function subNodeStyle(i: number): string {
@@ -101,8 +101,8 @@
     flex-direction: column;
     align-items: center;
     gap: 0.2rem;
-    background: rgba(15, 3, 3, 0.85);
-    border: 1px solid rgba(180, 40, 30, 0.5);
+    background: #020d19;
+    border: 1px solid rgba(255, 255, 255, 0.65);
     border-radius: 50%;
     width: clamp(3.8rem, 6vw, 6rem);
     height: clamp(3.8rem, 6vw, 6rem);
@@ -114,7 +114,7 @@
 
   .p2-node-label {
     font: 600 clamp(0.45rem, 0.65vw, 0.62rem)/1 var(--sans);
-    color: rgba(220, 80, 60, 0.95);
+    color: #fafafa;
     text-transform: uppercase;
     letter-spacing: 0.07em;
   }
@@ -147,14 +147,14 @@
 
   /* Inner circle — radius 4.5vw → diameter 9vw */
   .p2-suborbit-ring--backend-inner {
-    width: 9vw;
-    height: 9vw;
+    width: 10vw;
+    height: 10vw;
   }
 
   /* Outer circle — radius 7vw → diameter 14vw */
   .p2-suborbit-ring--backend-outer {
-    width: 14vw;
-    height: 14vw;
+    width: 18vw;
+    height: 18vw;
   }
 
   .p2-suborbit-spinner {
