@@ -60,14 +60,74 @@ import '../styles/global.scss';
         fetchpriority="high"
       />
 
-      <!-- HERO COPY CONTENT -->
+      <!-- HERO COPY CONTENT — ABOUT CAROUSEL -->
       <div class="p1-copy" aria-label="Hero introduction">
-        <p class="p1-greeting">Afzyl here!</p>
-        <p class="p1-desc">
-          Full-Stack Software Developer building secure, scalable, and
-          user-focused web applications with clean interfaces and thoughtful
-          digital experiences.
-        </p>
+
+        <!-- SLIDES -->
+        <div class="p1-carousel" id="p1-carousel" aria-live="polite">
+
+          <div class="p1-slide p1-slide--active" data-slide="0" role="group" aria-label="About 1 of 3">
+            <p class="p1-greeting">Afzyl here!</p>
+            <p class="p1-desc">
+              Full-Stack Software Developer building secure, scalable, and
+              user-focused web applications with modern UI and thoughtful
+              digital experiences.
+            </p>
+          </div>
+
+          <div class="p1-slide" data-slide="1" role="group" aria-label="About 2 of 3">
+            <p class="p1-slide-num">02</p>
+            <p class="p1-desc">
+              Fusing MERN, Next.js, and Astro&nbsp;+&nbsp;Svelte to build
+              powerful full-stack systems and immersive interactive experiences.
+            </p>
+          </div>
+
+          <div class="p1-slide" data-slide="2" role="group" aria-label="About 3 of 3">
+            <p class="p1-slide-num">03</p>
+            <p class="p1-desc">
+              A Software Developer with a touch of Motion Design in my DNA.<br/>
+              Based in Kerala — scroll down and discover what I build.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- CONTROLS ROW -->
+        <div class="p1-carousel-controls">
+
+          <!-- HIRE ME -->
+          <a
+            class="p1-hire-btn"
+            id="p1-hire-me"
+            href="mailto:afsalazeez29@gmail.com?subject=Hire%20Me%20%E2%80%94%20Full-Stack%20Software%20Developer"
+            aria-label="Hire Afzyl — opens email client"
+          >
+            <span class="p1-hire-inner" aria-hidden="true">
+              <span class="p1-hire-text">Hire Me</span>
+              <span class="p1-hire-text">Hire Me</span>
+            </span>
+          </a>
+
+          <!-- PREV / NEXT PILL -->
+          <div class="p1-nav-pill" role="group" aria-label="About navigation">
+            <button
+              class="p1-nav-btn"
+              id="p1-prev"
+              aria-label="Previous about"
+              type="button"
+            >&#8249;</button>
+            <span class="p1-nav-sep" aria-hidden="true"></span>
+            <button
+              class="p1-nav-btn"
+              id="p1-next"
+              aria-label="Next about"
+              type="button"
+            >&#8250;</button>
+          </div>
+
+        </div>
+
       </div>
 
       <!-- BIG BOTTOM TEXT -->
@@ -93,6 +153,9 @@ import '../styles/global.scss';
       <!-- PAGE 2 — ORBITAL CONTENT OVERLAY -->
       <OrbitalSystem client:visible />
 
+      <!-- DEV-SPHERE LABEL — top-right boxy label -->
+      <div class="p2-devsphere-label" aria-hidden="true">Dev-Sphere</div>
+
     </section>
 
 
@@ -110,315 +173,139 @@ import '../styles/global.scss';
         loading="lazy"
       />
 
-      <!-- PAGE 3 — HOW I BUILD + PROJECTS -->
-      <div class="p3-content" aria-label="How I build and selected work">
+      <!-- PAGE 3 — SELECTED PROJECTS -->
+      <div class="p3-content" aria-label="Selected projects and case studies">
 
-        <!-- INTRO -->
-        <header class="p3-intro">
-          <p class="p3-eyebrow">03 / HOW I BUILD</p>
-
-          <h2 class="p3-heading">
-            FROM IDEA<br/>TO PRODUCTION
-          </h2>
-
-          <p class="p3-intro-desc">
-            I turn product ideas into structured, scalable web applications —
-            combining thoughtful interface design, solid engineering, and
-            production-focused development from the first architecture
-            decision to deployment.
+        <!-- HEADING -->
+        <header class="proj-header">
+          <p class="proj-eyebrow">Selected Projects</p>
+          <p class="proj-intro">
+            A selection of full-stack systems, interactive experiences, and
+            developer-focused applications I've built, shipped, and deployed.
           </p>
         </header>
 
-        <!-- DEVELOPMENT PROCESS -->
-        <ol class="p3-stages" aria-label="Development process stages">
-
-          <li class="p3-stage">
-            <span class="p3-stage-num">01</span>
-
-            <div class="p3-stage-body">
-              <h3 class="p3-stage-title">
-                DISCOVER
-                <span class="p3-stage-sub">Understand the Problem</span>
-              </h3>
-
-              <p class="p3-stage-desc">
-                I start by understanding the product goal, users, requirements,
-                and technical constraints before writing code.
-              </p>
-
-              <p class="p3-tags">
-                Requirements · User Needs · Scope · Technical Constraints
-              </p>
-            </div>
-          </li>
-
-
-          <li class="p3-stage">
-            <span class="p3-stage-num">02</span>
-
-            <div class="p3-stage-body">
-              <h3 class="p3-stage-title">
-                ARCHITECT
-                <span class="p3-stage-sub">Plan the System</span>
-              </h3>
-
-              <p class="p3-stage-desc">
-                I break the product into clear modules, data flows, APIs,
-                components, and responsibilities before implementation begins.
-              </p>
-
-              <p class="p3-tags">
-                Architecture · Data Flow · API Design · Database
-              </p>
-            </div>
-          </li>
-
-
-          <li class="p3-stage">
-            <span class="p3-stage-num">03</span>
-
-            <div class="p3-stage-body">
-              <h3 class="p3-stage-title">
-                ENGINEER
-                <span class="p3-stage-sub">Build the Product</span>
-              </h3>
-
-              <p class="p3-stage-desc">
-                I develop the interface and backend as structured, reusable
-                systems — connecting frontend interactions with reliable
-                application logic and data.
-              </p>
-
-              <p class="p3-tags">
-                Frontend · Backend · Components · APIs
-              </p>
-            </div>
-          </li>
-
-
-          <li class="p3-stage">
-            <span class="p3-stage-num">04</span>
-
-            <div class="p3-stage-body">
-              <h3 class="p3-stage-title">
-                REFINE
-                <span class="p3-stage-sub">Make It Feel Right</span>
-              </h3>
-
-              <p class="p3-stage-desc">
-                I refine interactions, responsiveness, performance,
-                accessibility, and visual details until the product feels
-                cohesive across devices.
-              </p>
-
-              <p class="p3-tags">
-                Responsive · Interaction · Performance · Accessibility
-              </p>
-            </div>
-          </li>
-
-
-          <li class="p3-stage">
-            <span class="p3-stage-num">05</span>
-
-            <div class="p3-stage-body">
-              <h3 class="p3-stage-title">
-                SHIP
-                <span class="p3-stage-sub">Deploy &amp; Improve</span>
-              </h3>
-
-              <p class="p3-stage-desc">
-                I take completed applications into production, monitor
-                real-world behavior, fix issues, and continuously improve
-                the system.
-              </p>
-
-              <p class="p3-tags">
-                Deployment · CI/CD · Monitoring · Iteration
-              </p>
-            </div>
-          </li>
-
-        </ol>
-
-
-        <!-- BUILT WITH INTENT -->
-        <section class="p3-intent" aria-labelledby="intent-heading">
-
-          <h2 class="p3-intent-heading" id="intent-heading">
-            BUILT WITH INTENT
-          </h2>
-
-          <p class="p3-intent-sub">
-            Good software isn't only about making something work. It's about
-            making it understandable, maintainable, secure, and ready for
-            the next iteration.
-          </p>
-
-          <ul class="p3-pillars">
-
-            <li>
-              <strong class="p3-pillar-title">MODULAR</strong>
-              <span class="p3-pillar-desc">
-                Reusable components and clearly separated responsibilities.
-              </span>
-            </li>
-
-            <li>
-              <strong class="p3-pillar-title">SECURE</strong>
-              <span class="p3-pillar-desc">
-                Authentication, authorization, validation, and role-aware
-                application flows.
-              </span>
-            </li>
-
-            <li>
-              <strong class="p3-pillar-title">SCALABLE</strong>
-              <span class="p3-pillar-desc">
-                Architecture designed to accommodate new features without
-                unnecessary complexity.
-              </span>
-            </li>
-
-            <li>
-              <strong class="p3-pillar-title">PRODUCTION-MINDED</strong>
-              <span class="p3-pillar-desc">
-                Performance, responsiveness, deployment, and real-world
-                reliability considered from the beginning.
-              </span>
-            </li>
-
-          </ul>
-
-        </section>
-
-
-        <!-- SELECTED PRODUCTION WORK -->
-        <section class="p3-projects" aria-labelledby="projects-heading">
-
-          <h2 class="p3-projects-heading" id="projects-heading">
-            Selected Production Work
-          </h2>
-
-          <div class="p3-project-grid">
-
-            <article class="p3-project">
-
-              <div class="p3-project-meta">
-                <span class="p3-project-num">01</span>
-                <span class="p3-project-cat">
-                  FULL-STACK / ENTERPRISE / RBAC
-                </span>
-              </div>
-
-              <h3 class="p3-project-name">JailMeet</h3>
-
-              <p class="p3-project-type">
-                Enterprise Parole &amp; Visitor Management Platform
-              </p>
-
-              <p class="p3-project-highlight">
-                4 ROLE-BASED MODULES — ADMIN · OFFICER · VISITOR · PRISONER
-              </p>
-
-              <p class="p3-project-desc">
-                A secure role-based platform designed around complex
-                institutional workflows, where functionality, authorization,
-                and reliable data handling take priority alongside a polished
-                user experience.
-              </p>
-
-              <p class="p3-project-focus">
-                Role-based workflows · Authentication &amp; authorization ·
-                Complex modules · Database-driven · Responsive dashboards ·
-                Secure API · Production structure
-              </p>
-
-              <blockquote class="p3-project-quote">
-                "Functionality first. Experience without sacrificing control."
-              </blockquote>
-
-            </article>
-
-
-            <article class="p3-project">
-
-              <div class="p3-project-meta">
-                <span class="p3-project-num">02</span>
-                <span class="p3-project-cat">
-                  FULL-STACK / PRODUCT UI / RESPONSIVE
-                </span>
-              </div>
-
-              <h3 class="p3-project-name">Recipe.IO</h3>
-
-              <p class="p3-project-type">
-                Modern Recipe Sharing Platform
-              </p>
-
-              <p class="p3-project-desc">
-                A modern recipe-sharing experience focused on making content
-                discovery simple, visual, responsive, and enjoyable across
-                devices.
-              </p>
-
-              <p class="p3-project-focus">
-                Modern interface design · Responsive layouts · Content-focused
-                UX · Reusable components · Smooth interactions · Clear
-                hierarchy · Mobile-first
-              </p>
-
-              <blockquote class="p3-project-quote">
-                "Turning structured content into an experience people want
-                to explore."
-              </blockquote>
-
-            </article>
-
-
-            <article class="p3-project">
-
-              <div class="p3-project-meta">
-                <span class="p3-project-num">03</span>
-                <span class="p3-project-cat">
-                  GROUP PROJECT / AI / THREE.JS
-                </span>
-              </div>
-
-              <h3 class="p3-project-name">Hue.AI</h3>
-
-              <p class="p3-project-type">
-                AI-Powered Creative Interface
-              </p>
-
-              <p class="p3-project-desc">
-                A collaborative AI project where I focused on the interface
-                architecture and interactive experience, connecting
-                AI-generated results with a visually immersive frontend.
-              </p>
-
-              <p class="p3-project-focus">
-                UI/UX architecture · Three.js integration · Interactive visual
-                experiences · AI API integration · Frontend architecture ·
-                Collaborative development
-              </p>
-
-              <blockquote class="p3-project-quote">
-                "Connecting AI intelligence with an expressive interactive
-                interface."
-              </blockquote>
-
-            </article>
-
+        <!-- PROJECT 01 — JAILMEET -->
+        <article class="proj-card" id="proj-jailmeet">
+          <div class="proj-img-wrap">
+            <img
+              class="proj-img"
+              src="/Mockups/JAILMEET.png"
+              alt="JailMeet project mockup"
+              loading="lazy"
+            />
           </div>
+          <div class="proj-info">
+            <span class="proj-num">01</span>
+            <h2 class="proj-title">JailMeet</h2>
+            <p class="proj-stack">Next.js · React · TypeScript · Node.js · Express.js · Prisma · PostgreSQL</p>
+            <p class="proj-desc">
+              A secure prison visit and parole management platform connecting
+              Visitors, Prisoners, Officers, and Administrators in one system.
+              Includes appointment booking, parole requests, user management,
+              communication, and multiple role-based workflows.
+            </p>
+            <a
+              class="proj-cta"
+              href="https://github.com/afsalazeez29-code"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View JailMeet project on GitHub"
+            >
+              <span class="proj-cta-inner" aria-hidden="true">
+                <span class="proj-cta-text">View Project &#x2192;</span>
+                <span class="proj-cta-text">View Project &#x2192;</span>
+              </span>
+            </a>
+          </div>
+        </article>
 
-          <p class="p3-closing">
-            THREE PRODUCTS.<br/>
-            THREE DIFFERENT PROBLEMS.<br/>
-            ONE ENGINEERING APPROACH.
+        <!-- PROJECT 02 — RECIPE.IO -->
+        <article class="proj-card" id="proj-recipeio">
+          <div class="proj-img-wrap">
+            <img
+              class="proj-img"
+              src="/Mockups/Recipe.io.png"
+              alt="Recipe.IO project mockup"
+              loading="lazy"
+            />
+          </div>
+          <div class="proj-info">
+            <span class="proj-num">02</span>
+            <h2 class="proj-title">Recipe.IO</h2>
+            <p class="proj-stack">MongoDB · Express.js · React · Node.js (MERN)</p>
+            <p class="proj-desc">
+              A complete end-to-end MERN recipe-sharing platform with separate
+              Admin and User modules. Users can create, upload, edit, and delete
+              recipes, while administrators manage users and their recipes.
+            </p>
+            <a
+              class="proj-cta"
+              href="https://rsp-project-xi.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View Recipe.IO live project"
+            >
+              <span class="proj-cta-inner" aria-hidden="true">
+                <span class="proj-cta-text">View Live &#x2192;</span>
+                <span class="proj-cta-text">View Live &#x2192;</span>
+              </span>
+            </a>
+          </div>
+        </article>
+
+        <!-- PROJECT 03 — HUE.AI -->
+        <article class="proj-card" id="proj-hueai">
+          <div class="proj-img-wrap">
+            <img
+              class="proj-img"
+              src="/Mockups/HUE.AI.png"
+              alt="HUE.AI project mockup"
+              loading="lazy"
+            />
+          </div>
+          <div class="proj-info">
+            <span class="proj-num">03</span>
+            <h2 class="proj-title">HUE.AI</h2>
+            <p class="proj-stack">Group Project · AI · Three.js · CSS · UI/UX</p>
+            <p class="proj-desc">
+              An AI-powered tool that helps developers style HTML and JSX
+              webpages. Analyzes HTML/JSX structure and generates tailored CSS
+              suggestions. My role focused on UI/UX, Three.js, and CSS,
+              creating the interactive visual experience and styling system.
+            </p>
+            <a
+              class="proj-cta"
+              href="https://hue-ai-xeao.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View HUE.AI live project"
+            >
+              <span class="proj-cta-inner" aria-hidden="true">
+                <span class="proj-cta-text">View Live &#x2192;</span>
+                <span class="proj-cta-text">View Live &#x2192;</span>
+              </span>
+            </a>
+          </div>
+        </article>
+
+        <!-- CLOSING + HIRE ME -->
+        <footer class="proj-footer">
+          <p class="proj-closing">
+            More ideas are in progress — more projects coming soon.
           </p>
-
-        </section>
+          <a
+            class="proj-hire-btn"
+            id="proj-hire-me"
+            href="mailto:afsalazeez29@gmail.com?subject=Hire%20Me%20%E2%80%94%20Full-Stack%20Software%20Developer"
+            aria-label="Hire Afzyl — opens email client"
+          >
+            <span class="proj-hire-inner" aria-hidden="true">
+              <span class="proj-hire-text">Hire Me</span>
+              <span class="proj-hire-text">Hire Me</span>
+            </span>
+          </a>
+        </footer>
 
       </div>
 
@@ -442,96 +329,80 @@ import '../styles/global.scss';
         loading="lazy"
       />
 
-      <!-- PAGE 4 — CONTACT CONTENT -->
+      <!-- PAGE 4 — GET IN TOUCH -->
       <div class="p4-contact" aria-label="Contact section">
 
-        <p class="p4-eyebrow">04 / CONTACT</p>
+        <div class="p4-touch-box">
 
-        <p class="p4-avail">
-          <span class="p4-dot" aria-hidden="true">●</span>
-          AVAILABLE FOR OPPORTUNITIES
-        </p>
+          <h2 class="p4-touch-heading">GET IN TOUCH</h2>
 
-        <p class="p4-avail-sub">
-          Open to Full-Time Roles · Frontend · Full-Stack · Software Development
-        </p>
+          <p class="p4-touch-desc">
+            Let&#x2019;s work together to create meaningful, user-focused
+            digital experiences. Feel free to reach out and let&#x2019;s
+            build something great.
+          </p>
 
-        <h2 class="p4-heading">
-          LET'S BUILD<br/>SOMETHING USEFUL.
-        </h2>
-
-        <p class="p4-body">
-          I'm looking for my next opportunity where I can turn ideas into
-          reliable, well-crafted digital products, solve meaningful problems,
-          and continue growing as a software developer.
-        </p>
-
-        <!-- HIRE ME CTA -->
-        <a
-          class="p4-cta"
-          id="hire-me-btn"
-          href="#"
-          aria-label="Hire Afzyl Azeez — opens email client"
-        >
-          HIRE ME ↗️
-        </a>
-
-        <div class="p4-connect">
-
-          <p class="p4-connect-label">CONNECT</p>
-
-          <div class="p4-socials">
+          <div class="p4-icons" role="list" aria-label="Social and contact links">
 
             <a
-              class="p4-social"
-              href="#"
-              id="social-whatsapp"
+              class="p4-icon-btn"
+              id="p4-github"
+              href="https://github.com/afsalazeez29-code"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub profile"
+              role="listitem"
             >
-              WHATSAPP
+              <img src="/icons/github.svg" alt="" aria-hidden="true" class="p4-icon-img" />
             </a>
 
             <a
-              class="p4-social p4-social--primary"
-              href="#"
-              id="social-linkedin"
+              class="p4-icon-btn"
+              id="p4-gmail"
+              href="mailto:afsalazeez29@gmail.com?subject=Hire%20Me%20%E2%80%94%20Full-Stack%20Software%20Developer"
+              aria-label="Send email"
+              role="listitem"
             >
-              LINKEDIN
+              <img src="/icons/gmail.svg" alt="" aria-hidden="true" class="p4-icon-img" />
             </a>
 
             <a
-              class="p4-social"
-              href="#"
-              id="social-instagram"
+              class="p4-icon-btn"
+              id="p4-linkedin"
+              href="https://www.linkedin.com/in/afsalsazeez29/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn profile"
+              role="listitem"
             >
-              INSTAGRAM
+              <img src="/icons/indeed.svg" alt="" aria-hidden="true" class="p4-icon-img" />
             </a>
 
             <a
-              class="p4-social"
-              href="#"
-              id="social-x"
+              class="p4-icon-btn"
+              id="p4-instagram"
+              href="https://www.instagram.com/afzyl._/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram profile"
+              role="listitem"
             >
-              X
+              <img src="/icons/instagram.svg" alt="" aria-hidden="true" class="p4-icon-img" />
+            </a>
+
+            <a
+              class="p4-icon-btn"
+              id="p4-whatsapp"
+              href="https://wa.me/+918590529081"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="WhatsApp contact"
+              role="listitem"
+            >
+              <img src="/icons/whatsapp.svg" alt="" aria-hidden="true" class="p4-icon-img" />
             </a>
 
           </div>
-
-        </div>
-
-        <p class="p4-tagline">
-          Have an opportunity, idea, or interesting problem to solve?<br/>
-          <strong>LET'S TALK.</strong>
-        </p>
-
-        <div class="p4-sig">
-
-          <p class="p4-sig-name">
-            AFZYL AZEEZ
-          </p>
-
-          <p class="p4-sig-role">
-            FULL-STACK SOFTWARE DEVELOPER
-          </p>
 
         </div>
 
@@ -613,6 +484,34 @@ import '../styles/global.scss';
           ease: 'power3.out'
         });
 
+      }
+
+      // Page 1 Carousel Logic
+      const p1Slides = document.querySelectorAll('.p1-slide');
+      const p1Prev = document.getElementById('p1-prev');
+      const p1Next = document.getElementById('p1-next');
+      let p1CurrentIndex = 0;
+
+      if (p1Slides.length > 0 && p1Prev && p1Next) {
+        function showSlide(index: number) {
+          p1Slides.forEach((slide, i) => {
+            if (i === index) {
+              slide.classList.add('p1-slide--active');
+            } else {
+              slide.classList.remove('p1-slide--active');
+            }
+          });
+        }
+        
+        p1Prev.addEventListener('click', () => {
+          p1CurrentIndex = (p1CurrentIndex - 1 + p1Slides.length) % p1Slides.length;
+          showSlide(p1CurrentIndex);
+        });
+
+        p1Next.addEventListener('click', () => {
+          p1CurrentIndex = (p1CurrentIndex + 1) % p1Slides.length;
+          showSlide(p1CurrentIndex);
+        });
       }
 
     }
@@ -945,6 +844,11 @@ import '../styles/global.scss';
   text-shadow:
     0 1px 12px
     rgba(0, 0, 0, 0.35);
+
+  /* Task 6: center copyright + curved top edges */
+  text-align: center;
+
+  border-radius: 100px 100px 0 0;
 }
 
 .compact-footer p {
@@ -1934,6 +1838,539 @@ import '../styles/global.scss';
     width: min(55vw, 15rem);
 
     max-width: 58%;
+  }
+
+}
+
+
+
+/* =========================================================
+   TASK 2 — PAGE 1: ABOUT CAROUSEL
+   ========================================================= */
+
+.p1-carousel {
+  position: relative;
+  min-height: 4rem;
+}
+
+.p1-slide {
+  display: none;
+  animation: p1-fadein 0.3s ease;
+}
+
+.p1-slide--active {
+  display: block;
+}
+
+.p1-slide-num {
+  margin: 0 0 0.35rem;
+  font:
+    600
+    0.72rem/1
+    var(--sans);
+  color: rgba(2, 13, 25, 0.4);
+  letter-spacing: 0.1em;
+}
+
+@keyframes p1-fadein {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.p1-carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-top: 0.9rem;
+  pointer-events: all;
+}
+
+/* HIRE ME BUTTON — vertical text-slide hover */
+.p1-hire-btn {
+  display: inline-flex;
+  align-items: flex-start;
+  justify-content: center;
+  overflow: hidden;
+  /* Fix Safari border-radius clipping */
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  height: 2rem;
+  padding: 0 1rem;
+  background: #020D19;
+  color: #FAFAFA;
+  border-radius: 999px;
+  font:
+    600
+    0.75rem/1
+    var(--sans);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  pointer-events: all;
+  flex-shrink: 0;
+}
+
+.p1-hire-inner {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25 ease-in-out;
+  pointer-events: none;
+}
+
+.p1-hire-text {
+  display: block;
+  line-height: 2rem;
+  white-space: nowrap;
+}
+
+.p1-hire-btn:hover .p1-hire-inner {
+  transform: translateY(-50%);
+}
+
+/* PREV/NEXT PILL */
+.p1-nav-pill {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  background: rgba(2, 13, 25, 0.07);
+  border: 1px solid rgba(2, 13, 25, 0.18);
+  border-radius: 999px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.p1-nav-sep {
+  display: block;
+  width: 1px;
+  height: 1rem;
+  background: rgba(2, 13, 25, 0.18);
+}
+
+.p1-nav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.2rem;
+  height: 2rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #020D19;
+  font-size: 1.2rem;
+  line-height: 1;
+  transition: background 0.18s ease;
+  pointer-events: all;
+}
+
+.p1-nav-btn:hover {
+  background: rgba(2, 13, 25, 0.1);
+}
+
+/* p1-copy pointer-events: controls need to be interactive */
+.p1-copy {
+  pointer-events: none;
+}
+.p1-carousel-controls {
+  pointer-events: all;
+}
+
+
+/* =========================================================
+   TASK 3B — PAGE 2: DEV-SPHERE LABEL
+   ========================================================= */
+
+.p2-devsphere-label {
+  position: absolute;
+  top: clamp(1.5rem, 3vw, 2.5rem);
+  right: clamp(1.5rem, 4vw, 3.5rem);
+  z-index: 25;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  border-radius: 10px;
+  padding: 0.4rem 1rem;
+  font:
+    600
+    clamp(0.75rem, 1vw, 0.9rem)/1
+    var(--sans);
+  color: rgba(255, 255, 255, 0.85);
+  letter-spacing: 0.06em;
+  pointer-events: none;
+  user-select: none;
+  backdrop-filter: blur(2px);
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   TASK 4 — PAGE 3: PROJECTS SECTION (NEW)
+   ========================================================= */
+
+.proj-header {
+  max-width: 600px;
+  margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.proj-eyebrow {
+  margin: 0 0 0.6rem;
+  font:
+    700
+    clamp(1.1rem, 2.2vw, 1.8rem)/1
+    var(--heading);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #f1f0eb;
+}
+
+.proj-intro {
+  margin: 0;
+  font:
+    400
+    clamp(0.8rem, 1.05vw, 0.93rem)/1.65
+    var(--sans);
+  color: rgba(241, 240, 235, 0.72);
+  max-width: 480px;
+}
+
+/* PROJECT CARD */
+.proj-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  align-items: start;
+  padding: clamp(1.2rem, 2vw, 1.8rem);
+  border: 1px solid rgba(241, 240, 235, 0.13);
+  border-radius: 18px;
+  background: rgba(2, 13, 25, 0.45);
+  backdrop-filter: blur(6px);
+  margin-bottom: clamp(1.2rem, 2vw, 1.8rem);
+}
+
+.proj-card:last-of-type {
+  margin-bottom: 0;
+}
+
+.proj-img-wrap {
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  background: rgba(241, 240, 235, 0.05);
+}
+
+.proj-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.proj-card:hover .proj-img {
+  transform: scale(1.03);
+}
+
+.proj-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.proj-num {
+  font:
+    600
+    0.68rem/1
+    var(--sans);
+  color: rgba(241, 240, 235, 0.4);
+  letter-spacing: 0.1em;
+}
+
+.proj-title {
+  margin: 0;
+  font:
+    700
+    clamp(1.3rem, 2.5vw, 2rem)/1
+    var(--heading);
+  letter-spacing: -0.02em;
+  color: #f1f0eb;
+}
+
+.proj-stack {
+  margin: 0;
+  font:
+    500
+    0.7rem/1.4
+    var(--sans);
+  color: rgba(241, 240, 235, 0.5);
+  letter-spacing: 0.03em;
+}
+
+.proj-desc {
+  margin: 0;
+  font:
+    400
+    clamp(0.78rem, 1vw, 0.9rem)/1.6
+    var(--sans);
+  color: rgba(241, 240, 235, 0.75);
+}
+
+/* PROJECT CTA — VERTICAL TEXT SLIDE HOVER */
+.proj-cta {
+  display: inline-flex;
+  align-items: flex-start;
+  justify-content: center;
+  overflow: hidden;
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  height: 2.1rem;
+  padding: 0 1.1rem;
+  margin-top: 0.3rem;
+  align-self: flex-start;
+  border: 1px solid rgba(241, 240, 235, 0.35);
+  border-radius: 999px;
+  font:
+    600
+    0.75rem/1
+    var(--sans);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #f1f0eb;
+  text-decoration: none;
+  background: rgba(241, 240, 235, 0.06);
+  pointer-events: all;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.proj-cta:hover {
+  border-color: rgba(241, 240, 235, 0.75);
+  background: rgba(241, 240, 235, 0.12);
+}
+
+.proj-cta-inner {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.55s ease-in-out;
+  pointer-events: none;
+}
+
+.proj-cta-text {
+  display: block;
+  line-height: 2.1rem;
+  white-space: nowrap;
+}
+
+.proj-cta:hover .proj-cta-inner {
+  transform: translateY(-50%);
+}
+
+/* PROJECT FOOTER */
+.proj-footer {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-top: clamp(1.5rem, 2.5vw, 2rem);
+  flex-wrap: wrap;
+  pointer-events: all;
+}
+
+.proj-closing {
+  margin: 0;
+  font:
+    400
+    clamp(0.78rem, 1vw, 0.88rem)/1.5
+    var(--sans);
+  color: rgba(241, 240, 235, 0.6);
+  font-style: italic;
+}
+
+/* PAGE 3 HIRE ME — VERTICAL TEXT SLIDE HOVER */
+.proj-hire-btn {
+  display: inline-flex;
+  align-items: flex-start;
+  justify-content: center;
+  overflow: hidden;
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  height: 2.1rem;
+  padding: 0 1.3rem;
+  background: #020D19;
+  color: #FAFAFA;
+  border-radius: 999px;
+  font:
+    600
+    0.75rem/1
+    var(--sans);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: opacity 0.2s ease;
+}
+
+.proj-hire-btn:hover {
+  opacity: 0.88;
+}
+
+.proj-hire-inner {
+  display: flex;
+  flex-direction: column;
+  transition: transform  ease-in-out;
+  pointer-events: none;
+}
+
+.proj-hire-text {
+  display: block;
+  line-height: 2.1rem;
+  white-space: nowrap;
+}
+
+.proj-hire-btn:hover .proj-hire-inner {
+  transform: translateY(-50%);
+}
+
+/* Page 3 pointer-events fix */
+.proj-card,
+.proj-cta,
+.proj-hire-btn {
+  pointer-events: all;
+}
+
+
+/* =========================================================
+   TASK 5 — PAGE 4: GET IN TOUCH / CONTACT
+   ========================================================= */
+
+.p4-contact {
+  position: absolute;
+  z-index: 21;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding:
+    clamp(2rem, 5vw, 4rem)
+    var(--gutter);
+  pointer-events: none;
+}
+
+.p4-touch-box {
+  background: #020D19;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 24px;
+  padding: clamp(2rem, 4vw, 3.5rem) clamp(1.5rem, 3vw, 2.5rem);
+  max-width: 560px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  pointer-events: all;
+}
+
+.p4-touch-heading {
+  margin: 0;
+  font:
+    700
+    clamp(1.8rem, 4vw, 3rem)/1
+    var(--heading);
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: #f1f0eb;
+}
+
+.p4-touch-desc {
+  margin: 0;
+  font:
+    400
+    clamp(0.82rem, 1.05vw, 0.93rem)/1.65
+    var(--sans);
+  color: rgba(241, 240, 235, 0.72);
+  max-width: 420px;
+}
+
+/* ICON ROW */
+.p4-icons {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.8rem, 1.5vw, 1.2rem);
+  flex-wrap: wrap;
+}
+
+/* CIRCULAR ICON BUTTON */
+.p4-icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(2.8rem, 4vw, 3.5rem);
+  height: clamp(2.8rem, 4vw, 3.5rem);
+  border-radius: 50%;
+  background: rgba(241, 240, 235, 0.12);
+  border: 1px solid rgba(241, 240, 235, 0.18);
+  flex-shrink: 0;
+  text-decoration: none;
+  overflow: hidden;
+  position: relative;
+  transition:
+    background 0.4s ease-out,
+    border-color 0.4s ease-out,
+    transform 0.2s ease;
+}
+
+.p4-icon-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff192d 0%, #fafafa 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease-out;
+}
+
+.p4-icon-btn:hover::before {
+  opacity: 1;
+}
+
+.p4-icon-btn:hover {
+  border-color: transparent;
+  transform: scale(1.08);
+}
+
+.p4-icon-img {
+  width: 45%;
+  height: 45%;
+  object-fit: contain;
+  display: block;
+  position: relative;
+  z-index: 1;
+  filter: brightness(0) invert(0.15);
+  transition: filter 0.4s ease-out;
+}
+
+.p4-icon-btn:hover .p4-icon-img {
+  filter: brightness(0) invert(1);
+}
+
+
+/* =========================================================
+   RESPONSIVE — NEW ELEMENTS
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .proj-card {
+    grid-template-columns: 1fr;
+  }
+
+  .p2-devsphere-label {
+    display: none;
+  }
+
+}
+
+@media (max-width: 720px) {
+
+  .p1-hire-btn {
+    font-size: 0.68rem;
+    padding: 0 0.8rem;
+  }
+
+  .p4-touch-box {
+    border-radius: 16px;
   }
 
 }

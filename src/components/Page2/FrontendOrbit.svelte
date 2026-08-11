@@ -443,7 +443,7 @@
 
     opacity: 0;
 
-    transition: opacity 0.25s ease;
+    transition: opacity 0.55s ease;
 
     z-index: 30;
   }
