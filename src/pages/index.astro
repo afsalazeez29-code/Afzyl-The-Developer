@@ -176,15 +176,6 @@ import '../styles/global.scss';
       <!-- PAGE 3 — SELECTED PROJECTS -->
       <div class="p3-content" aria-label="Selected projects and case studies">
 
-        <!-- HEADING -->
-        <header class="proj-header">
-          <p class="proj-eyebrow">Selected Projects</p>
-          <p class="proj-intro">
-            A selection of full-stack systems, interactive experiences, and
-            developer-focused applications I've built, shipped, and deployed.
-          </p>
-        </header>
-
         <!-- PROJECT LIST — 3-row grid, fills remaining height -->
         <div class="proj-list">
 
@@ -235,9 +226,8 @@ import '../styles/global.scss';
 
             <!-- PROJECT INFO -->
             <div class="proj-info">
-              <span class="proj-num">01</span>
-              <h2 class="proj-title">JailMeet</h2>
-              <p class="proj-stack">Next.js · React · TypeScript · Node.js · Express.js · Prisma · PostgreSQL</p>
+              <h2 class="proj-title">JAILMEET</h2>
+              <p class="proj-stack">Next.js · React · TypeScript · Express.js · PostgreSQL</p>
               <p class="proj-desc">
                 A secure prison visit and parole management platform connecting
                 Visitors, Prisoners, Officers, and Administrators in one system.
@@ -252,8 +242,8 @@ import '../styles/global.scss';
                 aria-label="View JailMeet project on GitHub"
               >
                 <span class="proj-cta-inner" aria-hidden="true">
-                  <span class="proj-cta-text">View Project &#x2192;</span>
-                  <span class="proj-cta-text">View Project &#x2192;</span>
+                  <span class="proj-cta-text">View Live &#x2192;</span>
+                  <span class="proj-cta-text">View Live &#x2192;</span>
                 </span>
               </a>
             </div>
@@ -307,9 +297,8 @@ import '../styles/global.scss';
 
             <!-- PROJECT INFO -->
             <div class="proj-info">
-              <span class="proj-num">02</span>
-              <h2 class="proj-title">Recipe.IO</h2>
-              <p class="proj-stack">MongoDB · Express.js · React · Node.js (MERN)</p>
+              <h2 class="proj-title">RECIPE.IO</h2>
+              <p class="proj-stack">MERN | MongoDB · Express.js · React · Node.js</p>
               <p class="proj-desc">
                 A complete end-to-end MERN recipe-sharing platform with separate
                 Admin and User modules. Users can create, upload, edit, and delete
@@ -321,6 +310,46 @@ import '../styles/global.scss';
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="View Recipe.IO live project"
+              >
+                <span class="proj-cta-inner" aria-hidden="true">
+                  <span class="proj-cta-text">View Live &#x2192;</span>
+                  <span class="proj-cta-text">View Live &#x2192;</span>
+                </span>
+              </a>
+            </div>
+
+          </article>
+
+          <!-- PROJECT 03 — HUE.AI -->
+          <article class="proj-card" id="proj-hueai">
+
+            <!-- IMAGE — SINGLE -->
+            <div class="proj-carousel-wrapper">
+              <div class="proj-carousel-stage">
+                <div class="proj-carousel-slide" style="opacity: 1; transform: scale(1); filter: brightness(1); z-index: 2;">
+                  <img
+                    class="proj-img"
+                    src="/Mockups/HUE.AI/huecard.png"
+                    alt="HUE.AI mockup screen"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- PROJECT INFO -->
+            <div class="proj-info">
+            <h2 class="proj-title">HUE.AI</h2>
+              <p class="proj-stack">JavaScript · Three.JS · CSS · OpenAI API</p>
+              <p class="proj-desc">
+              HUE.AI — An AI-powered web application that helps developers style HTML and JSX webpages by analyzing their structure and generating tailored CSS, making UI development faster and more efficient.
+              </p>
+              <a
+                class="proj-cta"
+                href="https://hue-ai-xeao.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View HUE.AI live project"
               >
                 <span class="proj-cta-inner" aria-hidden="true">
                   <span class="proj-cta-text">View Live &#x2192;</span>
@@ -355,53 +384,7 @@ import '../styles/global.scss';
         loading="lazy"
       />
 
-      <!-- PAGE 4 — HUE.AI + GET IN TOUCH (blueprint: left + right) -->
       <div class="p4-contact" aria-label="Contact section">
-
-        <!-- LEFT — HUE.AI PROJECT 03 -->
-        <div class="p4-hueai">
-          <article class="proj-card" id="proj-hueai">
-
-            <!-- IMAGE — SINGLE -->
-            <div class="proj-carousel-wrapper">
-              <div class="proj-carousel-stage">
-                <div class="proj-carousel-slide" style="opacity: 1; transform: scale(1); filter: brightness(1); z-index: 2;">
-                  <img
-                    class="proj-img"
-                    src="/Mockups/HUE.AI/huecard.png"
-                    alt="HUE.AI mockup screen"
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <!-- PROJECT INFO -->
-            <div class="proj-info">
-              <span class="proj-num">03</span>
-              <h2 class="proj-title">HUE.AI</h2>
-              <p class="proj-stack">Next.js · TailwindCSS · OpenAI API · Prisma</p>
-              <p class="proj-desc">
-                An AI-powered color palette generator. Users can generate, tweak,
-                and export professional color palettes instantly using natural
-                language prompts.
-              </p>
-              <a
-                class="proj-cta"
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="View HUE.AI live project"
-              >
-                <span class="proj-cta-inner" aria-hidden="true">
-                  <span class="proj-cta-text">View Live &#x2192;</span>
-                  <span class="proj-cta-text">View Live &#x2192;</span>
-                </span>
-              </a>
-            </div>
-
-          </article>
-        </div>
 
         <!-- RIGHT — GET IN TOUCH -->
         <div class="p4-touch-box">
@@ -1059,10 +1042,6 @@ import '../styles/global.scss';
 
   padding: clamp(0.7rem, 1.2vw, 1rem) 0 0;
 
-  border-top:
-    1px solid
-    rgba(241, 240, 235, 0.3);
-
   color: rgba(241, 240, 235, 0.65);
 
   background: transparent;
@@ -1078,14 +1057,57 @@ import '../styles/global.scss';
     0 1px 12px
     rgba(0, 0, 0, 0.35);
 
-  /* Task 6: center copyright + curved top edges */
   text-align: center;
 
   border-radius: 100px 100px 0 0;
+
+  /* Gradient top border */
+  &::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 1px;
+
+    background: linear-gradient(
+      to right,
+      #FAFAFA,
+      #E12E0F
+    );
+
+    /* Keep the exact curved footer edge */
+    border-radius: 100px 100px 0 0;
+  }
 }
 
 .compact-footer p {
   margin: 0;
+}
+
+.footer-name {
+  color: rgba(241, 240, 235, 0.9);
+
+  text-decoration: underline;
+
+  text-underline-offset: 3px;
+
+  text-decoration-color: transparent;
+
+  transition:
+    text-decoration-color 0.18s ease,
+    opacity 0.18s ease;
+
+  cursor: pointer;
+}
+
+.footer-name:hover {
+  text-decoration-color: rgba(241, 240, 235, 0.7);
+
+  opacity: 1;
 }
 
 .footer-name {
@@ -1700,29 +1722,24 @@ import '../styles/global.scss';
 
 .p4-contact {
   position: absolute;
-
   z-index: 21;
-
   inset: 0;
 
   display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 
-  flex-direction: column;
-
-  justify-content: center;
-
-  gap: clamp(0.7rem, 1.2vw, 1.1rem);
+  gap: clamp(1.5rem, 3vw, 3rem);
 
   padding:
-    clamp(3rem, 8vw, 6rem)
-    var(--gutter)
-    clamp(6rem, 14vw, 10rem);
+    clamp(2rem, 4vw, 4rem)
+    clamp(2rem, 5vw, 6rem);
 
   pointer-events: none;
 
-  max-width: 700px;
+  max-width: none;
 }
-
 .p4-eyebrow {
   margin: 0;
 
@@ -2252,12 +2269,12 @@ import '../styles/global.scss';
   max-width: 480px;
 }
 
-/* PROJECT LIST — 2-row grid: JailMeet + Recipe.IO share height */
+/* PROJECT LIST — 3-row grid: JailMeet + Recipe.IO + HUE.AI share height */
 .proj-list {
   flex: 1;
   min-height: 0;
   display: grid;
-  grid-template-rows: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(3, minmax(0, 1fr));
   gap: clamp(0.6rem, 1vw, 1rem);
   overflow: hidden;
 }
@@ -2271,8 +2288,8 @@ import '../styles/global.scss';
   padding: clamp(0.8rem, 1.2vw, 1.2rem);
   border: 1px solid rgba(241, 240, 235, 0.13);
   border-radius: 16px;
-  background: rgba(2, 13, 25, 0.45);
-  backdrop-filter: blur(6px);
+  background: #020D19;
+  backdrop-filter: none;
   min-height: 0;
   overflow: hidden;
 }
@@ -2389,22 +2406,13 @@ import '../styles/global.scss';
   justify-content: center;
 }
 
-.proj-num {
-  font:
-    600
-    0.68rem/1
-    var(--sans);
-  color: rgba(241, 240, 235, 0.4);
-  letter-spacing: 0.1em;
-}
-
 .proj-title {
   margin: 0;
   font:
     700
     clamp(1.3rem, 2.2vw, 1.9rem)/1
     var(--heading);
-  letter-spacing: -0.02em;
+  letter-spacing: 0.1rem;
   color: #f1f0eb;
 }
 
@@ -2414,8 +2422,7 @@ import '../styles/global.scss';
     500
     0.7rem/1.4
     var(--sans);
-  color: rgba(241, 240, 235, 0.5);
-  letter-spacing: 0.03em;
+  color:rgba(241, 240, 235, 0.75) 
 }
 
 .proj-desc {
@@ -2550,92 +2557,87 @@ import '../styles/global.scss';
   position: absolute;
   z-index: 21;
   inset: 0;
-  /* Blueprint: HUE.AI left column, GET IN TOUCH right column */
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  gap: clamp(1.5rem, 3vw, 2.5rem);
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: clamp(1.5rem, 2.5vw, 2.5rem);
   padding:
     clamp(1.5rem, 3vw, 3rem)
-    clamp(2rem, 4vw, 4rem)
+    clamp(1.5rem, 3vw, 3rem)
     clamp(1.5rem, 3vw, 3rem)
     var(--gutter);
   pointer-events: none;
 }
 
-/* LEFT COLUMN — HUE.AI project (large, vertical card) */
-.p4-hueai {
-  flex: 1;
-  min-width: 0;
-  max-height: 90%;
-  display: flex;
-  align-items: center;
-}
-
-/* HUE.AI card on Page 4: vertical layout (image top, info below) */
-.p4-hueai .proj-card {
-  width: 100%;
-  flex-direction: column;
-  gap: clamp(0.8rem, 1.5vw, 1.2rem);
-  overflow: hidden;
-  pointer-events: all;
-}
-
-/* HUE.AI carousel wrapper: full-width, natural 16/9 */
-.p4-hueai .proj-carousel-wrapper {
-  flex: none;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  height: auto;
-  max-height: clamp(200px, 45vh, 400px);
-}
-
-.p4-hueai .proj-info {
-  justify-content: flex-start;
-}
-
 .p4-touch-box {
   background: #020D19;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 24px;
+  border: 1px solid transparent;
+  background:
+
+    linear-gradient(#020D19, #020D19) padding-box,
+
+    linear-gradient(to right, #FAFAFA, #e12e0f) border-box;
+  border-radius: 16px;
+  backdrop-filter: none;
+
   padding: clamp(1.5rem, 3vw, 3rem) clamp(1.2rem, 2.5vw, 2.5rem);
-  /* Right column — fixed width */
+
   flex-shrink: 0;
-  width: clamp(280px, 32%, 420px);
+  width: clamp(320px, 32%, 440px);
+
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 1.4rem;
+
+  margin-right: auto;
   pointer-events: all;
+  transform: translateY(-30px);
 }
 
 .p4-touch-heading {
   margin: 0;
+  padding: 0;
+  width: 100%;
+
   font:
     700
     clamp(1.8rem, 4vw, 3rem)/1
     var(--heading);
-  letter-spacing: -0.02em;
+
+  letter-spacing: 0.03em;
   text-transform: uppercase;
-  color: #f1f0eb;
+  color: #FAFAFA;
+  text-align: left;
 }
 
 .p4-touch-desc {
   margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: none;
+
   font:
     400
     clamp(0.82rem, 1.05vw, 0.93rem)/1.65
     var(--sans);
-  color: rgba(241, 240, 235, 0.72);
-  max-width: 420px;
+
+  color: #FAFAFA;
+  text-align: left;
 }
 
-/* ICON ROW */
 .p4-icons {
   display: flex;
   align-items: center;
-  gap: clamp(0.8rem, 1.5vw, 1.2rem);
-  flex-wrap: wrap;
+  justify-content: flex-start;
+
+  width: 100%;
+  gap: clamp(0.6rem, 1.2vw, 1rem);
+
+  flex-wrap: nowrap;
+  padding: 0;
+  margin: 0;
 }
 
 /* CIRCULAR ICON BUTTON */
@@ -2645,8 +2647,8 @@ import '../styles/global.scss';
   justify-content: center;
   width: clamp(2.8rem, 4vw, 3.5rem);
   height: clamp(2.8rem, 4vw, 3.5rem);
-  border-radius: 50%;
-  background: rgba(241, 240, 235, 0.12);
+  border-radius: 70%;
+  background: #FAFAFA;
   border: 1px solid rgba(241, 240, 235, 0.18);
   flex-shrink: 0;
   text-decoration: none;
@@ -2678,8 +2680,8 @@ import '../styles/global.scss';
 }
 
 .p4-icon-img {
-  width: 45%;
-  height: 45%;
+  width: 65%;
+  height: 65%;
   object-fit: contain;
   display: block;
   position: relative;
@@ -2735,7 +2737,7 @@ import '../styles/global.scss';
     justify-content: flex-start;
   }
 
-  /* Page 4 — stack HUE.AI above GET IN TOUCH on tablet/mobile */
+  /* Page 4 — center GET IN TOUCH on tablet/mobile */
   .p4-contact {
     flex-direction: column;
     align-items: stretch;
@@ -2743,15 +2745,6 @@ import '../styles/global.scss';
     gap: clamp(1rem, 2vw, 1.5rem);
     overflow-y: auto;
     padding: clamp(1.5rem, 4vw, 3rem) var(--gutter);
-  }
-
-  .p4-hueai {
-    flex: none;
-  }
-
-  .p4-hueai .proj-card {
-    max-height: unset;
-    flex-direction: column;
   }
 
   .p4-touch-box {
@@ -2782,7 +2775,6 @@ import '../styles/global.scss';
   .p4-touch-box {
     border-radius: 16px;
   }
-
 }
 
 </style>
