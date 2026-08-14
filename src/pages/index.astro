@@ -140,7 +140,7 @@ import '../styles/global.scss';
          IMAGE 2
          =================================================== -->
 
-    <section class="image-section image-section-2" id="process">
+    <section class="image-section image-section-2" id="PROJECTS">
 
       <!-- BACKGROUND — BOTTOM LAYER -->
       <img
@@ -414,7 +414,9 @@ import '../styles/global.scss';
             <a
               class="p4-icon-btn"
               id="p4-gmail"
-              href="mailto:afsalazeez29@gmail.com?subject=Hire%20Me%20%E2%80%94%20Full-Stack%20Software%20Developer"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=afsalazeez29@gmail.com&su=Hire%20Me%20%E2%80%94%20Full-Stack%20Software%20Developer"
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label="Send email"
               role="listitem"
             >
@@ -462,29 +464,56 @@ import '../styles/global.scss';
 
       </div>
 
-
       <!-- FOOTER -->
       <footer class="compact-footer">
+      <svg
+  class="footer-curve"
+  viewBox="0 0 1000 58"
+  preserveAspectRatio="none"
+  aria-hidden="true"
+>
+  <defs>
+    <linearGradient
+      id="footerGradient"
+      x1="0%"
+      y1="0%"
+      x2="100%"
+      y2="0%"
+    >
+      <stop offset="0%" stop-color="#FAFAFA" />
+      <stop offset="100%" stop-color="#E12E0F" />
+    </linearGradient>
+  </defs>
 
-        <p>
-          ©️ Designed &amp; developed by
-          <a
-            class="footer-name"
-            href="#"
-            id="footer-linkedin-link"
-          >
-            Afsal S Azeez
-          </a>.
-        </p>
+  <path
+  d="M 0 58
+     V 30
+     C 0 14, 14 1, 40 1
+     H 960
+     C 986 1, 1000 14, 1000 30
+     V 58"
+  fill="none"
+  stroke="url(#footerGradient)"
+  stroke-width="1.5"
+  stroke-linecap="round"
+/>
+</svg>
 
-      </footer>
+<p>
+  © Designed &amp; developed by
+  <a
+    class="footer-name"
+    href="https://www.linkedin.com/in/afsalsazeez29/"
+    id="footer-linkedin-link"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="LinkedIn profile"
+  >
+    Afsal S Azeez
+  </a>.
+</p>
 
-    </section>
-
-  </main>
-
-
-  <!-- =====================================================
+<!-- =====================================================
        GSAP + LENIS + THREE.JS INITIALIZATION
        ===================================================== -->
 
@@ -1060,28 +1089,17 @@ import '../styles/global.scss';
   text-align: center;
 
   border-radius: 100px 100px 0 0;
+}
+.footer-curve {
+  position: absolute;
 
-  /* Gradient top border */
-  &::before {
-    content: "";
+  top: 0;
+  left: 0;
 
-    position: absolute;
+  width: 100%;
+  height: 58px;
 
-    top: 0;
-    left: 0;
-    right: 0;
-
-    height: 1px;
-
-    background: linear-gradient(
-      to right,
-      #FAFAFA,
-      #E12E0F
-    );
-
-    /* Keep the exact curved footer edge */
-    border-radius: 100px 100px 0 0;
-  }
+  pointer-events: none;
 }
 
 .compact-footer p {
@@ -1089,7 +1107,7 @@ import '../styles/global.scss';
 }
 
 .footer-name {
-  color: rgba(241, 240, 235, 0.9);
+  color: #FAFAFA;
 
   text-decoration: underline;
 
@@ -1134,22 +1152,23 @@ import '../styles/global.scss';
 
 
 /* =========================================================
-   PAGE 1 — HERO COPY + BIG AFZYL TEXT
+   PAGE 1 — ABOUT / INTRO COPY
    ========================================================= */
 
 .p1-copy {
   box-sizing: border-box;
 
-  width: min(32rem, calc(100vw - (2 * var(--gutter))));
+  width: min(28rem, 30vw);
+  max-width: 30vw;
 
-  max-width:
-    calc(100vw - (2 * var(--gutter)));
+  /* Gradient border */
+  border: 2px solid transparent;
 
-  border:
-    1.3px solid
-    rgba(2, 13, 25, 0.55);
+  border-radius: 16px;
 
-  border-radius: 28px;
+  background:
+    linear-gradient(#020D19) padding-box,
+    linear-gradient(to right, #FAFAFA, #E12E0F) border-box;
 
   padding: 1.5rem 1.8rem;
 
@@ -1164,10 +1183,6 @@ import '../styles/global.scss';
 
   bottom: auto;
 
-  width: min(28rem, 30vw);
-
-  max-width: 30vw;
-
   display: flex;
 
   flex-direction: column;
@@ -1177,6 +1192,9 @@ import '../styles/global.scss';
   pointer-events: none;
 }
 
+
+/* GREETING / HEADING */
+
 .p1-greeting {
   margin: 0.2rem;
 
@@ -1185,10 +1203,13 @@ import '../styles/global.scss';
     clamp(1.1rem, 2vw, 1.6rem)/1.2
     var(--heading);
 
-  color: #020D19;
+  color: #FAFAFA;
 
   letter-spacing: -0.01em;
 }
+
+
+/* DESCRIPTION */
 
 .p1-desc {
   margin: 0;
@@ -1198,7 +1219,7 @@ import '../styles/global.scss';
     clamp(0.78rem, 1vw, 0.95rem)/1.6
     var(--sans);
 
-  color: #020D19;
+  color: #FAFAFA;
 
   max-width: 22rem;
 }
@@ -1341,7 +1362,7 @@ import '../styles/global.scss';
 
 
 /* =========================================================
-   PAGE 3 — PROCESS STAGES
+   PAGE 3 — PROJECTS STAGES
    ========================================================= */
 
 .p3-stages {
@@ -2131,28 +2152,43 @@ import '../styles/global.scss';
 }
 
 /* HIRE ME BUTTON — vertical text-slide hover */
+/* HIRE ME BUTTON — vertical text-slide hover */
 .p1-hire-btn {
   display: inline-flex;
   align-items: flex-start;
   justify-content: center;
   overflow: hidden;
+
   /* Fix Safari border-radius clipping */
   -webkit-mask-image: -webkit-radial-gradient(white, black);
+
   height: 2.2rem;
   padding: 0 1.4rem;
-  background: #020D19;
-  color: #FAFAFA;
+
+  /* Gradient border */
+  border: 2px solid transparent;
+
   border-radius: 999px;
+
+  background:
+    linear-gradient(#FAFAFA, #FAFAFA) padding-box,
+    linear-gradient(to right, #FAFAFA, #E12E0F) border-box;
+
+  color: #020D19;
+
   font:
     600
     0.85rem/1
     var(--sans);
+
   letter-spacing: 0.06em;
   text-transform: uppercase;
   text-decoration: none;
+
   cursor: pointer;
   pointer-events: all;
   flex-shrink: 0;
+
   transform: translateY(0.8rem);
 }
 
@@ -2194,7 +2230,7 @@ import '../styles/global.scss';
   background: transparent;
   border: none;
   cursor: pointer;
-  color: #020D19;
+  color: #FAFAFA;
   font-size: 2.2rem;
   line-height: 1;
   transition: background 0.18s ease;
@@ -2280,18 +2316,34 @@ import '../styles/global.scss';
 }
 
 /* PROJECT CARD — horizontal: large image left (~58%), info right */
+/* PROJECT CARD — horizontal: large image left (~58%), info right */
 .proj-card {
   display: flex;
   flex-direction: row;
   align-items: stretch;
+
   gap: clamp(1rem, 2vw, 1.6rem);
+
   padding: clamp(0.8rem, 1.2vw, 1.2rem);
-  border: 1px solid rgba(241, 240, 235, 0.13);
+
+  /* Gradient border */
+  border: 1px solid transparent;
+
   border-radius: 16px;
-  background: #020D19;
+
+  background:
+    linear-gradient(#020D19, #020D19) padding-box,
+    linear-gradient(to right, #FAFAFA, #E12E0F) border-box;
+
   backdrop-filter: none;
+
   min-height: 0;
+
   overflow: hidden;
+}
+
+.proj-card:last-of-type {
+  margin-bottom: 0;
 }
 
 .proj-card:last-of-type {
@@ -2593,7 +2645,7 @@ import '../styles/global.scss';
 
   margin-right: auto;
   pointer-events: all;
-  transform: translateY(-30px);
+  transform: translateY(-100px);
 }
 
 .p4-touch-heading {
@@ -2645,33 +2697,56 @@ import '../styles/global.scss';
   display: flex;
   align-items: center;
   justify-content: center;
+
   width: clamp(2.8rem, 4vw, 3.5rem);
   height: clamp(2.8rem, 4vw, 3.5rem);
+
   border-radius: 70%;
+
+  /* NORMAL STATE */
   background: #FAFAFA;
+
   border: 1px solid rgba(241, 240, 235, 0.18);
+
   flex-shrink: 0;
   text-decoration: none;
   overflow: hidden;
   position: relative;
+
   transition:
-    background 0.4s ease-out,
-    border-color 0.4s ease-out,
+    border-color 0.3s ease-out,
     transform 0.2s ease;
 }
 
+/* HOVER GRADIENT */
 .p4-icon-btn::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
+
   border-radius: 50%;
-  background: linear-gradient(135deg, #ff192d 0%, #fafafa 100%);
+
+  background: linear-gradient(
+    135deg,
+    #ff192d 0%,
+    #fafafa 50%,
+    #ff192d 100%
+  );
+
+  background-size: 600%;
+  background-position: 0% center;
+
   opacity: 0;
-  transition: opacity 0.4s ease-out;
+
+  transition:
+    opacity 0.3s ease-out,
+    background-position 0.3s ease-out;
 }
 
+/* HOVER */
 .p4-icon-btn:hover::before {
   opacity: 1;
+  background-position: 100% center;
 }
 
 .p4-icon-btn:hover {
@@ -2679,6 +2754,11 @@ import '../styles/global.scss';
   transform: scale(1.08);
 }
 
+/* KEEP ICON ABOVE THE GRADIENT */
+.p4-icon-btn .p4-icon-img {
+  position: relative;
+  z-index: 2;
+}
 .p4-icon-img {
   width: 65%;
   height: 65%;
