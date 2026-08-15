@@ -1,5 +1,9 @@
 {
   "extends": "astro/tsconfigs/strict",
   "include": [".astro/types.d.ts", "**/*"],
-  "exclude": ["dist"]
+  "exclude": [
+    "dist",
+    "src/components/Page3/ProjectWorld.js",
+    "src/components/Page4/Blackhole.js"
+  ]
 }

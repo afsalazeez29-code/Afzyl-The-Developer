@@ -1,6 +1,9 @@
 ---
 import SiteNav from '../components/SiteNav.svelte';
 import OrbitalSystem from '../components/Page2/OrbitalSystem.svelte';
+import ProjectWorld from '../components/Page3/ProjectWorld.svelte';
+import Blackhole from '../components/Page4/Blackhole.svelte';
+import Process from '../components/Process/Process.svelte';
 import '../styles/global.scss';
 ---
 
@@ -156,6 +159,22 @@ import '../styles/global.scss';
       <!-- DEV-SPHERE LABEL — top-right boxy label -->
       <div class="p2-devsphere-label" aria-hidden="true">Dev-Sphere</div>
 
+      <!-- TECH SPHERE DESCRIPTION — bottom-left text container -->
+      <div class="p2-tech-sphere-desc" aria-label="Tech Sphere description">
+        <p class="p2-ts-eyebrow">PLAY-GROUND</p>
+        <h2 class="p2-ts-title">WELCOME TO MY TECH SPHERE</h2>
+        <p class="p2-ts-body">
+          A Collection of The Technologies, Tools, and Frameworks <br>I've Work With a
+          Primary Focus on Full-Stack Web Development and Modern Interactive Experiences.
+        </p>
+        <ul class="p2-ts-list" aria-label="Technology stacks">
+          <li><span class="p2-ts-bullet">•</span> <strong>MERN Stack</strong> — MongoDB, Express.js, React, Node.js</li>
+          <li><span class="p2-ts-bullet">•</span> <strong>Next.js Full-Stack</strong> — Next.js, TypeScript, Prisma, Neon PostgreSQL, and related tools</li>
+          <li><span class="p2-ts-bullet">•</span> <strong>Astro + Svelte</strong> — Lightweight, component-driven architecture for high-performance interactive websites</li>
+          <li><span class="p2-ts-bullet">•</span> <strong>Modern Web &amp; UI</strong> — HTML, CSS, SCSS, Tailwind CSS, GSAP, Three.js, and more</li>
+        </ul>
+      </div>
+
     </section>
 
 
@@ -176,193 +195,217 @@ import '../styles/global.scss';
       <!-- PAGE 3 — SELECTED PROJECTS -->
       <div class="p3-content" aria-label="Selected projects and case studies">
 
-        <!-- PROJECT LIST — 3-row grid, fills remaining height -->
+        <!-- LEFT — PROJECT LIST -->
         <div class="proj-list">
 
-          <!-- PROJECT 01 — JAILMEET -->
-          <article class="proj-card" id="proj-jailmeet">
+            <!-- PROJECT 01 — JAILMEET -->
+            <article class="proj-card" id="proj-jailmeet">
 
-            <!-- IMAGE CAROUSEL — LAYERED STACK -->
-            <div class="proj-carousel-wrapper" data-carousel>
-              <button
-                class="proj-carousel-btn proj-carousel-prev"
-                aria-label="Previous JailMeet image"
-                type="button"
-              >&#8249;</button>
+              <!-- IMAGE CAROUSEL — LAYERED STACK -->
+              <div class="proj-carousel-wrapper" data-carousel>
+                <button
+                  class="proj-carousel-btn proj-carousel-prev"
+                  aria-label="Previous JailMeet image"
+                  type="button"
+                >&#8249;</button>
 
-              <div class="proj-carousel-stage">
-                <div class="proj-carousel-slide" data-slide="0">
-                  <img
-                    class="proj-img"
-                    src="/Mockups/JAILMEET/jmcard1.png"
-                    alt="JailMeet mockup screen 1"
-                    loading="lazy"
-                  />
+                <div class="proj-carousel-stage">
+                  <div class="proj-carousel-slide" data-slide="0">
+                    <img
+                      class="proj-img"
+                      src="/Mockups/JAILMEET/jmcard1.png"
+                      alt="JailMeet mockup screen 1"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="proj-carousel-slide" data-slide="1">
+                    <img
+                      class="proj-img"
+                      src="/Mockups/JAILMEET/jmcard2.png"
+                      alt="JailMeet mockup screen 2"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="proj-carousel-slide" data-slide="2">
+                    <img
+                      class="proj-img"
+                      src="/Mockups/JAILMEET/jmcard3.png"
+                      alt="JailMeet mockup screen 3"
+                      loading="lazy"
+                    />
+                  </div>
                 </div>
-                <div class="proj-carousel-slide" data-slide="1">
-                  <img
-                    class="proj-img"
-                    src="/Mockups/JAILMEET/jmcard2.png"
-                    alt="JailMeet mockup screen 2"
-                    loading="lazy"
-                  />
+
+                <button
+                  class="proj-carousel-btn proj-carousel-next"
+                  aria-label="Next JailMeet image"
+                  type="button"
+                >&#8250;</button>
+              </div>
+
+              <!-- PROJECT INFO -->
+              <div class="proj-info">
+                <h2 class="proj-title">JAILMEET</h2>
+                <p class="proj-stack">Next.js · React · TypeScript · Express.js · PostgreSQL</p>
+                <p class="proj-desc">
+                  A secure prison visit and parole management platform connecting
+                  Visitors, Prisoners, Officers, and Administrators in one system.
+                  Includes appointment booking, parole requests, user management,
+                  communication, and multiple role-based workflows.
+                </p>
+                <a
+                  class="proj-cta"
+                  href="https://github.com/afsalazeez29-code"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="View JailMeet project on GitHub"
+                >
+                  <span class="proj-cta-inner" aria-hidden="true">
+                    <span class="proj-cta-text">View Live &#x2192;</span>
+                    <span class="proj-cta-text">View Live &#x2192;</span>
+                  </span>
+                </a>
+              </div>
+
+            </article>
+
+            <!-- PROJECT 02 — RECIPE.IO -->
+            <article class="proj-card" id="proj-recipeio">
+
+              <!-- IMAGE CAROUSEL — LAYERED STACK -->
+              <div class="proj-carousel-wrapper" data-carousel>
+                <button
+                  class="proj-carousel-btn proj-carousel-prev"
+                  aria-label="Previous Recipe.IO image"
+                  type="button"
+                >&#8249;</button>
+
+                <div class="proj-carousel-stage">
+                  <div class="proj-carousel-slide" data-slide="0">
+                    <img
+                      class="proj-img"
+                      src="/Mockups/RECIPE.IO/Riocard1.png"
+                      alt="Recipe.IO mockup screen 1"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="proj-carousel-slide" data-slide="1">
+                    <img
+                      class="proj-img"
+                      src="/Mockups/RECIPE.IO/Riocard2.png"
+                      alt="Recipe.IO mockup screen 2"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="proj-carousel-slide" data-slide="2">
+                    <img
+                      class="proj-img"
+                      src="/Mockups/RECIPE.IO/Riocard3.png"
+                      alt="Recipe.IO mockup screen 3"
+                      loading="lazy"
+                    />
+                  </div>
                 </div>
-                <div class="proj-carousel-slide" data-slide="2">
-                  <img
-                    class="proj-img"
-                    src="/Mockups/JAILMEET/jmcard3.png"
-                    alt="JailMeet mockup screen 3"
-                    loading="lazy"
-                  />
+
+                <button
+                  class="proj-carousel-btn proj-carousel-next"
+                  aria-label="Next Recipe.IO image"
+                  type="button"
+                >&#8250;</button>
+              </div>
+
+              <!-- PROJECT INFO -->
+              <div class="proj-info">
+                <h2 class="proj-title">RECIPE.IO</h2>
+                <p class="proj-stack">MERN | MongoDB · Express.js · React · Node.js</p>
+                <p class="proj-desc">
+                  A complete end-to-end MERN recipe-sharing platform with separate
+                  Admin and User modules. Users can create, upload, edit, and delete
+                  recipes, while administrators manage users and their recipes.
+                </p>
+                <a
+                  class="proj-cta"
+                  href="https://rsp-project-xi.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="View Recipe.IO live project"
+                >
+                  <span class="proj-cta-inner" aria-hidden="true">
+                    <span class="proj-cta-text">View Live &#x2192;</span>
+                    <span class="proj-cta-text">View Live &#x2192;</span>
+                  </span>
+                </a>
+              </div>
+
+            </article>
+
+            <!-- PROJECT 03 — HUE.AI -->
+            <article class="proj-card" id="proj-hueai">
+
+              <!-- IMAGE — SINGLE -->
+              <div class="proj-carousel-wrapper">
+                <div class="proj-carousel-stage">
+                  <div class="proj-carousel-slide" style="opacity: 1; transform: scale(1); filter: brightness(1); z-index: 2;">
+                    <img
+                      class="proj-img"
+                      src="/Mockups/HUE.AI/huecard.png"
+                      alt="HUE.AI mockup screen"
+                      loading="lazy"
+                    />
+                  </div>
                 </div>
               </div>
 
-              <button
-                class="proj-carousel-btn proj-carousel-next"
-                aria-label="Next JailMeet image"
-                type="button"
-              >&#8250;</button>
-            </div>
-
-            <!-- PROJECT INFO -->
-            <div class="proj-info">
-              <h2 class="proj-title">JAILMEET</h2>
-              <p class="proj-stack">Next.js · React · TypeScript · Express.js · PostgreSQL</p>
-              <p class="proj-desc">
-                A secure prison visit and parole management platform connecting
-                Visitors, Prisoners, Officers, and Administrators in one system.
-                Includes appointment booking, parole requests, user management,
-                communication, and multiple role-based workflows.
-              </p>
-              <a
-                class="proj-cta"
-                href="https://github.com/afsalazeez29-code"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="View JailMeet project on GitHub"
-              >
-                <span class="proj-cta-inner" aria-hidden="true">
-                  <span class="proj-cta-text">View Live &#x2192;</span>
-                  <span class="proj-cta-text">View Live &#x2192;</span>
-                </span>
-              </a>
-            </div>
-
-          </article>
-
-          <!-- PROJECT 02 — RECIPE.IO -->
-          <article class="proj-card" id="proj-recipeio">
-
-            <!-- IMAGE CAROUSEL — LAYERED STACK -->
-            <div class="proj-carousel-wrapper" data-carousel>
-              <button
-                class="proj-carousel-btn proj-carousel-prev"
-                aria-label="Previous Recipe.IO image"
-                type="button"
-              >&#8249;</button>
-
-              <div class="proj-carousel-stage">
-                <div class="proj-carousel-slide" data-slide="0">
-                  <img
-                    class="proj-img"
-                    src="/Mockups/RECIPE.IO/Riocard1.png"
-                    alt="Recipe.IO mockup screen 1"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="proj-carousel-slide" data-slide="1">
-                  <img
-                    class="proj-img"
-                    src="/Mockups/RECIPE.IO/Riocard2.png"
-                    alt="Recipe.IO mockup screen 2"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="proj-carousel-slide" data-slide="2">
-                  <img
-                    class="proj-img"
-                    src="/Mockups/RECIPE.IO/Riocard3.png"
-                    alt="Recipe.IO mockup screen 3"
-                    loading="lazy"
-                  />
-                </div>
+              <!-- PROJECT INFO -->
+              <div class="proj-info">
+              <h2 class="proj-title">HUE.AI</h2>
+                <p class="proj-stack">JavaScript · Three.JS · CSS · OpenAI API</p>
+                <p class="proj-desc">
+                HUE.AI — An AI-powered web application that helps developers style HTML and JSX webpages by analyzing their structure and generating tailored CSS, making UI development faster and more efficient.
+                </p>
+                <a
+                  class="proj-cta"
+                  href="https://hue-ai-xeao.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="View HUE.AI live project"
+                >
+                  <span class="proj-cta-inner" aria-hidden="true">
+                    <span class="proj-cta-text">View Live &#x2192;</span>
+                    <span class="proj-cta-text">View Live &#x2192;</span>
+                  </span>
+                </a>
               </div>
 
-              <button
-                class="proj-carousel-btn proj-carousel-next"
-                aria-label="Next Recipe.IO image"
-                type="button"
-              >&#8250;</button>
-            </div>
-
-            <!-- PROJECT INFO -->
-            <div class="proj-info">
-              <h2 class="proj-title">RECIPE.IO</h2>
-              <p class="proj-stack">MERN | MongoDB · Express.js · React · Node.js</p>
-              <p class="proj-desc">
-                A complete end-to-end MERN recipe-sharing platform with separate
-                Admin and User modules. Users can create, upload, edit, and delete
-                recipes, while administrators manage users and their recipes.
-              </p>
-              <a
-                class="proj-cta"
-                href="https://rsp-project-xi.vercel.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="View Recipe.IO live project"
-              >
-                <span class="proj-cta-inner" aria-hidden="true">
-                  <span class="proj-cta-text">View Live &#x2192;</span>
-                  <span class="proj-cta-text">View Live &#x2192;</span>
-                </span>
-              </a>
-            </div>
-
-          </article>
-
-          <!-- PROJECT 03 — HUE.AI -->
-          <article class="proj-card" id="proj-hueai">
-
-            <!-- IMAGE — SINGLE -->
-            <div class="proj-carousel-wrapper">
-              <div class="proj-carousel-stage">
-                <div class="proj-carousel-slide" style="opacity: 1; transform: scale(1); filter: brightness(1); z-index: 2;">
-                  <img
-                    class="proj-img"
-                    src="/Mockups/HUE.AI/huecard.png"
-                    alt="HUE.AI mockup screen"
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <!-- PROJECT INFO -->
-            <div class="proj-info">
-            <h2 class="proj-title">HUE.AI</h2>
-              <p class="proj-stack">JavaScript · Three.JS · CSS · OpenAI API</p>
-              <p class="proj-desc">
-              HUE.AI — An AI-powered web application that helps developers style HTML and JSX webpages by analyzing their structure and generating tailored CSS, making UI development faster and more efficient.
-              </p>
-              <a
-                class="proj-cta"
-                href="https://hue-ai-xeao.vercel.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="View HUE.AI live project"
-              >
-                <span class="proj-cta-inner" aria-hidden="true">
-                  <span class="proj-cta-text">View Live &#x2192;</span>
-                  <span class="proj-cta-text">View Live &#x2192;</span>
-                </span>
-              </a>
-            </div>
-
-          </article>
+            </article>
 
         </div><!-- /.proj-list -->
 
-      </div>
+      </div><!-- /.p3-content -->
+
+      <!-- RIGHT — PROJECT WORLD GLOBE + DESCRIPTION (desktop only) -->
+      <div class="p3-globe-container" aria-hidden="true">
+
+        <!-- Globe canvas -->
+        <div class="p3-globe-canvas">
+          <ProjectWorld client:visible />
+        </div>
+
+        <!-- Project World description text -->
+        <div class="p3-world-desc">
+          <h2 class="p3-world-title">PROJECT WORLD</h2>
+          <p class="p3-world-body">
+            A Showcase of My Completed Production-Ready Full-Stack Projects —
+            JailMeet, Recipe.IO, and HUE.AI. Each Project is Fully Functional,
+            Responsive, and Built to Solve Practical Problems Through Modern Web Technologies.
+          </p>
+          <p class="p3-world-body">
+            Explore Each Project, Discover its Features and Functionality, and Experience
+            it Firsthand by Clicking &ldquo;View Live.&rdquo;
+          </p>
+        </div>
+
+      </div><!-- /.p3-globe-container -->
 
     </section>
 
@@ -383,6 +426,19 @@ import '../styles/global.scss';
         alt=""
         loading="lazy"
       />
+
+      <!-- LEFT — PROCESS + BLACKHOLE (new, in empty viewport space) -->
+      <div class="p4-left-content" aria-label="Development process and visual">
+
+        <!-- PROCESS TIMELINE -->
+        <Process client:visible />
+
+        <!-- BLACKHOLE CANVAS (desktop only, guard in component) -->
+        <div class="p4-blackhole-wrap" aria-hidden="true">
+          <Blackhole client:visible />
+        </div>
+
+      </div>
 
       <div class="p4-contact" aria-label="Contact section">
 
@@ -822,7 +878,7 @@ import '../styles/global.scss';
    ========================================================= */
 
 .effect-layer {
-  display: none !important;
+  display: none;
 
   position: fixed;
 
@@ -2119,6 +2175,18 @@ import '../styles/global.scss';
 
 }
 
+/* Tech Sphere desc: on small phones, pull out of absolute flow */
+@media (max-width: 430px) {
+  .p2-tech-sphere-desc {
+    position: relative;
+    z-index: auto;
+    bottom: auto;
+    left: auto;
+    max-width: 100%;
+    margin: 1rem var(--gutter) 0;
+  }
+}
+
 /* =========================================================
    TASK 2 — PAGE 1: ABOUT CAROUSEL
    ========================================================= */
@@ -2272,6 +2340,93 @@ import '../styles/global.scss';
   user-select: none;
   backdrop-filter: blur(2px);
   white-space: nowrap;
+}
+
+/* =========================================================
+   PAGE 2 — TECH SPHERE DESCRIPTION (NEW)
+   ========================================================= */
+
+.p2-tech-sphere-desc {
+  position: absolute;
+  z-index: 22;
+
+  bottom: clamp(3rem, 5vw, 6rem);
+  right: clamp(1.5rem, 8vw, 10rem);
+
+  max-width: clamp(260px, 28vw, 400px);
+
+  padding:
+    clamp(1rem, 1.5vw, 1.5rem)
+    clamp(1.2rem, 1.8vw, 1.8rem);
+
+  /* Gradient border + #020D19 inner background */
+  border: 1px solid transparent;
+
+  background:
+    linear-gradient(#020D19, #020D19) padding-box,
+    linear-gradient(to right, #FAFAFA, #E12E0F) border-box;
+
+  border-radius: 16px;
+
+  backdrop-filter: blur(8px);
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.p2-ts-eyebrow {
+  margin: 0;
+  font:
+    700
+    clamp(0.65rem, 0.85vw, 0.78rem)/1
+    var(--sans);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #DC4632;
+}
+
+.p2-ts-title {
+  margin: 0;
+  font:
+    700
+    clamp(1rem, 1.6vw, 1.35rem)/1.15
+    var(--heading);
+  letter-spacing: -0.01em;
+  color: #FAFAFA;
+}
+
+.p2-ts-body {
+  margin: 0;
+  font:
+    400
+    clamp(0.72rem, 0.9vw, 0.82rem)/1.6
+    var(--sans);
+  color: #FAFAFA;
+}
+
+.p2-ts-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font:
+    400
+    clamp(0.68rem, 0.85vw, 0.78rem)/1.5
+    var(--sans);
+  color: #FAFAFA;
+}
+
+.p2-ts-list strong {
+  color: #FAFAFA;
+  font-weight: 600;
+}
+
+.p2-ts-bullet {
+  color: #DC4632;
+  margin-right: 0.25rem;
 }
 
 
@@ -2854,6 +3009,174 @@ import '../styles/global.scss';
 
   .p4-touch-box {
     border-radius: 16px;
+  }
+}
+
+/* =========================================================
+   PAGE 3 — TWO-COLUMN LAYOUT (new)
+   ========================================================= */
+
+/* Inner flex row: proj-list (left) + globe (right) */
+.p3-inner {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.p3-globe-container {
+  position: absolute;
+
+  top: 45%;
+  right: 1vw;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: clamp(300px, 35vw, 480px);
+
+  height: auto;
+
+  padding: clamp(1rem, 2vw, 2rem);
+
+  pointer-events: none;
+  box-sizing: border-box;
+  z-index: 21;
+
+  transform: translateY(-50%);
+}
+
+/* Globe canvas wrapper */
+.p3-globe-canvas {
+  position: relative;
+  width: clamp(220px, 28vw, 380px);
+  height: clamp(220px, 28vw, 380px);
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+/* Description below globe */
+.p3-world-desc {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+
+  /* Proper card spacing */
+  padding: 1.5rem 1.5rem;
+
+  /* Position */
+  margin-top: 1.2rem;
+
+  /* Rounded rectangle — NOT pill */
+  border: 2px solid transparent;
+  border-radius: 1.5rem;
+
+  /* Dark background + white → red gradient border */
+  background:
+    linear-gradient(#020D19, #020D19) padding-box,
+    linear-gradient(to right, #FAFAFA, #FF192D) border-box;
+
+  color: #FAFAFA;
+}
+
+.p3-world-title {
+  margin: 0;
+  font: 700 clamp(1.1rem,1.8vw,1.5rem)/1.1 var(--heading);
+  letter-spacing: 0.03em;
+  color: #FAFAFA;
+}
+
+.p3-world-body {
+  margin: 0;
+  font: 400 clamp(0.68rem,0.82vw,0.76rem)/1.6 var(--sans);
+  color: #FAFAFA;
+}
+
+/* Hide globe container on ≤430px (no init in component) */
+@media (max-width: 430px) {
+  .p3-globe-container {
+    display: none;
+  }
+
+  .p3-inner {
+    flex-direction: column;
+  }
+}
+
+/* On tablets hide the globe too for cleaner layout */
+@media (max-width: 900px) {
+  .p3-globe-container {
+    display: none;
+  }
+
+  .p3-inner {
+    flex-direction: column;
+  }
+}
+
+/* =========================================================
+   PAGE 4 — PROCESS + BLACKHOLE LEFT COLUMN (new)
+   ========================================================= */
+
+/* Left content area for Process + Blackhole */
+.p4-left-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 55%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: clamp(2rem, 4vw, 5rem) clamp(1.5rem, 3vw, 4rem);
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* Blackhole canvas wrapper */
+.p4-blackhole-wrap {
+  position: relative;
+  width: clamp(240px, 30vw, 420px);
+  height: clamp(240px, 30vw, 420px);
+  align-self: center;
+  margin-top: 1.5rem;
+  pointer-events: none;
+}
+
+/* Hide on ≤430px (no init in component) */
+@media (max-width: 430px) {
+  .p4-left-content {
+    position: relative;
+    width: 100%;
+    padding: 2rem var(--gutter) 1rem;
+    height: auto;
+  }
+
+  .p4-blackhole-wrap {
+    display: none;
+  }
+}
+
+/* Hide on tablets for a clean layout */
+@media (max-width: 900px) {
+  .p4-left-content {
+    position: relative;
+    width: 100%;
+    padding: 2rem var(--gutter) 1rem;
+    height: auto;
+  }
+
+  .p4-blackhole-wrap {
+    display: none;
   }
 }
 
