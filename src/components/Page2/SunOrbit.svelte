@@ -714,6 +714,8 @@
 
   onMount(() => {
     if (typeof window === "undefined") return;
+    // ≤430px hard guard — skip expensive Three.js on small phones
+    if (window.innerWidth <= 430) return;
     cleanup = initScene(container);
   });
 

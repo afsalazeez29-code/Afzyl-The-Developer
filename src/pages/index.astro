@@ -427,17 +427,14 @@ import '../styles/global.scss';
         loading="lazy"
       />
 
-      <!-- LEFT — PROCESS + BLACKHOLE (new, in empty viewport space) -->
-      <div class="p4-left-content" aria-label="Development process and visual">
-
-        <!-- PROCESS TIMELINE -->
+      <!-- PROCESS — full-width left area -->
+      <div class="p4-left-content" aria-label="Development process">
         <Process client:visible />
+      </div>
 
-        <!-- BLACKHOLE CANVAS (desktop only, guard in component) -->
-        <div class="p4-blackhole-wrap" aria-hidden="true">
-          <Blackhole client:visible />
-        </div>
-
+      <!-- BLACKHOLE — independently positioned upper-right (desktop only) -->
+      <div class="p4-blackhole-wrap" aria-hidden="true">
+        <Blackhole client:visible />
       </div>
 
       <div class="p4-contact" aria-label="Contact section">
@@ -878,7 +875,7 @@ import '../styles/global.scss';
    ========================================================= */
 
 .effect-layer {
-  display: none;
+  display: block;
 
   position: fixed;
 
@@ -887,7 +884,7 @@ import '../styles/global.scss';
   width: 100%;
   height: 100%;
 
-  z-index: 10;
+  z-index: 2;
 
   pointer-events: none;
 }
@@ -2620,7 +2617,7 @@ import '../styles/global.scss';
     clamp(1.3rem, 2.2vw, 1.9rem)/1
     var(--heading);
   letter-spacing: 0.1rem;
-  color: #f1f0eb;
+  color: #fafafa;
 }
 
 .proj-stack {
@@ -2638,7 +2635,7 @@ import '../styles/global.scss';
     400
     clamp(0.78rem, 1vw, 0.9rem)/1.5
     var(--sans);
-  color: rgba(241, 240, 235, 0.75);
+  color: #fafafa;
 }
 
 /* PROJECT CTA — VERTICAL TEXT SLIDE HOVER */
@@ -3127,55 +3124,55 @@ import '../styles/global.scss';
    PAGE 4 — PROCESS + BLACKHOLE LEFT COLUMN (new)
    ========================================================= */
 
-/* Left content area for Process + Blackhole */
+/* ── Process: full-width container that holds the graph ─────────────────── */
 .p4-left-content {
   position: absolute;
   top: 0;
+  padding-top: 0;
   left: 0;
-  width: 55%;
+  width: 78%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  padding: clamp(2rem, 4vw, 5rem) clamp(1.5rem, 3vw, 4rem);
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 0rem clamp(0rem, 0.5vw, 0.6rem);
   pointer-events: none;
   z-index: 5;
 }
 
-/* Blackhole canvas wrapper */
+/* ── Blackhole: independently positioned upper-right ─────────────────────── */
 .p4-blackhole-wrap {
-  position: relative;
-  width: clamp(240px, 30vw, 420px);
-  height: clamp(240px, 30vw, 420px);
-  align-self: center;
-  margin-top: 1.5rem;
+  position: absolute;
+  top: 2rem;
+  right: clamp(1.5rem, 3vw, 4rem);
+  width: clamp(200px, 22vw, 340px);
+  height: clamp(200px, 22vw, 340px);
   pointer-events: none;
+  z-index: 6;
 }
 
-/* Hide on ≤430px (no init in component) */
+/* ── Mobile: ≤430px — collapse to document flow, hide graph visuals ──────── */
 @media (max-width: 430px) {
   .p4-left-content {
     position: relative;
     width: 100%;
-    padding: 2rem var(--gutter) 1rem;
     height: auto;
+    padding: 2rem var(--gutter, 1.5rem) 1rem;
+    justify-content: flex-start;
   }
 
   .p4-blackhole-wrap {
     display: none;
   }
-}
 
-/* Hide on tablets for a clean layout */
-@media (max-width: 900px) {
-  .p4-left-content {
-    position: relative;
-    width: 100%;
-    padding: 2rem var(--gutter) 1rem;
-    height: auto;
+  /* Hide SunOrbit globe (guard already in component; CSS belt-and-suspenders) */
+  .sun-orbit-wrapper {
+    display: none;
   }
 
-  .p4-blackhole-wrap {
+  /* Hide ProjectWorld globe (guard already in component) */
+  .pw-globe-root {
     display: none;
   }
 }

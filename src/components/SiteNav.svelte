@@ -223,7 +223,7 @@
     left: 0;
     bottom: -5px;
 
-    background: linear-gradient(to right, #fafafa, #e12e0f);
+    background: linear-gradient(to right, #fafafa, #ff192d);
 
     transform: scaleX(0);
 
