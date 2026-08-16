@@ -279,7 +279,7 @@
     border-radius: 50%;
   }
 
-  @media (max-width: 900px) {
+  @media (min-width: 431px) and (max-width: 900px) {
     .p2-node {
       border-radius: 0.5rem;
       width: auto !important;

@@ -53,16 +53,18 @@
   </nav>
 
   <!-- MOBILE HAMBURGER -->
-  <button
-    class="hamburger"
-    type="button"
-    aria-label={open ? "Close menu" : "Open menu"}
-    aria-expanded={open}
-    on:click={() => (open = !open)}
-  >
-    <span></span>
-    <span></span>
-  </button>
+ <!-- MOBILE HAMBURGER -->
+<button
+  class="hamburger"
+  type="button"
+  aria-label={open ? "Close menu" : "Open menu"}
+  aria-expanded={open}
+  on:click={() => (open = !open)}
+>
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
 
   <!-- MOBILE DROPDOWN -->
   {#if open}
@@ -118,7 +120,7 @@
 
     gap: clamp(0.4rem, 1vw, 0.6rem);
 
-    padding: 0.3rem clamp(0.7rem, 1.5vw, 1px) 0.3rem 0.3rem;
+    padding: 0.1rem clamp(0.7rem, 1.5vw, 1px) 0.1rem 0.2rem;
 
     background: rgba(41, 35, 35, 0.08);
 
@@ -149,8 +151,8 @@
   }
 
   .profile-avatar {
-    width: clamp(24px, 3.5vw, 40px);
-    height: clamp(24px, 3.5vw, 40px);
+    width: clamp(35px, 3.5vw, 40px);
+    height: clamp(35px, 3.5vw, 40px);
 
     border-radius: 50%;
 
@@ -247,37 +249,55 @@
      MOBILE HAMBURGER
      ================================ */
 
-  .hamburger {
-    display: none;
+ .hamburger {
+  margin-left: auto;
+  display: none;
 
-    flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
 
-    gap: 5px;
+  gap: 3px;
 
-    padding: 7px;
+  width: 34px;
+  height: 34px;
 
-    background: none;
+  padding: 0;
 
-    border: 0;
+  background: rgba(41, 35, 35, 0.08);
 
-    cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 
-    width: 34px;
+  border-radius: 50%;
 
-    color: #fafafa;
+  cursor: pointer;
 
-    span {
-      display: block;
+  color: #fafafa;
 
-      height: 1.5px;
+  flex: 0 0 auto;
 
-      background: currentColor;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
 
-      border-radius: 2px;
+  span {
+    display: block;
 
-      transition: transform 0.28s ease;
-    }
+    width: 3.5px;
+    height: 3.5px;
+
+    background: currentColor;
+
+    border-radius: 50%;
+
+    transition: transform 0.2s ease;
   }
+}
+
+.hamburger:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.35);
+}
 
   /* ================================
      MOBILE MENU
@@ -395,8 +415,9 @@
 
     .hamburger {
       width: 32px;
+      height: 32px;
 
-      padding: 6px;
+      padding: 0px;
     }
   }
 

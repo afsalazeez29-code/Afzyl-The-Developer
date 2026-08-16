@@ -22,20 +22,7 @@ import '../styles/global.scss';
 
 <body>
 
-  <!-- =====================================================
-       THREE.JS PARTICLE EFFECT
-       ===================================================== -->
 
-  <div
-    class="effect-layer"
-    data-main-particles-component
-    data-theme="dark"
-    data-particles-scale="0.75"
-    data-density="200"
-    aria-hidden="true"
-  >
-    <div data-container></div>
-  </div>
 
   <SiteNav client:load />
 
@@ -571,7 +558,6 @@ import '../styles/global.scss';
        ===================================================== -->
 
   <script>
-    import '../effects/MainElement.js';
     import Lenis from 'lenis';
     import gsap from 'gsap';
     import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -584,18 +570,16 @@ import '../styles/global.scss';
 
     if (!reduce) {
 
-      const lenis = new Lenis({
-        lerp: 0.08,
-        smoothWheel: true
-      });
+      // Native mobile scrolling is lighter and avoids an unnecessary RAF loop.
+      const lenis = window.innerWidth > 430
+        ? new Lenis({ lerp: 0.08, smoothWheel: true })
+        : null;
 
-      lenis.on('scroll', ScrollTrigger.update);
-
-      gsap.ticker.add((time) => {
-        lenis.raf(time * 1000);
-      });
-
-      gsap.ticker.lagSmoothing(0);
+      if (lenis) {
+        lenis.on('scroll', ScrollTrigger.update);
+        gsap.ticker.add((time) => lenis.raf(time * 1000));
+        gsap.ticker.lagSmoothing(0);
+      }
 
       if (document.querySelector('.hero h1 span')) {
 
@@ -870,48 +854,6 @@ import '../styles/global.scss';
 }
 
 
-/* =========================================================
-   THREE.JS PARTICLE EFFECT
-   ========================================================= */
-
-.effect-layer {
-  display: block;
-
-  position: fixed;
-
-  inset: 0;
-
-  width: 100%;
-  height: 100%;
-
-  z-index: 2;
-
-  pointer-events: none;
-}
-
-.effect-layer [data-container] {
-  position: absolute;
-
-  inset: 0;
-
-  width: 100%;
-  height: 100%;
-
-  pointer-events: none;
-}
-
-.effect-layer canvas {
-  position: absolute;
-
-  inset: 0;
-
-  width: 100%;
-  height: 100%;
-
-  pointer-events: none;
-
-  z-index: 0;
-}
 
 
 /* =========================================================
@@ -3175,6 +3117,175 @@ import '../styles/global.scss';
   .pw-globe-root {
     display: none;
   }
+}
+
+/* =========================================================
+   PORTRAIT MOBILE COMPOSITION — isolated from desktop
+   ========================================================= */
+@media (max-width: 430px) {
+  html, body { overflow-x: clip; }
+
+  .image-section {
+    aspect-ratio: auto;
+    min-height: 100svh;
+    overflow: hidden;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .image-section > .hero-bg { display: none; }
+
+  .image-section-1 {
+    min-height: max(100svh, 620px);
+    background-image: url('/Mimages/MHero-BG1.webp');
+  }
+
+  .portrait {
+    left: 35%;
+    bottom: 13svh;
+    width: min(76vw, 310px);
+    max-width: none;
+    transform: translateX(-50%);
+    z-index: 5;
+  }
+
+@media (max-width: 430px) {
+
+  .afzyl-big {
+    position: absolute;
+
+    /* Position the rotated word along the right side */
+    top: 39%;
+    right: -65%;
+
+    left: auto;
+    bottom: auto;
+
+    /* ROTATE THE WHOLE LANDSCAPE WORD */
+    transform: rotate(270deg);
+    transform-origin: center center;
+
+    /* Keep AFZYL as one horizontal word before rotation */
+    width: max-content;
+    white-space: nowrap;
+
+    font-size: clamp(10rem, 55vw, 18rem);
+    line-height: 0.8;
+
+    color: #020d19;
+    opacity: 0.94;
+
+    z-index: 1;
+    pointer-events: none;
+  }
+
+}
+  .p1-copy {
+    left: 1rem;
+    right: auto;
+    top: auto;
+    bottom: max(1.1rem, env(safe-area-inset-bottom));
+    width: 65%;
+    max-width: 320px;
+    padding: 1rem 1.1rem;
+    border-width: 1px;
+    gap: .65rem;
+    z-index: 10;
+  }
+  .p1-greeting { font-size: 1.25rem; }
+  .p1-desc { font-size: .78rem; line-height: 1.5; }
+
+  .image-section-2 {
+    min-height: 100svh;
+    background-image: url('/Mimages/MHero-BG2.webp');
+    background-size: 100% auto;
+    background-position: center top;
+    background-color: #020d19;
+  }
+  .image-section-2::after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    left: 0; right: 0; bottom: 0;
+    height: 68%;
+    background: url('/Mimages/MHero-BG2-(2).webp') center bottom / 100% auto no-repeat;
+    pointer-events: none;
+  }
+  .image-section-2 > :not(.hero-bg) { position: relative; z-index: 2; }
+  .p2-tech-sphere-desc {
+    top: 3.9rem;
+    right: 1rem;
+    left: 1rem;
+    bottom: auto;
+    max-width: none;
+    padding: .9rem 1rem;
+    border-radius: 12px;
+  }
+  .p2-ts-title { font-size: 1.02rem; }
+  .p2-ts-body, .p2-ts-list { font-size: .7rem; }
+
+  .image-section-3 {
+    min-height: auto;
+    padding-top: 0;
+    background: #020d19 url('/Mimages/MHero-BG3.webp') center top / 100% auto no-repeat;
+    display: flex;
+    flex-direction: column;
+  }
+  .p3-globe-container {
+    position: relative;
+    display: block;
+    top: auto; right: auto;
+    width: auto; height: auto;
+    padding: 5.3rem 1rem 2rem;
+    transform: none;
+    order: 1;
+  }
+  .p3-globe-canvas { display: none; }
+  .p3-world-desc {
+    display: flex;
+    margin: 0;
+    padding: 1rem;
+    border-radius: 14px;
+  }
+  .p3-world-title { font-size: 1.55rem; }
+  .p3-world-body { font-size: .76rem; }
+  .p3-content {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    overflow: visible;
+    padding: 2.25rem 1rem 2.5rem;
+    background: url('/Mimages/MHero-BG3-(2).webp') center top / cover no-repeat;
+    order: 2;
+  }
+  .proj-list { gap: 1rem; overflow: visible; }
+  .proj-card { padding: .8rem; gap: .85rem; border-radius: 14px; overflow: hidden; }
+  .proj-carousel-wrapper { max-height: none; }
+  .proj-carousel-btn { display: flex !important; opacity: 1; width: 2.15rem; height: 2.15rem; }
+  .proj-title { font-size: 1.35rem; }
+  .proj-stack { font-size: .67rem; }
+  .proj-desc { font-size: .76rem; line-height: 1.5; }
+
+  .image-section-4 {
+    min-height: auto;
+    background: #020d19 url('/Mimages/MHero-BG4.webp') center top / cover no-repeat;
+    padding: 4.5rem 1rem 7rem;
+  }
+  .p4-left-content, .p4-contact {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    padding: 0;
+  }
+  .p4-left-content { margin-bottom: 2rem; }
+  .p4-contact { display: block; overflow: visible; }
+  .p4-touch-box { width: 100%; margin: 0; padding: 1.25rem; transform: none; }
+  .p4-touch-heading { font-size: 2rem; }
+  .p4-touch-desc { font-size: .82rem; }
+  .p4-icons { gap: .55rem; justify-content: space-between; }
+  .p4-icon-btn { width: 2.55rem; height: 2.55rem; }
+  .compact-footer { left: 1rem; right: 1rem; bottom: 1rem; font-size: .7rem; }
 }
 
 </style>

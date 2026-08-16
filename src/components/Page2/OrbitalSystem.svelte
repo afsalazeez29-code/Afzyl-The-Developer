@@ -194,4 +194,42 @@
       transform: none !important;
     }
   }
+
+  /* Portrait phones keep the systems circular and in reading order. The
+     desktop coordinate system above remains untouched. */
+  @media (max-width: 430px) {
+    .p2-os-canvas {
+      position: relative;
+      left: auto;
+      top: auto;
+      width: 100%;
+      height: auto;
+      padding: 17rem 0 1rem;
+      overflow: hidden;
+    }
+
+    .p2-ring, .p2-sun-core { display: none; }
+
+    .p2-nodes {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3.2rem;
+    }
+
+    .p2-os-node {
+      position: relative;
+      top: auto;
+      left: auto;
+      width: min(100%, 320px);
+      height: 250px;
+      display: grid;
+      place-items: center;
+      transform: none !important;
+    }
+
+    .p2-os-node--frontend { transform: scale(1.48) !important; margin: 2rem 0; }
+    .p2-os-node--engineering, .p2-os-node--backend, .p2-os-node--database { transform: scale(1.28) !important; }
+    .p2-os-node--architecture { transform: scale(.9) !important; }
+  }
 </style>

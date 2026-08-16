@@ -484,7 +484,7 @@
      MOBILE
      ═══════════════════════════════════════════════════════════ */
 
-  @media (max-width: 900px) {
+  @media (min-width: 431px) and (max-width: 900px) {
     .p2-node {
       width: auto !important;
       height: auto !important;
