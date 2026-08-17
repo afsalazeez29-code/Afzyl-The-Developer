@@ -89,7 +89,7 @@
   <span class="p2-node-sub"> System Design </span>
 
   <!-- ═══════════════════════════════════════════════════════════
-       CONNECTOR LINES + CONCEPT BOXES
+       DESKTOP CONNECTOR LINES + CONCEPT BOXES
        ═══════════════════════════════════════════════════════════ -->
 
   <div class="p2-arch-system" aria-label="Architecture concepts">
@@ -115,6 +115,96 @@
         </div>
       {/each}
     </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     MOBILE ARCHITECTURE SYSTEM (<= 430px)
+     ═══════════════════════════════════════════════════════════ -->
+<div class="p2-m-arch-wrapper" aria-hidden="true">
+  <!-- CONNECTOR LINES FANNING DOWN FROM NODE -->
+  <svg class="p2-m-arch-svg" viewBox="0 0 100 40" preserveAspectRatio="none">
+    <line
+      x1="50"
+      y1="0"
+      x2="6.25"
+      y2="40"
+      stroke="rgba(200, 40, 30, 0.55)"
+      stroke-width="1.2"
+      vector-effect="non-scaling-stroke"
+    />
+    <line
+      x1="50"
+      y1="0"
+      x2="18.75"
+      y2="40"
+      stroke="rgba(200, 40, 30, 0.55)"
+      stroke-width="1.2"
+      vector-effect="non-scaling-stroke"
+    />
+    <line
+      x1="50"
+      y1="0"
+      x2="31.25"
+      y2="40"
+      stroke="rgba(200, 40, 30, 0.55)"
+      stroke-width="1.2"
+      vector-effect="non-scaling-stroke"
+    />
+    <line
+      x1="50"
+      y1="0"
+      x2="43.75"
+      y2="40"
+      stroke="rgba(200, 40, 30, 0.55)"
+      stroke-width="1.2"
+      vector-effect="non-scaling-stroke"
+    />
+    <line
+      x1="50"
+      y1="0"
+      x2="56.25"
+      y2="40"
+      stroke="rgba(200, 40, 30, 0.55)"
+      stroke-width="1.2"
+      vector-effect="non-scaling-stroke"
+    />
+    <line
+      x1="50"
+      y1="0"
+      x2="68.75"
+      y2="40"
+      stroke="rgba(200, 40, 30, 0.55)"
+      stroke-width="1.2"
+      vector-effect="non-scaling-stroke"
+    />
+    <line
+      x1="50"
+      y1="0"
+      x2="81.25"
+      y2="40"
+      stroke="rgba(200, 40, 30, 0.55)"
+      stroke-width="1.2"
+      vector-effect="non-scaling-stroke"
+    />
+    <line
+      x1="50"
+      y1="0"
+      x2="93.75"
+      y2="40"
+      stroke="rgba(200, 40, 30, 0.55)"
+      stroke-width="1.2"
+      vector-effect="non-scaling-stroke"
+    />
+  </svg>
+
+  <!-- 8 VERTICAL SYSTEM DESIGN PILLS IN A ROW -->
+  <div class="p2-m-arch-pills">
+    {#each archProps as prop}
+      <div class="p2-m-arch-pill" role="note" aria-label={prop}>
+        <span class="p2-m-arch-pill-text">{prop}</span>
+      </div>
+    {/each}
   </div>
 </div>
 
@@ -387,9 +477,13 @@
     background: rgba(22, 5, 5, 0.95);
   }
 
-  /* ═══════════════════════════════════════════════════════════════
-     MOBILE
-     ═══════════════════════════════════════════════════════════════ */
+  .p2-m-arch-wrapper {
+    display: none;
+  }
+
+  /* ═══════════════════════════════════════════════════════════
+     TABLET
+     ═══════════════════════════════════════════════════════════ */
 
   @media (min-width: 431px) and (max-width: 900px) {
     .p2-node {
@@ -414,7 +508,7 @@
       margin-top: 0.4rem;
     }
 
-    /* Hide connector lines on mobile */
+    /* Hide connector lines on tablet */
 
     .p2-arch-lines {
       display: none;
@@ -452,6 +546,144 @@
 
     .p2-arch-box-text {
       font-size: 0.52rem;
+    }
+  }
+  /* ═══════════════════════════════════════════════════════════
+   MOBILE SCREEN 4 — ARCHITECTURE SYSTEM DESIGN PILLS
+   ═══════════════════════════════════════════════════════════ */
+  @media (max-width: 430px) {
+    /* ─────────────────────────────────────────
+     CENTER ARCHITECTURE NODE
+     ───────────────────────────────────────── */
+
+    .p2-node {
+      width: 6rem;
+      height: 6rem;
+      padding: 0.2rem;
+    }
+
+    .p2-node-label {
+      font-size: 0.85rem;
+    }
+
+    .p2-node-sub {
+      font-size: 0.5rem;
+    }
+
+    /* ─────────────────────────────────────────
+     ARCHITECTURE DESKTOP SYSTEM HIDDEN
+     ───────────────────────────────────────── */
+
+    .p2-arch-system {
+      display: none !important;
+    }
+
+    /* ─────────────────────────────────────────
+     MOBILE ARCHITECTURE WRAPPER
+     ───────────────────────────────────────── */
+
+    .p2-m-arch-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      width: min(94vw, 380px);
+
+      margin-top: 0.5rem;
+
+      pointer-events: auto;
+    }
+
+    /* ─────────────────────────────────────────
+     CONNECTOR LINES
+     ───────────────────────────────────────── */
+
+    .p2-m-arch-svg {
+      width: 100%;
+      height: 34px;
+
+      overflow: visible;
+
+      display: block;
+
+      pointer-events: none;
+    }
+
+    /* ─────────────────────────────────────────
+     SYSTEM DESIGN PILLS
+     ───────────────────────────────────────── */
+
+    .p2-m-arch-pills {
+      display: grid;
+
+      grid-template-columns: repeat(8, 1fr);
+
+      gap: clamp(2px, 0.8vw, 4px);
+
+      width: 100%;
+    }
+
+    /* ─────────────────────────────────────────
+     INDIVIDUAL PILLS
+     ───────────────────────────────────────── */
+
+    .p2-m-arch-pill {
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      background: #020d19;
+
+      border: 1px solid rgba(255, 255, 255, 0.65);
+
+      border-radius: 4px;
+
+      padding: 0.45rem 0.1rem;
+
+      min-height: 120px;
+
+      box-sizing: border-box;
+
+      cursor: default;
+
+      transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background-color 0.25s ease;
+    }
+
+    /* ─────────────────────────────────────────
+     PILL HOVER / FOCUS
+     ───────────────────────────────────────── */
+
+    .p2-m-arch-pill:hover,
+    .p2-m-arch-pill:focus {
+      border-color: rgba(220, 70, 50, 0.75);
+
+      box-shadow: 0 0 8px rgba(200, 40, 30, 0.35);
+
+      background: rgba(22, 5, 5, 0.95);
+    }
+
+    /* ─────────────────────────────────────────
+     VERTICAL PILL TEXT
+     ───────────────────────────────────────── */
+
+    .p2-m-arch-pill-text {
+      writing-mode: vertical-rl;
+
+      transform: rotate(180deg);
+
+      font: 600 clamp(0.46rem, 1.6vw, 0.56rem) / 1 var(--sans, sans-serif);
+
+      color: #fafafa;
+
+      text-transform: uppercase;
+
+      letter-spacing: 0.04em;
+
+      white-space: nowrap;
     }
   }
 </style>

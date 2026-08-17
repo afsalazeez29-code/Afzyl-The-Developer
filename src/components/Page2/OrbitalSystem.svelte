@@ -1,7 +1,8 @@
 <script lang="ts">
   // Page 2 Orbital System — Orchestrator
-  // Manages the global canvas, rings, and core.
-  // Each orbital domain is a self-contained child component.
+  // Manages the global canvas, rings, and core for desktop,
+  // and coordinates the 3-screen mobile layout (Screen 2, 3, 4).
+  // Reuses existing orbital domain child components without data duplication.
 
   import EngineeringOrbit from "./EngineeringOrbit.svelte";
   import BackendOrbit from "./BackendOrbit.svelte";
@@ -11,6 +12,9 @@
   import SunOrbit from "./SunOrbit.svelte";
 </script>
 
+<!-- ═══════════════════════════════════════════════════════════════
+     DESKTOP ORBITAL SYSTEM CANVAS (> 430px)
+     ═══════════════════════════════════════════════════════════════ -->
 <div
   class="p2-os-canvas"
   aria-label="AFZYL Full-Stack Developer orbital architecture"
@@ -44,9 +48,43 @@
   </div>
 </div>
 
+<!-- ═══════════════════════════════════════════════════════════════
+     MOBILE THREE CONSECUTIVE SCREENS (<= 430px)
+     Screen 2: /Mimages/MHero-BG2.webp (Person composition + Tech Sphere Description)
+     Screen 3: /Mimages/MHero-BG2-(2).webp (Frontend + Engineering + Backend)
+     Screen 4: /Mimages/MHero-BG2-(2).webp (Database + Architecture with 8 pills)
+     ═══════════════════════════════════════════════════════════════ -->
+<div class="p2-mobile-screens" aria-label="Mobile orbital technology screens">
+  <!-- SCREEN 2: BACKGROUND PERSON COMPOSITION (Tech Sphere Description is at top in index.astro) -->
+  <div class="p2-mobile-screen p2-screen-intro"></div>
+
+  <!-- SCREEN 3: FRONTEND + ENGINEERING + BACKEND ORBITS -->
+  <div class="p2-mobile-screen p2-screen-orbits-1">
+    <div class="p2-m-orbit-box p2-m-orbit-frontend">
+      <FrontendOrbit />
+    </div>
+    <div class="p2-m-orbit-box p2-m-orbit-engineering">
+      <EngineeringOrbit />
+    </div>
+    <div class="p2-m-orbit-box p2-m-orbit-backend">
+      <BackendOrbit />
+    </div>
+  </div>
+
+  <!-- SCREEN 4: DATABASE + ARCHITECTURE ORBITS -->
+  <div class="p2-mobile-screen p2-screen-db-arch">
+    <div class="p2-m-orbit-box p2-m-orbit-database">
+      <DatabaseOrbit />
+    </div>
+    <div class="p2-m-orbit-box p2-m-orbit-architecture">
+      <ArchitectureOrbit />
+    </div>
+  </div>
+</div>
+
 <style>
   /* ═══════════════════════════════════════════════════════════════════════════
-     CANVAS — GLOBAL COORDINATE ANCHOR
+     DESKTOP CANVAS — GLOBAL COORDINATE ANCHOR
      ═══════════════════════════════════════════════════════════════════════════ */
 
   .p2-os-canvas {
@@ -83,6 +121,7 @@
     width: 40vw;
     height: 40vw;
   }
+
   .p2-nodes {
     margin: 0;
     padding: 0;
@@ -140,10 +179,18 @@
   }
 
   /* ═══════════════════════════════════════════════════════════════════════════
-     MOBILE
+     MOBILE SCREENS — HIDDEN BY DEFAULT ON DESKTOP
      ═══════════════════════════════════════════════════════════════════════════ */
 
-  @media (max-width: 900px) {
+  .p2-mobile-screens {
+    display: none;
+  }
+
+  /* ═══════════════════════════════════════════════════════════════════════════
+     TABLET (431px–900px)
+     ═══════════════════════════════════════════════════════════════════════════ */
+
+  @media (min-width: 431px) and (max-width: 900px) {
     .p2-os-canvas {
       position: relative;
       left: auto;
@@ -171,15 +218,6 @@
       margin: 0 auto 0.5rem;
     }
 
-    .p2-core {
-      position: relative;
-      top: auto;
-      left: auto;
-      transform: none;
-      width: 7rem;
-      height: 7rem;
-    }
-
     .p2-nodes {
       display: flex;
       flex-wrap: wrap;
@@ -195,41 +233,93 @@
     }
   }
 
-  /* Portrait phones keep the systems circular and in reading order. The
-     desktop coordinate system above remains untouched. */
+  /* ═══════════════════════════════════════════════════════════════════════════
+     MOBILE (320px–430px) — THREE CONSECUTIVE VERTICAL SCREENS
+     ═══════════════════════════════════════════════════════════════════════════ */
+
   @media (max-width: 430px) {
     .p2-os-canvas {
-      position: relative;
-      left: auto;
-      top: auto;
-      width: 100%;
-      height: auto;
-      padding: 17rem 0 1rem;
-      overflow: hidden;
+      display: none !important;
     }
 
-    .p2-ring, .p2-sun-core { display: none; }
+    .p2-mobile-screens {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
 
-    .p2-nodes {
+    .p2-mobile-screen {
+      position: relative;
+      width: 100%;
+      min-height: 100svh;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+    .p2-screen-intro {
+      position: relative;
+
+      height: calc(100vw * 1601 / 1083);
+      min-height: 0;
+
+      background: #020d19 url("/Mimages/MHero-BG2.webp") center top / 100% auto
+        no-repeat;
+    }
+    /* ── SCREEN 3: MHero-BG2-(2).webp (Frontend + Engineering + Backend Orbits) ── */
+    .p2-screen-orbits-1 {
+      background: #020d19 url("/Mimages/MHero-BG2-(3).webp") center top / cover
+        no-repeat;
+      min-height: max(100svh, 1050px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      padding: 3rem 0 3.5rem;
+      gap: rem;
+    }
+
+    .p2-m-orbit-frontend,
+    .p2-m-orbit-engineering,
+    .p2-m-orbit-backend {
+      position: relative;
+      width: min(100%, 340px);
+      height: 290px;
+      display: grid;
+      place-items: center;
+      pointer-events: auto;
+    }
+
+    /* ── SCREEN 4: MHero-BG2-(2).webp (Database + Architecture Orbits) ── */
+    .p2-screen-db-arch {
+      background: #020d19 url("/Mimages/MHero-BG2-(2).webp") center top / cover
+        no-repeat;
+      min-height: max(100svh, 740px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      padding: 3rem 0 4rem;
+      gap: 2.5rem;
+    }
+
+    .p2-m-orbit-database {
+      position: relative;
+      width: min(100%, 340px);
+      height: 290px;
+      display: grid;
+      place-items: center;
+      pointer-events: auto;
+    }
+
+    .p2-m-orbit-architecture {
+      position: relative;
+      width: min(100%, 390px);
+      min-height: 270px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 3.2rem;
+      justify-content: flex-start;
+      pointer-events: auto;
+      padding-top: 0.5rem;
     }
-
-    .p2-os-node {
-      position: relative;
-      top: auto;
-      left: auto;
-      width: min(100%, 320px);
-      height: 250px;
-      display: grid;
-      place-items: center;
-      transform: none !important;
-    }
-
-    .p2-os-node--frontend { transform: scale(1.48) !important; margin: 2rem 0; }
-    .p2-os-node--engineering, .p2-os-node--backend, .p2-os-node--database { transform: scale(1.28) !important; }
-    .p2-os-node--architecture { transform: scale(.9) !important; }
   }
 </style>

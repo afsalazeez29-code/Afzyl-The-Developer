@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { onDestroy } from "svelte";
+  import { onMount, onDestroy } from "svelte";
 
   let open = false;
   let navEl: HTMLElement;
@@ -12,9 +12,31 @@
     { label: "CONTACT", href: "#contact" },
   ];
 
-  const close = () => (open = false);
+  const close = () => {
+    open = false;
+  };
 
-  onDestroy(() => {});
+  function handleOutsideClick(event: MouseEvent) {
+    if (!open) return;
+
+    const target = event.target as Node;
+
+    if (navEl && !navEl.contains(target)) {
+      close();
+    }
+  }
+
+  onMount(() => {
+    document.addEventListener("click", handleOutsideClick);
+
+    return () => {
+      document.removeEventListener("click", handleOutsideClick);
+    };
+  });
+
+  onDestroy(() => {
+    // Nothing required here.
+  });
 </script>
 
 <header bind:this={navEl} class:open aria-label="Main navigation">
@@ -66,23 +88,36 @@
   <span></span>
 </button>
 
-  <!-- MOBILE DROPDOWN -->
   {#if open}
-    <nav class="mobile-menu" aria-label="Mobile navigation">
-      {#each navItems as item, i}
-        <a
-          class="mobile-link"
-          href={item.href}
-          on:click={() => {
-            activeIndex = i;
-            close();
-          }}
-        >
-          {item.label}
-        </a>
-      {/each}
-    </nav>
-  {/if}
+  <nav
+    class="mobile-menu"
+    aria-label="Mobile navigation"
+    on:click|stopPropagation
+  >
+    <!-- CLOSE BUTTON -->
+    <button
+      class="mobile-menu-close"
+      type="button"
+      aria-label="Close menu"
+      on:click={close}
+    >
+      X
+    </button>
+
+    {#each navItems as item, i}
+      <a
+        class="mobile-link"
+        href={item.href}
+        on:click={() => {
+          activeIndex = i;
+          close();
+        }}
+      >
+        {item.label}
+      </a>
+    {/each}
+  </nav>
+{/if}
 </header>
 
 <style lang="scss">
@@ -299,65 +334,140 @@
   border-color: rgba(255, 255, 255, 0.35);
 }
 
-  /* ================================
-     MOBILE MENU
-     ================================ */
+ /* ================================
+   MOBILE MENU
+   ================================ */
 
-  .mobile-menu {
-    position: absolute;
+.mobile-menu {
+  position: absolute;
 
-    top: calc(100% + 10px);
+  top: calc(100% + 10px);
 
-    left: 0;
-    right: 0;
+  left: 0;
+  right: 0;
 
-    border-radius: 20px;
+  padding: 3rem 0.65rem 0.65rem;  
+  display: flex;
+  flex-direction: column;
 
-    background: rgba(250, 250, 250, 0.96);
+  gap: 0.35rem;
 
-    backdrop-filter: blur(18px) saturate(140%);
+  z-index: 99;
 
-    -webkit-backdrop-filter: blur(18px) saturate(140%);
+  background: #020d19;
 
-    border: 1px solid rgba(255, 255, 255, 0.65);
+  border: 1px solid transparent;
 
-    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.14);
+  border-radius: 16px;
 
-    display: flex;
+  background:
+    linear-gradient(#020d19, #020d19) padding-box,
+    linear-gradient(to right, #fafafa, #e12e0f) border-box;
 
-    flex-direction: column;
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.25);
+}
+.mobile-menu-close {
+  position: absolute;
 
-    padding: 0.7rem 0;
+  top: 0.65rem;
+  right: 0.7rem;
 
-    z-index: 99;
-  }
+  width: 30px;
+  height: 30px;
 
-  .mobile-link {
-    padding: 0.7rem 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    font-family: var(--sans);
+  padding: 0;
 
-    font-size: 0.86rem;
+  border: 1px solid rgba(250, 250, 250, 0.35);
+  border-radius: 50%;
 
-    font-weight: 500;
+  background: transparent;
 
-    letter-spacing: 0.03em;
+  color: #fafafa;
 
-    color: #fafafa;
+  font-family: Arial, sans-serif;
+  font-size: 1.45rem;
+  font-weight: 300;
+  line-height: 1;
 
-    text-decoration: none;
+  cursor: pointer;
 
-    transition: background 0.15s ease;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
 
-    border-radius: 10px;
+.mobile-menu-close:hover {
+  border-color: transparent;
 
-    margin: 0 0.35rem;
+  background:
+    linear-gradient(#020d19, #020d19) padding-box,
+    linear-gradient(to right, #fafafa, #e12e0f) border-box;
 
-    &:hover {
-      background: rgba(0, 0, 0, 0.06);
-    }
-  }
+  transform: rotate(90deg);
+}
 
+.mobile-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 42px;
+
+  padding: 0.7rem 1rem;
+
+  margin: 0;
+
+  border-radius: 10px;
+
+  font-family: var(--sans);
+
+  font-size: 0.82rem;
+
+  font-weight: 500;
+
+  letter-spacing: 0.03em;
+
+  color: #fafafa;
+
+  text-decoration: none;
+  text-align: center;
+
+  background: transparent;
+
+  border: 1px solid transparent;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.mobile-link:hover {
+  border: 1px solid transparent;
+
+  border-radius: 10px;
+
+  background:
+    linear-gradient(#020d19, #020d19) padding-box,
+    linear-gradient(to right, #fafafa, #e12e0f) border-box;
+
+  color: #fafafa;
+}
+.mobile-link:active {
+  border: 1px solid transparent;
+
+  background:
+    linear-gradient(#fafafa, #fafafa) padding-box,
+    linear-gradient(to right, #fafafa, #e12e0f) border-box;
+
+  color: #020d19;
+}
   /* ================================
      RESPONSIVE
      ================================ */

@@ -497,7 +497,7 @@
     }
 
     /* ─────────────────────────────────────────────────────────
-       Disable orbital positioning on mobile
+       Disable orbital positioning on tablet
        ───────────────────────────────────────────────────────── */
 
     .p2-suborbit {
@@ -568,6 +568,76 @@
       top: calc(100% + 0.3rem);
 
       font-size: 0.45rem;
+    }
+  }
+  /* ═══════════════════════════════════════════════════════════
+   MOBILE SCREEN 3 — FRONTEND TRUE CIRCULAR ROTATING ORBIT
+   ═══════════════════════════════════════════════════════════ */
+  @media (max-width: 430px) {
+    /* ─────────────────────────────────────────
+     CENTER NODE
+     ───────────────────────────────────────── */
+
+    .p2-node {
+      width: 6rem;
+      height: 6rem;
+      padding: 0.2rem;
+    }
+
+    .p2-node-label {
+      font-size: 0.85rem;
+    }
+
+    .p2-node-sub {
+      font-size: 0.5rem;
+    }
+
+    /* ─────────────────────────────────────────
+     INNER ORBIT
+     ───────────────────────────────────────── */
+
+    .p2-suborbit-ring--frontend-circle1 {
+      width: 190px;
+      height: 190px;
+    }
+
+    /* ─────────────────────────────────────────
+     OUTER ORBIT
+     ───────────────────────────────────────── */
+
+    .p2-suborbit-ring--frontend-circle2 {
+      width: 310px;
+      height: 310px;
+    }
+
+    /* ─────────────────────────────────────────
+     TECHNOLOGY NODES
+     ───────────────────────────────────────── */
+
+    .p2-subnode {
+      width: 3rem;
+      height: 3rem;
+
+      /* Half of 3rem = 1.5rem */
+      margin: -1.5rem;
+    }
+
+    /* ─────────────────────────────────────────
+     INNER ORBIT NODE RADIUS
+     ───────────────────────────────────────── */
+
+    .p2-spinner--frontend-circle1 .p2-subnode {
+      transform: rotate(var(--angle)) translateX(95px)
+        rotate(calc(-1 * var(--angle)));
+    }
+
+    /* ─────────────────────────────────────────
+     OUTER ORBIT NODE RADIUS
+     ───────────────────────────────────────── */
+
+    .p2-spinner--frontend-circle2 .p2-subnode {
+      transform: rotate(var(--angle)) translateX(155px)
+        rotate(calc(-1 * var(--angle)));
     }
   }
 </style>

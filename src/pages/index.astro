@@ -2114,17 +2114,9 @@ import '../styles/global.scss';
 
 }
 
-/* Tech Sphere desc: on small phones, pull out of absolute flow */
-@media (max-width: 430px) {
-  .p2-tech-sphere-desc {
-    position: relative;
-    z-index: auto;
-    bottom: auto;
-    left: auto;
-    max-width: 100%;
-    margin: 1rem var(--gutter) 0;
-  }
-}
+/* =========================================================
+   PAGE 2 — TECH SPHERE DESCRIPTION AT TOP
+   ========================================================= */
 
 /* =========================================================
    TASK 2 — PAGE 1: ABOUT CAROUSEL
@@ -3197,30 +3189,25 @@ import '../styles/global.scss';
   .p1-desc { font-size: .78rem; line-height: 1.5; }
 
   .image-section-2 {
-    min-height: 100svh;
-    background-image: url('/Mimages/MHero-BG2.webp');
-    background-size: 100% auto;
-    background-position: center top;
-    background-color: #020d19;
+    min-height: auto;
+    background: none;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
   }
-  .image-section-2::after {
-    content: '';
-    position: absolute;
-    z-index: 1;
-    left: 0; right: 0; bottom: 0;
-    height: 68%;
-    background: url('/Mimages/MHero-BG2-(2).webp') center bottom / 100% auto no-repeat;
-    pointer-events: none;
+  .p2-devsphere-label {
+    display: none;
   }
-  .image-section-2 > :not(.hero-bg) { position: relative; z-index: 2; }
   .p2-tech-sphere-desc {
-    top: 3.9rem;
+    position: absolute;
+    top: 13%;
     right: 1rem;
     left: 1rem;
     bottom: auto;
     max-width: none;
     padding: .9rem 1rem;
     border-radius: 12px;
+    z-index: 10;
   }
   .p2-ts-title { font-size: 1.02rem; }
   .p2-ts-body, .p2-ts-list { font-size: .7rem; }

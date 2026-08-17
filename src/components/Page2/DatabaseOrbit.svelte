@@ -343,4 +343,72 @@
       font-size: 0.45rem;
     }
   }
+  /* ── Mobile Screen 4: True Circular Rotating Orbit ── */
+  @media (max-width: 430px) {
+    /* ─────────────────────────────────────────
+     CENTER NODE
+     ───────────────────────────────────────── */
+
+    .p2-node {
+      width: 6rem;
+      height: 6rem;
+      padding: 0.2rem;
+    }
+
+    .p2-node-label {
+      font-size: 0.85rem;
+    }
+
+    .p2-node-sub {
+      font-size: 0.5rem;
+    }
+
+    /* ─────────────────────────────────────────
+     INNER DATABASE ORBIT
+     ───────────────────────────────────────── */
+
+    .p2-suborbit-ring--db-inner {
+      width: 190px;
+      height: 190px;
+    }
+
+    /* ─────────────────────────────────────────
+     OUTER DATABASE ORBIT
+     ───────────────────────────────────────── */
+
+    .p2-suborbit-ring--db-outer {
+      width: 310px;
+      height: 310px;
+    }
+
+    /* ─────────────────────────────────────────
+     DATABASE TECHNOLOGY NODES
+     ───────────────────────────────────────── */
+
+    .p2-subnode {
+      width: 3rem;
+      height: 3rem;
+
+      /* Half of 3rem */
+      margin: -1.5rem;
+    }
+
+    /* ─────────────────────────────────────────
+     INNER ORBIT RADIUS
+     ───────────────────────────────────────── */
+
+    .p2-spinner--db-inner .p2-subnode {
+      transform: rotate(var(--angle)) translateX(95px)
+        rotate(calc(-1 * var(--angle)));
+    }
+
+    /* ─────────────────────────────────────────
+     OUTER ORBIT RADIUS
+     ───────────────────────────────────────── */
+
+    .p2-spinner--db-outer .p2-subnode {
+      transform: rotate(var(--angle)) translateX(155px)
+        rotate(calc(-1 * var(--angle)));
+    }
+  }
 </style>
