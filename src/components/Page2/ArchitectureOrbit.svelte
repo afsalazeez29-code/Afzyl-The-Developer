@@ -4,16 +4,20 @@
   // ═══════════════════════════════════════════════════════════════
 
   const archProps = [
-    "System Design",
-    "Scalability",
-    "Security",
-    "API Architecture",
-    "Database Architecture",
-    "Cloud Architecture",
-    "Performance",
-    "Maintainability",
-  ];
+  // Row 1 — Core Architecture
+  "System Design",
+  "API Architecture",
+  "Database Architecture",
+  "Cloud Architecture",
 
+  // Row 2 — System Qualities
+  "Scalability",
+  "Security",
+  "Performance",
+
+  // Row 3 — Long-Term Quality
+  "Maintainability",
+];
   // ═══════════════════════════════════════════════════════════════
   // ARCHITECTURE BOX POSITIONS
   //
@@ -85,9 +89,6 @@
 
 <div class="p2-node">
   <span class="p2-node-label">ARCHITECTURE</span>
-
-  <span class="p2-node-sub"> System Design </span>
-
   <!-- ═══════════════════════════════════════════════════════════
        DESKTOP CONNECTOR LINES + CONCEPT BOXES
        ═══════════════════════════════════════════════════════════ -->
@@ -121,88 +122,28 @@
 <!-- ═══════════════════════════════════════════════════════════
      MOBILE ARCHITECTURE SYSTEM (<= 430px)
      ═══════════════════════════════════════════════════════════ -->
-<div class="p2-m-arch-wrapper" aria-hidden="true">
-  <!-- CONNECTOR LINES FANNING DOWN FROM NODE -->
-  <svg class="p2-m-arch-svg" viewBox="0 0 100 40" preserveAspectRatio="none">
-    <line
-      x1="50"
-      y1="0"
-      x2="6.25"
-      y2="40"
-      stroke="rgba(200, 40, 30, 0.55)"
-      stroke-width="1.2"
-      vector-effect="non-scaling-stroke"
-    />
-    <line
-      x1="50"
-      y1="0"
-      x2="18.75"
-      y2="40"
-      stroke="rgba(200, 40, 30, 0.55)"
-      stroke-width="1.2"
-      vector-effect="non-scaling-stroke"
-    />
-    <line
-      x1="50"
-      y1="0"
-      x2="31.25"
-      y2="40"
-      stroke="rgba(200, 40, 30, 0.55)"
-      stroke-width="1.2"
-      vector-effect="non-scaling-stroke"
-    />
-    <line
-      x1="50"
-      y1="0"
-      x2="43.75"
-      y2="40"
-      stroke="rgba(200, 40, 30, 0.55)"
-      stroke-width="1.2"
-      vector-effect="non-scaling-stroke"
-    />
-    <line
-      x1="50"
-      y1="0"
-      x2="56.25"
-      y2="40"
-      stroke="rgba(200, 40, 30, 0.55)"
-      stroke-width="1.2"
-      vector-effect="non-scaling-stroke"
-    />
-    <line
-      x1="50"
-      y1="0"
-      x2="68.75"
-      y2="40"
-      stroke="rgba(200, 40, 30, 0.55)"
-      stroke-width="1.2"
-      vector-effect="non-scaling-stroke"
-    />
-    <line
-      x1="50"
-      y1="0"
-      x2="81.25"
-      y2="40"
-      stroke="rgba(200, 40, 30, 0.55)"
-      stroke-width="1.2"
-      vector-effect="non-scaling-stroke"
-    />
-    <line
-      x1="50"
-      y1="0"
-      x2="93.75"
-      y2="40"
-      stroke="rgba(200, 40, 30, 0.55)"
-      stroke-width="1.2"
-      vector-effect="non-scaling-stroke"
-    />
+<div class="p2-m-arch-wrapper" aria-label="Architecture concepts">
+  <!-- Lines connect the node to the 4 / 3 / 1 card hierarchy. -->
+  <svg class="p2-m-arch-svg" viewBox="0 0 100 198" preserveAspectRatio="none" aria-hidden="true">
+    <g class="p2-m-arch-connectors">
+      <path d="M50 0V16H12.5M50 16H87.5M12.5 16V32M37.5 16V32M62.5 16V32M87.5 16V32" />
+      <path d="M12.5 66V82H87.5M37.5 66V82M62.5 66V82M87.5 66V82M24 82V98M50 82V98M76 82V98" />      <path d="M24 132V148H76M50 132V148M76 132V148M50 148V164" />
+    </g>
   </svg>
 
-  <!-- 8 VERTICAL SYSTEM DESIGN PILLS IN A ROW -->
   <div class="p2-m-arch-pills">
-    {#each archProps as prop}
-      <div class="p2-m-arch-pill" role="note" aria-label={prop}>
-        <span class="p2-m-arch-pill-text">{prop}</span>
+    {#each [archProps.slice(0, 4), archProps.slice(4, 7), archProps.slice(7)] as tier, tierIndex}
+      <div
+        class="p2-m-arch-tier"
+        class:p2-m-arch-tier--four={tierIndex === 0}
+        class:p2-m-arch-tier--three={tierIndex === 1}
+        class:p2-m-arch-tier--one={tierIndex === 2}
+      >
+        {#each tier as prop}
+          <div class="p2-m-arch-pill" role="note" aria-label={prop}>
+            <span class="p2-m-arch-pill-text">{prop}</span>
+          </div>
+        {/each}
       </div>
     {/each}
   </div>
@@ -256,13 +197,6 @@
 
     letter-spacing: 0.07em;
   }
-
-  .p2-node-sub {
-    font: 400 clamp(0.4rem, 0.58vw, 0.55rem) / 1.3 var(--sans);
-
-    color: rgba(255, 255, 255, 0.65);
-  }
-
   /* ═══════════════════════════════════════════════════════════════
      ARCHITECTURE SYSTEM
      
@@ -563,13 +497,8 @@
     }
 
     .p2-node-label {
-      font-size: 0.85rem;
+      font-size: clamp(0.62rem, 2.5vw, 0.68rem);
     }
-
-    .p2-node-sub {
-      font-size: 0.5rem;
-    }
-
     /* ─────────────────────────────────────────
      ARCHITECTURE DESKTOP SYSTEM HIDDEN
      ───────────────────────────────────────── */
@@ -583,14 +512,14 @@
      ───────────────────────────────────────── */
 
     .p2-m-arch-wrapper {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-
+      display: block;
+      position: absolute;
+      top: 100%;
+      left: 50%;
       width: min(94vw, 380px);
-
-      margin-top: 0.5rem;
-
+      height: 198px;
+      margin-top: 0;
+      transform: translateX(-50%);
       pointer-events: auto;
     }
 
@@ -599,14 +528,24 @@
      ───────────────────────────────────────── */
 
     .p2-m-arch-svg {
+      position: absolute;
+      inset: 0;
       width: 100%;
-      height: 34px;
+      height: 100%;
 
       overflow: visible;
 
       display: block;
 
       pointer-events: none;
+      z-index: 0;
+    }
+
+    .p2-m-arch-connectors {
+      fill: none;
+      stroke: rgba(200, 40, 30, 0.55);
+      stroke-width: 1;
+      vector-effect: non-scaling-stroke;
     }
 
     /* ─────────────────────────────────────────
@@ -615,12 +554,38 @@
 
     .p2-m-arch-pills {
       display: grid;
-
-      grid-template-columns: repeat(8, 1fr);
-
-      gap: clamp(2px, 0.8vw, 4px);
-
+      grid-template-rows: 32px 34px 32px 34px 32px 34px;
       width: 100%;
+      height: 100%;
+      position: relative;
+      z-index: 1;
+    }
+
+    .p2-m-arch-tier {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.25rem, 1.5vw, 0.45rem);
+  width: 100%;
+  height: 34px;
+  margin-inline: auto;
+}
+
+    .p2-m-arch-tier--four {
+      grid-row: 2;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .p2-m-arch-tier--three {
+      grid-row: 4;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      width: 76%;
+    }
+
+    .p2-m-arch-tier--one {
+      grid-row: 6;
+      grid-template-columns: minmax(0, 1fr);
+      width: 48%;
     }
 
     /* ─────────────────────────────────────────
@@ -637,11 +602,10 @@
 
       border: 1px solid rgba(255, 255, 255, 0.65);
 
-      border-radius: 4px;
+      border-radius: 3px;
 
-      padding: 0.45rem 0.1rem;
-
-      min-height: 120px;
+      min-height: clamp(1.75rem, 7.5vw, 2.1rem);
+      padding: 0.28rem 0.18rem;
 
       box-sizing: border-box;
 
@@ -671,11 +635,7 @@
      ───────────────────────────────────────── */
 
     .p2-m-arch-pill-text {
-      writing-mode: vertical-rl;
-
-      transform: rotate(180deg);
-
-      font: 600 clamp(0.46rem, 1.6vw, 0.56rem) / 1 var(--sans, sans-serif);
+      font: 600 clamp(0.4rem, 1.6vw, 0.57rem) / 1.12 var(--sans, sans-serif);
 
       color: #fafafa;
 
@@ -683,7 +643,8 @@
 
       letter-spacing: 0.04em;
 
-      white-space: nowrap;
+      text-align: center;
+      white-space: normal;
     }
   }
 </style>

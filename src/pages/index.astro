@@ -179,8 +179,30 @@ import '../styles/global.scss';
         loading="lazy"
       />
 
+      <!-- Mobile-only: preserves the complete first Project World portrait image. -->
+      <img
+        class="p3-mobile-intro-bg"
+        src="/Mimages/MHero-BG3.webp"
+        alt=""
+        aria-hidden="true"
+      />
+
       <!-- PAGE 3 — SELECTED PROJECTS -->
       <div class="p3-content" aria-label="Selected projects and case studies">
+
+        <!-- Mobile-only: Project World belongs to the project-background continuation. -->
+        <div class="p3-world-desc p3-world-desc--mobile">
+          <h2 class="p3-world-title">PROJECT WORLD</h2>
+          <p class="p3-world-body">
+            A Showcase of My Completed Production-Ready Full-Stack Projects —
+            JailMeet, Recipe.IO, and HUE.AI. Each Project is Fully Functional,
+            Responsive, and Built to Solve Practical Problems Through Modern Web Technologies.
+          </p>
+          <p class="p3-world-body">
+            Explore Each Project, Discover its Features and Functionality, and Experience
+            it Firsthand by Clicking “View Live.”
+          </p>
+        </div>
 
         <!-- LEFT — PROJECT LIST -->
         <div class="proj-list">
@@ -3019,6 +3041,14 @@ import '../styles/global.scss';
   color: #FAFAFA;
 }
 
+.p3-world-desc--mobile {
+  display: none;
+}
+
+.p3-mobile-intro-bg {
+  display: none;
+}
+
 .p3-world-title {
   margin: 0;
   font: 700 clamp(1.1rem,1.8vw,1.5rem)/1.1 var(--heading);
@@ -3215,18 +3245,18 @@ import '../styles/global.scss';
   .image-section-3 {
     min-height: auto;
     padding-top: 0;
-    background: #020d19 url('/Mimages/MHero-BG3.webp') center top / 100% auto no-repeat;
+    background: none;
     display: flex;
     flex-direction: column;
   }
-  .p3-globe-container {
-    position: relative;
+  .p3-mobile-intro-bg {
     display: block;
-    top: auto; right: auto;
-    width: auto; height: auto;
-    padding: 5.3rem 1rem 2rem;
-    transform: none;
-    order: 1;
+    width: 100%;
+    height: auto;
+    flex: 0 0 auto;
+  }
+  .p3-globe-container {
+    display: none;
   }
   .p3-globe-canvas { display: none; }
   .p3-world-desc {
@@ -3243,8 +3273,14 @@ import '../styles/global.scss';
     width: 100%;
     overflow: visible;
     padding: 2.25rem 1rem 2.5rem;
-    background: url('/Mimages/MHero-BG3-(2).webp') center top / cover no-repeat;
-    order: 2;
+    background: #020d19 url('/Mimages/MHero-BG3-(2).webp') center top / 100% auto no-repeat;
+    order: 1;
+  }
+  .p3-world-desc--mobile {
+    display: flex;
+    margin: 0 0 1rem;
+    padding: 1rem;
+    border-radius: 14px;
   }
   .proj-list { gap: 1rem; overflow: visible; }
   .proj-card { padding: .8rem; gap: .85rem; border-radius: 14px; overflow: hidden; }

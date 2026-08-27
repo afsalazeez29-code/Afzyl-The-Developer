@@ -274,7 +274,7 @@
       justify-content: space-evenly;
       align-items: center;
       padding: 3rem 0 3.5rem;
-      gap: rem;
+      gap: 6rem;
     }
 
     .p2-m-orbit-frontend,
@@ -289,17 +289,23 @@
     }
 
     /* ── SCREEN 4: MHero-BG2-(2).webp (Database + Architecture Orbits) ── */
-    .p2-screen-db-arch {
-      background: #020d19 url("/Mimages/MHero-BG2-(2).webp") center top / cover
-        no-repeat;
-      min-height: max(100svh, 740px);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-evenly;
-      align-items: center;
-      padding: 3rem 0 4rem;
-      gap: 2.5rem;
-    }
+   .p2-screen-db-arch {
+  background: #020d19 url("/Mimages/MHero-BG2-(2).webp") center top / cover
+    no-repeat;
+
+  min-height: max(100svh, 740px);
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: flex-start;
+
+  align-items: center;
+
+  padding: 2rem 0 2rem;
+
+  gap: 1rem;
+}
 
     .p2-m-orbit-database {
       position: relative;
@@ -313,13 +319,13 @@
     .p2-m-orbit-architecture {
       position: relative;
       width: min(100%, 390px);
-      min-height: 270px;
+      min-height: 0px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: flex-start;
       pointer-events: auto;
-      padding-top: 0.5rem;
+      padding-top: 4rem;
     }
   }
 </style>
