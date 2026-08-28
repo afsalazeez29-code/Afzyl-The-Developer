@@ -179,16 +179,12 @@ import '../styles/global.scss';
         loading="lazy"
       />
 
-      <!-- Mobile-only: preserves the complete first Project World portrait image. -->
-      <img
-        class="p3-mobile-intro-bg"
-        src="/Mimages/MHero-BG3.webp"
-        alt=""
-        aria-hidden="true"
-      />
-
       <!-- PAGE 3 — SELECTED PROJECTS -->
       <div class="p3-content" aria-label="Selected projects and case studies">
+        <div class="proj-list">
+          <div class="p3-mobile-background p3-mobile-background--primary">
+            <img class="p3-mobile-panel-image" src="/Mimages/MHero-BG3.webp" alt="" aria-hidden="true" />
+            <div class="p3-mobile-panel-content">
 
         <!-- Mobile-only: Project World belongs to the project-background continuation. -->
         <div class="p3-world-desc p3-world-desc--mobile">
@@ -204,9 +200,13 @@ import '../styles/global.scss';
           </p>
         </div>
 
-        <!-- LEFT — PROJECT LIST -->
-        <div class="proj-list">
+            </div>
+          </div>
 
+          <div class="p3-mobile-background p3-mobile-background--jailmeet">
+            <img class="p3-mobile-panel-image" src="/Mimages/MHero-BG3-(2).webp" alt="" aria-hidden="true" />
+            <div class="p3-mobile-panel-content">
+        <!-- LEFT — PROJECT LIST -->
             <!-- PROJECT 01 — JAILMEET -->
             <article class="proj-card" id="proj-jailmeet">
 
@@ -278,6 +278,13 @@ import '../styles/global.scss';
 
             </article>
 
+            </div>
+          </div>
+
+          <div class="p3-mobile-background p3-mobile-background--recipeio">
+            <img class="p3-mobile-panel-image" src="/Mimages/MHero-BG3-(2).webp" alt="" aria-hidden="true" />
+            <div class="p3-mobile-panel-content">
+
             <!-- PROJECT 02 — RECIPE.IO -->
             <article class="proj-card" id="proj-recipeio">
 
@@ -348,6 +355,13 @@ import '../styles/global.scss';
 
             </article>
 
+            </div>
+          </div>
+
+          <div class="p3-mobile-background p3-mobile-background--hueai">
+            <img class="p3-mobile-panel-image" src="/Mimages/MHero-BG3-(2).webp" alt="" aria-hidden="true" />
+            <div class="p3-mobile-panel-content">
+
             <!-- PROJECT 03 — HUE.AI -->
             <article class="proj-card" id="proj-hueai">
 
@@ -387,6 +401,9 @@ import '../styles/global.scss';
               </div>
 
             </article>
+
+            </div>
+          </div>
 
         </div><!-- /.proj-list -->
 
@@ -2946,6 +2963,24 @@ import '../styles/global.scss';
 
 }
 
+@media (min-width: 431px) and (max-width: 900px) {
+  .p3-world-desc--mobile {
+    display: none;
+  }
+
+  .proj-card {
+    flex-direction: row;
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .proj-carousel-wrapper {
+    flex: 0 0 clamp(200px, 58%, 520px);
+    width: auto;
+    max-height: none;
+  }
+}
+
 @media (max-width: 720px) {
 
   /* On small mobile, fill the available width */
@@ -3044,8 +3079,15 @@ import '../styles/global.scss';
 .p3-world-desc--mobile {
   display: none;
 }
+.p3-mobile-background {
+  display: contents;
+}
 
-.p3-mobile-intro-bg {
+.p3-mobile-panel-content {
+  display: contents;
+}
+
+.p3-mobile-panel-image {
   display: none;
 }
 
@@ -3063,7 +3105,8 @@ import '../styles/global.scss';
 }
 
 /* Hide globe container on ≤430px (no init in component) */
-@media (max-width: 430px) {
+@media (max-width: 430px) 
+{
   .p3-globe-container {
     display: none;
   }
@@ -3078,7 +3121,6 @@ import '../styles/global.scss';
   .p3-globe-container {
     display: none;
   }
-
   .p3-inner {
     flex-direction: column;
   }
@@ -3246,14 +3288,9 @@ import '../styles/global.scss';
     min-height: auto;
     padding-top: 0;
     background: none;
+    overflow: visible;
     display: flex;
     flex-direction: column;
-  }
-  .p3-mobile-intro-bg {
-    display: block;
-    width: 100%;
-    height: auto;
-    flex: 0 0 auto;
   }
   .p3-globe-container {
     display: none;
@@ -3272,17 +3309,56 @@ import '../styles/global.scss';
     inset: auto;
     width: 100%;
     overflow: visible;
-    padding: 2.25rem 1rem 2.5rem;
-    background: #020d19 url('/Mimages/MHero-BG3-(2).webp') center top / 100% auto no-repeat;
+    padding: 0;
+    background: none;
     order: 1;
   }
   .p3-world-desc--mobile {
     display: flex;
-    margin: 0 0 1rem;
-    padding: 1rem;
-    border-radius: 14px;
   }
-  .proj-list { gap: 1rem; overflow: visible; }
+  .p3-mobile-background {
+    position: relative;
+    width: 100%;
+    overflow: visible;
+    margin: 0;
+    padding: 0;
+  }
+  .p3-mobile-panel-image {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .p3-mobile-panel-content {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    overflow: visible;
+    box-sizing: border-box;
+  }
+.p3-mobile-background--jailmeet .p3-mobile-panel-content {
+  padding: 42rem 1rem 1rem;
+}
+
+.p3-mobile-background--recipeio .p3-mobile-panel-content {
+  padding: 72rem 1rem 1rem;
+}
+
+.p3-mobile-background--hueai .p3-mobile-panel-content {
+  padding: 102rem 1rem 1rem;
+}
+
+.p3-mobile-background--hueai {
+  height: 154rem;
+  overflow: hidden;
+}
+
+.p3-mobile-background--hueai .p3-mobile-panel-image {
+  transform: rotate(180deg);
+}
+  .proj-list { gap: 0; overflow: visible; }
   .proj-card { padding: .8rem; gap: .85rem; border-radius: 14px; overflow: hidden; }
   .proj-carousel-wrapper { max-height: none; }
   .proj-carousel-btn { display: flex !important; opacity: 1; width: 2.15rem; height: 2.15rem; }
