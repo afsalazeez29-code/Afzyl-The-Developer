@@ -46,14 +46,14 @@
     href="https://github.com/afsalazeez29-code"
     target="_blank"
     rel="noopener noreferrer"
-    aria-label="Afsal S Azeez GitHub Profile"
+    aria-label="Afsal A Azeez GitHub Profile"
   >
     <img
       class="profile-avatar"
       src="/Portraits/Avatar.webp"
-      alt="Afsal S Azeez"
+      alt="Afsal A Azeez"
     />
-    <span class="profile-name">Afsal S Azeez</span>
+    <span class="profile-name">Afsal A Azeez</span>
   </a>
 
   <!-- DESKTOP NAV -->
