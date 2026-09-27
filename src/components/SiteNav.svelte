@@ -43,7 +43,7 @@
   <!-- BRAND / PROFILE PILL -->
   <a
     class="brand profile-pill"
-    href="https://github.com/afsalazeez29-code"
+    href="https://www.linkedin.com/in/afsalsazeez29/"
     target="_blank"
     rel="noopener noreferrer"
     aria-label="Afsal A Azeez GitHub Profile"
